@@ -803,13 +803,13 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <div>
               <div className="flex justify-between items-center text-[#c03f13] font-bold uppercase pb-2 border-b border-[#1d1d1b]">
                 <span>24 HOURS</span>
-                <span className="bg-[#c03f13] text-[#cdc6be] px-1.5 py-0.5 text-[10px]">CURRENT PROTOTYPE</span>
+                <span className="bg-[#c03f13] text-[#cdc6be] px-1.5 py-0.5 text-[10px]">PROTOTYPE</span>
               </div>
               <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
                 Functional Prototype
               </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
-                <div className="font-bold text-[#c03f13]">WHAT IS ACHIEVED:</div>
+                <div className="font-bold text-[#c03f13]">WHAT IS PLANNED TO BE BUILT IN 24 HOURS:</div>
                 <ul className="space-y-1 text-[11px] text-[#2b2825]">
                   <li>✓ Complete editorial responsive UI &amp; design system</li>
                   <li>✓ Cloud architecture pipeline with zero hardware dependency</li>
