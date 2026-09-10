@@ -46,9 +46,29 @@ body {
   }
 }
 
-/* Allow the continuous paper texture to show through all sections and default paper containers */
-.bg-\[\#cdc6be\] {
+/* Allow the continuous paper texture to show through all sections while protecting the index overlay */
+section.bg-\[\#cdc6be\],
+main .bg-\[\#cdc6be\] {
   background-color: transparent !important;
+}
+
+/* Dedicated Opaque Archival Grain Background for Index Page Overlay */
+#nav-overlay,
+.index-page-overlay {
+  background-color: #cdc6be !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 50 !important;
+}
+
+.index-paper-grain {
+  background-image: 
+    radial-gradient(#1d1d1b 0.65px, transparent 0.65px), 
+    radial-gradient(#ffffff 0.65px, #cdc6be 0.65px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  opacity: 0.14;
+  pointer-events: none;
 }
 
 /* Preserve subtle card hover feedback */

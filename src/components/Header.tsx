@@ -136,10 +136,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: editorialEase }}
-            className="fixed inset-0 z-50 bg-[#cdc6be] flex flex-col justify-between p-6 md:p-14 overflow-y-auto"
+            className="fixed inset-0 z-50 index-page-overlay flex flex-col justify-between p-6 md:p-14 overflow-y-auto"
             id="nav-overlay"
           >
-            <div className="flex justify-between items-center hairline-b pb-6">
+            {/* Tactile paper grain overlay applied specifically for the Index page overlay */}
+            <div 
+              aria-hidden="true" 
+              className="fixed inset-0 index-paper-grain pointer-events-none z-0"
+            />
+
+            <div className="relative z-10 flex justify-between items-center hairline-b pb-6">
               <div className="flex items-center space-x-3">
                 <span className="font-blackletter text-3xl text-[#1d1d1b]">Rashkar</span>
                 <span className="text-[#625e57]">/</span>
@@ -157,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               </motion.button>
             </div>
 
-            <div className="my-auto py-8">
+            <div className="relative z-10 my-auto py-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-5xl mx-auto">
                 {/* Column 1: Primary Intelligence Engines */}
                 <div className="space-y-6">
@@ -236,7 +242,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               </div>
             </div>
 
-            <div className="hairline-t pt-4 flex flex-col md:flex-row justify-between text-xs font-mono text-[#625e57] gap-2">
+            <div className="relative z-10 hairline-t pt-4 flex flex-col md:flex-row justify-between text-xs font-mono text-[#625e57] gap-2">
               <span>100% CLOUD-BASED · SATELLITE &amp; SMARTPHONE INTELLIGENCE</span>
               <span>RASHKAR SPECIFICATION © 2026</span>
             </div>
