@@ -782,14 +782,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 11. 36-HOUR FEASIBILITY AUDIT (Honest Hackathon / Evaluation Analysis)    */}
+      {/* 11. 24-HOUR FEASIBILITY AUDIT (Honest Hackathon / Evaluation Analysis)    */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#ded7ce]/40 p-6 md:p-12" id="feasibility">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
           <div>
             <AnimatedEyebrow text="TRANSPARENT ENGINEERING AUDIT" className="mb-2" />
             <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
-              36-HOUR FEASIBILITY EVALUATION
+              24-HOUR FEASIBILITY EVALUATION
             </AnimatedH2>
           </div>
           <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
@@ -798,11 +798,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-          {/* Tier 1: 36 Hours Prototype */}
+          {/* Tier 1: 24 Hours Prototype */}
           <MotionCard delay={0.06} className="border-2 border-[#1d1d1b] p-6 bg-[#cdc6be] flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-center text-[#c03f13] font-bold uppercase pb-2 border-b border-[#1d1d1b]">
-                <span>36 HOURS</span>
+                <span>24 HOURS</span>
                 <span className="bg-[#c03f13] text-[#cdc6be] px-1.5 py-0.5 text-[10px]">CURRENT PROTOTYPE</span>
               </div>
               <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">

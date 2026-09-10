@@ -124,7 +124,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   }} 
                   className="hover:text-[#1d1d1b] text-left cursor-pointer"
                 >
-                  36-Hour Feasibility
+                  24-Hour Feasibility
                 </button>
               </li>
               <li>

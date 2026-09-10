@@ -750,11 +750,11 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
           <div className="lg:col-span-7 space-y-6">
             <AnimatedEyebrow text="05 / RIGOROUS FEASIBILITY BOUNDARIES" />
             <AnimatedH3 className="font-monument text-3xl sm:text-4xl uppercase text-[#1d1d1b]">
-              WHAT IS REALISTIC IN 36 HOURS
+              WHAT IS REALISTIC IN 24 HOURS
             </AnimatedH3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
               <MotionCard delay={0.06} className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/50 space-y-2">
-                <AnimatedLabel text="POSSIBLE IN 36 HOURS:" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedLabel text="POSSIBLE IN 24 HOURS:" className="text-[#c03f13] font-bold uppercase block" />
                 <ul className="space-y-1 text-[#625e57]">
                   <li>✓ Cloud API pipeline architecture</li>
                   <li>✓ Weather reanalysis data ingestion</li>
@@ -766,7 +766,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               </MotionCard>
 
               <MotionCard delay={0.12} className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/50 space-y-2">
-                <AnimatedLabel text="NOT POSSIBLE IN 36 HOURS:" className="text-[#1d1d1b] font-bold uppercase block" />
+                <AnimatedLabel text="NOT POSSIBLE IN 24 HOURS:" className="text-[#1d1d1b] font-bold uppercase block" />
                 <ul className="space-y-1 text-[#625e57]">
                   <li>✗ Multi-state national deployment</li>
                   <li>✗ Long-term field medical validation</li>
@@ -777,7 +777,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               </MotionCard>
             </div>
             <AnimatedParagraph className="font-editorial text-sm text-[#625e57] italic" delay={0.1}>
-              Rashkar prioritizes honest engineering boundaries. The 36-hour prototype demonstrates functional computational feasibility, preparing for multi-month field validation.
+              Rashkar prioritizes honest engineering boundaries. The 24-hour prototype demonstrates functional computational feasibility, preparing for multi-month field validation.
             </AnimatedParagraph>
           </div>
 
