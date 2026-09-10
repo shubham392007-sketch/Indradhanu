@@ -27,20 +27,21 @@ export interface BaseTypographyProps {
   className?: string;
   delay?: number;
   duration?: number;
-  viewportAmount?: number;
+  viewportAmount?: number | 'some' | 'all';
   once?: boolean;
   as?: React.ElementType;
 }
 
 /**
  * 1. AnimatedH1 — Physical Masked Editorial Reveal
- * Emerges from beneath a printed editorial mask with subtle blur settling.
- * Supports multi-line cascade and optional hero scroll motion.
+ * Emerges from beneath a printed editorial mask.
+ * Supports multi-line cascade, hero direct animation, and optional scroll-linked scale.
  */
 export interface AnimatedH1Props extends BaseTypographyProps {
   lines?: string[];
   scrollMotion?: boolean;
   stagger?: number;
+  animateOnMount?: boolean;
 }
 
 export const AnimatedH1: React.FC<AnimatedH1Props> = ({
@@ -48,25 +49,31 @@ export const AnimatedH1: React.FC<AnimatedH1Props> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   lines,
   scrollMotion = false,
+  animateOnMount = false,
+  stagger,
   as: Component = 'h1',
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const ref = useRef<HTMLHeadingElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: scrollMotion ? ref : undefined,
-    offset: ['start start', 'end start'],
-  });
-
-  const scrollScale = useTransform(scrollYProgress, [0, 1], [1, 0.94]);
-  const scrollOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.65]);
-  const scrollY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const shouldAnimateDirectly = animateOnMount || scrollMotion;
 
   if (shouldReduceMotion) {
+    if (lines && lines.length > 0) {
+      return (
+        <Component className={className}>
+          {lines.map((line, idx) => (
+            <span key={idx} className="block">
+              {line}
+            </span>
+          ))}
+        </Component>
+      );
+    }
     return <Component className={className}>{children}</Component>;
   }
 
@@ -79,10 +86,11 @@ export const AnimatedH1: React.FC<AnimatedH1Props> = ({
             <motion.span
               variants={h1MaskedVariants}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once, amount: viewportAmount }}
+              animate={shouldAnimateDirectly ? "visible" : undefined}
+              whileInView={shouldAnimateDirectly ? undefined : "visible"}
+              viewport={{ once, amount: viewportAmount as any }}
               custom={{
-                delay: delay + idx * TYPOGRAPHY_TIMING.lineStagger,
+                delay: delay + idx * (stagger ?? TYPOGRAPHY_TIMING.lineStagger),
                 duration: duration ?? TYPOGRAPHY_TIMING.h1,
               }}
               className="block"
@@ -95,23 +103,21 @@ export const AnimatedH1: React.FC<AnimatedH1Props> = ({
     );
   }
 
-  // Scroll-linked or single-line reveal
+  // Single-line reveal
   return (
-    <motion.div
-      style={scrollMotion ? { scale: scrollScale, opacity: scrollOpacity, y: scrollY } : undefined}
-      className="overflow-hidden"
-    >
+    <div className="overflow-hidden">
       <motion.div
         ref={ref}
         variants={h1MaskedVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once, amount: viewportAmount }}
+        animate={shouldAnimateDirectly ? "visible" : undefined}
+        whileInView={shouldAnimateDirectly ? undefined : "visible"}
+        viewport={{ once, amount: viewportAmount as any }}
         custom={{ delay, duration }}
       >
         <Component className={className}>{children}</Component>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -129,7 +135,7 @@ export const AnimatedH2: React.FC<AnimatedH2Props> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   showAccentRule = false,
   rulePosition = 'left',
@@ -147,7 +153,7 @@ export const AnimatedH2: React.FC<AnimatedH2Props> = ({
         <motion.div
           initial={{ scaleY: 0, originY: 0 }}
           whileInView={{ scaleY: 1 }}
-          viewport={{ once, amount: viewportAmount }}
+          viewport={{ once, amount: viewportAmount as any }}
           transition={{ duration: 0.6, delay, ease: editorialEase }}
           className="w-[2px] bg-[#c03f13] flex-shrink-0"
         />
@@ -156,7 +162,7 @@ export const AnimatedH2: React.FC<AnimatedH2Props> = ({
         variants={h2HorizontalVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once, amount: viewportAmount }}
+        viewport={{ once, amount: viewportAmount as any }}
         custom={{ delay: delay + (showAccentRule ? 0.08 : 0), duration }}
         className="w-full"
       >
@@ -166,7 +172,7 @@ export const AnimatedH2: React.FC<AnimatedH2Props> = ({
         <motion.div
           initial={{ scaleX: 0, originX: 0 }}
           whileInView={{ scaleX: 1 }}
-          viewport={{ once, amount: viewportAmount }}
+          viewport={{ once, amount: viewportAmount as any }}
           transition={{ duration: 0.7, delay: delay + 0.15, ease: editorialEase }}
           className="h-[1px] bg-[#1d1d1b] mt-3 w-full"
         />
@@ -183,7 +189,7 @@ export const AnimatedH3: React.FC<BaseTypographyProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   as: Component = 'h3',
 }) => {
@@ -198,7 +204,7 @@ export const AnimatedH3: React.FC<BaseTypographyProps> = ({
       variants={h3Variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: viewportAmount }}
+      viewport={{ once, amount: viewportAmount as any }}
       custom={{ delay, duration }}
     >
       <Component className={className}>{children}</Component>
@@ -214,7 +220,7 @@ export const AnimatedH4: React.FC<BaseTypographyProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   as: Component = 'h4',
 }) => {
@@ -229,7 +235,7 @@ export const AnimatedH4: React.FC<BaseTypographyProps> = ({
       variants={h4Variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: viewportAmount }}
+      viewport={{ once, amount: viewportAmount as any }}
       custom={{ delay, duration }}
     >
       <Component className={className}>{children}</Component>
@@ -250,7 +256,7 @@ export const AnimatedEyebrow: React.FC<AnimatedEyebrowProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   showLine = true,
   lineWidth = 'w-12 sm:w-16',
@@ -273,7 +279,7 @@ export const AnimatedEyebrow: React.FC<AnimatedEyebrowProps> = ({
         variants={eyebrowVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once, amount: viewportAmount }}
+        viewport={{ once, amount: viewportAmount as any }}
         custom={{ delay, duration }}
       >
         <Component>{children}</Component>
@@ -283,7 +289,7 @@ export const AnimatedEyebrow: React.FC<AnimatedEyebrowProps> = ({
           variants={eyebrowLineVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once, amount: viewportAmount }}
+          viewport={{ once, amount: viewportAmount as any }}
           custom={{ delay }}
           className={`h-[1px] bg-[#c03f13] ${lineWidth}`}
         />
@@ -300,7 +306,7 @@ export const AnimatedParagraph: React.FC<BaseTypographyProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.15,
+  viewportAmount = 0,
   once = true,
   as: Component = 'p',
 }) => {
@@ -315,7 +321,7 @@ export const AnimatedParagraph: React.FC<BaseTypographyProps> = ({
       variants={paragraphVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: viewportAmount }}
+      viewport={{ once, amount: viewportAmount as any }}
       custom={{ delay, duration }}
     >
       <Component className={className}>{children}</Component>
@@ -336,7 +342,7 @@ export const AnimatedQuote: React.FC<AnimatedQuoteProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   lines,
   as: Component = 'blockquote',
@@ -356,7 +362,7 @@ export const AnimatedQuote: React.FC<AnimatedQuoteProps> = ({
             variants={quote3DVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once, amount: viewportAmount }}
+            viewport={{ once, amount: viewportAmount as any }}
             custom={{
               delay: delay + idx * 0.12,
               duration: duration ?? TYPOGRAPHY_TIMING.quote,
@@ -376,7 +382,7 @@ export const AnimatedQuote: React.FC<AnimatedQuoteProps> = ({
         variants={quote3DVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once, amount: viewportAmount }}
+        viewport={{ once, amount: viewportAmount as any }}
         custom={{ delay, duration }}
       >
         <Component className={className}>{children}</Component>
@@ -406,7 +412,7 @@ export const AnimatedStat: React.FC<AnimatedStatProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const [displayValue, setDisplayValue] = useState<number>(shouldReduceMotion ? value : 0);
 
   const springValue = useSpring(0, {
@@ -466,7 +472,7 @@ export const AnimatedLabel: React.FC<BaseTypographyProps> = ({
   className = '',
   delay = 0,
   duration,
-  viewportAmount = 0.2,
+  viewportAmount = 0,
   once = true,
   as: Component = 'span',
 }) => {
@@ -481,7 +487,7 @@ export const AnimatedLabel: React.FC<BaseTypographyProps> = ({
       variants={labelVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: viewportAmount }}
+      viewport={{ once, amount: viewportAmount as any }}
       custom={{ delay, duration }}
       className="inline-block"
     >
@@ -518,7 +524,7 @@ export const EmphasizedText: React.FC<EmphasizedTextProps> = ({
     <motion.span
       initial={{ backgroundSize: '0% 100%' }}
       whileInView={{ backgroundSize: '100% 100%' }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0 }}
       transition={{ duration: 0.65, delay, ease: cinematicEase }}
       style={{
         backgroundImage: `linear-gradient(to right, ${highlightColor}, ${highlightColor})`,
@@ -553,7 +559,7 @@ export const MaskedText: React.FC<BaseTypographyProps> = ({
       <motion.div
         initial={{ y: '110%', opacity: 0 }}
         whileInView={{ y: '0%', opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0 }}
         transition={{ duration, delay, ease: editorialEase }}
         className={className}
       >
@@ -593,7 +599,7 @@ export const AnimatedWordReveal: React.FC<AnimatedWordRevealProps> = ({
           <motion.span
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{
               duration: 0.65,
               delay: delay + idx * stagger,
@@ -622,7 +628,7 @@ export const TextStaggerContainer: React.FC<{
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0 }}
       variants={{
         hidden: { opacity: 0 },
         visible: {

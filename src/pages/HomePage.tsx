@@ -49,12 +49,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           className="px-2 md:px-6 pt-3 pb-3"
         >
           <div className="bg-[#1d1d1b] text-[#cdc6be] px-2 md:px-6 py-6 md:py-14 wordmark-container flex items-center justify-center overflow-hidden">
-            <AnimatedH1
-              scrollMotion
-              className="font-monument text-[18vw] font-black tracking-tightest leading-none text-center wordmark-huge text-[#cdc6be] select-none"
+            <motion.h1
+              initial={shouldReduceMotion ? { opacity: 1 } : { y: '80%', opacity: 0 }}
+              animate={{ y: '0%', opacity: 1 }}
+              transition={{ duration: 1.15, ease: editorialEase }}
+              className="font-monument text-[18vw] font-black tracking-tightest leading-none text-center wordmark-huge text-[#cdc6be] select-none block"
             >
               RASHKAR
-            </AnimatedH1>
+            </motion.h1>
           </div>
         </motion.div>
 
@@ -94,6 +96,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </AnimatedLabel>
               {/* Monumental condensed typography stack */}
               <AnimatedH1
+                animateOnMount
                 lines={[
                   "AI FOR CLIMATE-RESILIENT",
                   "AGRICULTURE.",

@@ -1,4 +1,4 @@
-﻿import { cubicBezier } from 'motion/react';
+import { cubicBezier } from 'motion/react';
 
 // Cinematic Editorial Easing Curves
 export const cinematicEase = [0.16, 1, 0.3, 1] as const;
@@ -27,15 +27,11 @@ export const TYPOGRAPHY_TIMING = {
 export const h1MaskedVariants = {
   hidden: {
     opacity: 0,
-    y: 80,
-    clipPath: 'inset(100% 0 0 0)',
-    filter: 'blur(6px)',
+    y: 40,
   },
   visible: (custom: { delay?: number; duration?: number } = {}) => ({
     opacity: 1,
     y: 0,
-    clipPath: 'inset(0% 0 0 0)',
-    filter: 'blur(0px)',
     transition: {
       duration: custom.duration ?? TYPOGRAPHY_TIMING.h1,
       delay: custom.delay ?? 0,
@@ -48,13 +44,11 @@ export const h1MaskedVariants = {
 export const h2HorizontalVariants = {
   hidden: {
     opacity: 0,
-    x: -60,
-    clipPath: 'inset(0 100% 0 0)',
+    x: -24,
   },
   visible: (custom: { delay?: number; duration?: number } = {}) => ({
     opacity: 1,
     x: 0,
-    clipPath: 'inset(0 0% 0 0)',
     transition: {
       duration: custom.duration ?? TYPOGRAPHY_TIMING.h2,
       delay: custom.delay ?? 0,
