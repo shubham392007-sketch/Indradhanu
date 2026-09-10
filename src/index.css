@@ -46,10 +46,29 @@ body {
   }
 }
 
-/* Allow the continuous paper texture to show through all sections while protecting the index overlay */
+/* Allow the continuous paper texture to show through light paper sections and content cards while protecting the index overlay */
 section.bg-\[\#cdc6be\],
-main .bg-\[\#cdc6be\] {
+main > div.bg-\[\#cdc6be\],
+main div.bg-\[\#cdc6be\]:not(button):not(a):not(select):not(input) {
   background-color: transparent !important;
+}
+
+/* Ensure buttons, badges, and elements inside dark sections maintain their solid fill and high legibility */
+button.bg-\[\#cdc6be\],
+a.bg-\[\#cdc6be\],
+select.bg-\[\#cdc6be\],
+.bg-\[\#1d1d1b\] .bg-\[\#cdc6be\],
+.bg-\[\#1d1d1b\] button.bg-\[\#cdc6be\] {
+  background-color: #cdc6be !important;
+  color: #1d1d1b !important;
+}
+
+button.bg-\[\#cdc6be\]:hover,
+a.bg-\[\#cdc6be\]:hover,
+.bg-\[\#1d1d1b\] button.bg-\[\#cdc6be\]:hover {
+  background-color: #c03f13 !important;
+  color: #cdc6be !important;
+  border-color: #c03f13 !important;
 }
 
 /* Dedicated Opaque Archival Grain Background for Index Page Overlay */
