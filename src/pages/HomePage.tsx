@@ -973,7 +973,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             transition={{ duration: 0.8, delay: 0.2, ease: editorialEase }}
             className="font-blackletter text-4xl sm:text-5xl text-[#cdc6be] mt-6"
           >
-            Rashkar
+            Rash<span className="text-[0.88em] inline-block -translate-y-[0.02em]">K</span>ar
           </motion.div>
           <AnimatedParagraph className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#beb5aa] mt-2" delay={0.25}>
             AI FOR CLIMATE-RESILIENT AGRICULTURE · 100% CLOUD &amp; SMARTPHONE

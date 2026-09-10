@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
             className="text-center font-blackletter text-2xl md:text-3xl text-[#1d1d1b] tracking-tight select-none hover:text-[#c03f13] transition-colors cursor-pointer"
             title="Rashkar Home"
           >
-            Rashkar
+            Rash<span className="text-[0.88em] inline-block -translate-y-[0.02em]">K</span>ar
           </motion.button>
 
           {/* Right Zero Hardware Tag & Hamburger Menu */}
@@ -147,7 +147,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
 
             <div className="relative z-10 flex justify-between items-center hairline-b pb-6">
               <div className="flex items-center space-x-3">
-                <span className="font-blackletter text-3xl text-[#1d1d1b]">Rashkar</span>
+                <span className="font-blackletter text-3xl text-[#1d1d1b]">
+                  Rash<span className="text-[0.88em] inline-block -translate-y-[0.02em]">K</span>ar
+                </span>
                 <span className="text-[#625e57]">/</span>
                 <span className="font-mono text-xs uppercase tracking-widest text-[#625e57]">
                   EDITORIAL RESEARCH INDEX · 2026

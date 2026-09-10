@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               RASHKAR
             </AnimatedH2>
             <div className="font-blackletter text-2xl text-[#1d1d1b] mt-2">
-              Rashkar©
+              Rash<span className="text-[0.88em] inline-block -translate-y-[0.02em]">K</span>ar©
             </div>
             <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 mt-4 leading-relaxed max-w-md" delay={0.1}>
               An open scientific research specification and cloud AI architecture protocol dedicated to human heatstroke prevention and automated crop loss audit for smallholder farmers across India.
