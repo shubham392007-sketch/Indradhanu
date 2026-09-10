@@ -219,6 +219,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                       { num: '08', label: '36-HOUR FEASIBILITY AUDIT', anchor: 'feasibility' },
                       { num: '09', label: 'ACADEMIC RESEARCH & GAPS', anchor: 'research' },
                       { num: '10', label: 'PROPOSED TARGETS & SDGS', anchor: 'impact' },
+                      { num: '11', label: 'DEVELOPERS / RESEARCH COHORT', anchor: 'developers' },
                     ].map((sec) => (
                       <li key={sec.num}>
                         <motion.button 

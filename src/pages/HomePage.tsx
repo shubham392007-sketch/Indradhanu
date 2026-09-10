@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { CloudArchitectureFlow } from '../components/CloudArchitectureFlow';
+import { DevelopersSection } from '../components/DevelopersSection';
 import { RevealText } from '../components/motion/RevealText';
 import { SectionHeading } from '../components/motion/SectionHeading';
 import { AnimatedNumber } from '../components/motion/AnimatedNumber';
@@ -946,6 +947,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           </MotionCard>
         </div>
       </section>
+
+      {/* ========================================================================= */}
+      {/* 08. DEVELOPERS / THE PEOPLE BEHIND RASHKAR                                */}
+      {/* ========================================================================= */}
+      <DevelopersSection />
 
       {/* ========================================================================= */}
       {/* 13. FINAL LANDING STATEMENT POSTER & DUAL CTA                             */}

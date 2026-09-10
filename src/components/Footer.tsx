@@ -149,6 +149,17 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   Proposed Targets
                 </button>
               </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    navigate('/');
+                    setTimeout(() => document.getElementById('developers')?.scrollIntoView({ behavior: 'smooth' }), 100);
+                  }} 
+                  className="hover:text-[#c03f13] text-left font-bold text-[#1d1d1b] cursor-pointer"
+                >
+                  08. Developers Cohort
+                </button>
+              </li>
             </ul>
           </div>
         </div>
