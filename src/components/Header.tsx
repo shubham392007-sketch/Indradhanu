@@ -90,23 +90,27 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               CLOUD-FIRST SOFTWARE PLATFORM
             </span>
 
-            {/* Quick Engine Link */}
+            {/* Quick Engine Links - Highlighted for immediate visibility */}
             {currentPath !== '/heat-risk' && (
               <motion.button 
-                whileHover={{ x: 2, color: '#c03f13' }}
+                whileHover={{ y: -1, scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => handleNav('/heat-risk')}
-                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#2b2825] hover:text-[#1d1d1b] transition-colors cursor-pointer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 border border-[#1d1d1b] bg-[#ded7ce] text-[#1d1d1b] font-mono text-xs uppercase font-bold tracking-wider hover:bg-[#c03f13] hover:text-[#cdc6be] hover:border-[#c03f13] transition-all cursor-pointer shadow-xs rounded-sm"
               >
-                Heat-Risk →
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c03f13]"></span>
+                <span>Heat-Risk →</span>
               </motion.button>
             )}
             {currentPath !== '/crop-loss' && (
               <motion.button 
-                whileHover={{ x: 2, color: '#c03f13' }}
+                whileHover={{ y: -1, scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => handleNav('/crop-loss')}
-                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#2b2825] hover:text-[#1d1d1b] transition-colors cursor-pointer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1 border border-[#1d1d1b] bg-[#ded7ce] text-[#1d1d1b] font-mono text-xs uppercase font-bold tracking-wider hover:bg-[#1d1d1b] hover:text-[#cdc6be] hover:border-[#1d1d1b] transition-all cursor-pointer shadow-xs rounded-sm"
               >
-                Crop-Loss →
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3d7a5a]"></span>
+                <span>Crop-Loss →</span>
               </motion.button>
             )}
 
