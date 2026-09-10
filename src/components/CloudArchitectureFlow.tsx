@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { editorialEase, gentleSpring } from '../lib/motionVariants';
+import {
+  AnimatedH3,
+  AnimatedH4,
+  AnimatedEyebrow,
+  AnimatedParagraph,
+  AnimatedLabel,
+} from './motion/Typography';
 
 export const CloudArchitectureFlow: React.FC = () => {
   const [activeStage, setActiveStage] = useState<number>(2);
@@ -72,30 +79,17 @@ export const CloudArchitectureFlow: React.FC = () => {
   return (
     <div className="w-full bg-[#cdc6be] py-12 md:py-16">
       {/* Title & Architecture Declaration with entrance reveal */}
-      <motion.div 
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: editorialEase }}
-        className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4"
-      >
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
         <div>
-          <div className="font-mono text-xs uppercase tracking-widest text-[#c03f13] font-bold flex items-center gap-2">
-            <motion.span 
-              animate={{ width: [12, 24, 12] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="h-0.5 bg-[#c03f13]"
-            />
-            <span>TOPOLOGY BLUEPRINT · SPECIFICATION 2026</span>
-          </div>
-          <h3 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+          <AnimatedEyebrow text="TOPOLOGY BLUEPRINT · SPECIFICATION 2026" />
+          <AnimatedH3 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
             INTELLIGENCE IN THE CLOUD
-          </h3>
+          </AnimatedH3>
         </div>
-        <div className="max-w-md font-mono text-xs text-[#625e57] text-left md:text-right">
+        <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] text-left md:text-right" delay={0.1}>
           A software-only computational pipeline powered by <span className="text-[#1d1d1b] font-bold">cloud microservices, public meteorological feeds, and commodity smartphones</span>.
-        </div>
-      </motion.div>
+        </AnimatedParagraph>
+      </div>
 
       {/* Horizontal Flow Steps (Interactive Tabs with Motion & LayoutId) */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mb-8 font-mono text-xs">

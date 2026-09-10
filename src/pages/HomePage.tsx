@@ -6,6 +6,19 @@ import { SectionHeading } from '../components/motion/SectionHeading';
 import { AnimatedNumber } from '../components/motion/AnimatedNumber';
 import { MotionCard } from '../components/motion/MotionCard';
 import { editorialEase } from '../lib/motionVariants';
+import {
+  AnimatedH1,
+  AnimatedH2,
+  AnimatedH3,
+  AnimatedH4,
+  AnimatedEyebrow,
+  AnimatedParagraph,
+  AnimatedLabel,
+  AnimatedStat,
+  AnimatedQuote,
+  EmphasizedText,
+  AnimatedWordReveal,
+} from '../components/motion/Typography';
 
 interface HomePageProps {
   navigate: (path: string) => void;
@@ -36,14 +49,12 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           className="px-2 md:px-6 pt-3 pb-3"
         >
           <div className="bg-[#1d1d1b] text-[#cdc6be] px-2 md:px-6 py-6 md:py-14 wordmark-container flex items-center justify-center overflow-hidden">
-            <motion.h1 
-              initial={shouldReduceMotion ? { opacity: 1 } : { y: '100%', opacity: 0 }}
-              animate={{ y: '0%', opacity: 1 }}
-              transition={{ duration: 1.1, ease: editorialEase }}
+            <AnimatedH1
+              scrollMotion
               className="font-monument text-[18vw] font-black tracking-tightest leading-none text-center wordmark-huge text-[#cdc6be] select-none"
             >
               RASHKAR
-            </motion.h1>
+            </AnimatedH1>
           </div>
         </motion.div>
 
@@ -52,21 +63,20 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           {/* Left Column: Editorial Summary with Boxed Drop Cap 'A' */}
           <div className="lg:col-span-5 p-6 md:p-12 hairline-b lg:hairline-b-0 lg:hairline-r flex flex-col justify-between">
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-[#c03f13] font-semibold mb-6 flex items-center space-x-2">
-                <span className="w-4 h-[1px] bg-[#c03f13]"></span>
-                <span>AI FOR CLIMATE-RESILIENT AGRICULTURE</span>
-              </div>
+              <AnimatedEyebrow className="mb-6">
+                AI FOR CLIMATE-RESILIENT AGRICULTURE
+              </AnimatedEyebrow>
               <div className="text-lg md:text-2xl text-[#1d1d1b] leading-relaxed font-light">
                 <span className="drop-cap-boxed">A</span>
-                cloud-based artificial intelligence platform designed to support climate-resilient agriculture by combining environmental intelligence, personalized heat-risk prediction, and AI-assisted crop-loss verification.
+                <EmphasizedText>cloud-based artificial intelligence platform</EmphasizedText> designed to support climate-resilient agriculture by combining environmental intelligence, personalized heat-risk prediction, and AI-assisted crop-loss verification.
               </div>
-              <p className="font-serif italic text-sm md:text-base text-[#625e57] mt-6 leading-relaxed">
+              <AnimatedParagraph delay={0.15} className="font-serif italic text-sm md:text-base text-[#625e57] mt-6 leading-relaxed">
                 A software-only cloud AI platform. Designed from first principles to turn satellite multispectral time-series, weather reanalysis grids, and farmer smartphone photographs into rapid rural defense.
-              </p>
+              </AnimatedParagraph>
             </div>
             <div className="mt-8 pt-6 hairline-t flex flex-wrap items-center justify-between font-mono text-xs text-[#625e57] gap-2">
-              <span>INFRASTRUCTURE: 100% CLOUD &amp; SMARTPHONE</span>
-              <span className="text-[#1d1d1b] font-bold">[VOL. IV · 2026]</span>
+              <AnimatedLabel>INFRASTRUCTURE: 100% CLOUD &amp; SMARTPHONE</AnimatedLabel>
+              <AnimatedLabel className="text-[#1d1d1b] font-bold">[VOL. IV · 2026]</AnimatedLabel>
             </div>
           </div>
 
@@ -79,16 +89,19 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </svg>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-4">
+              <AnimatedLabel className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-4 block">
                 SPECIFICATION OVERVIEW · 2026 EDITION
-              </div>
+              </AnimatedLabel>
               {/* Monumental condensed typography stack */}
-              <div className="font-monument text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-[#1d1d1b] leading-tight pr-14">
-                AI FOR CLIMATE-RESILIENT<br />
-                AGRICULTURE.<br />
-                <span className="font-editorial italic font-light text-[#c03f13]">CLOUD-BASED INTELLIGENCE</span><br />
-                LAYER FOR SMALLHOLDERS.
-              </div>
+              <AnimatedH1
+                lines={[
+                  "AI FOR CLIMATE-RESILIENT",
+                  "AGRICULTURE.",
+                  "CLOUD-BASED INTELLIGENCE",
+                  "LAYER FOR SMALLHOLDERS."
+                ]}
+                className="font-monument text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-[#1d1d1b] leading-tight pr-14"
+              />
             </div>
             <div className="hairline-t pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs uppercase text-[#625e57]">
               <div><strong className="text-[#1d1d1b] block text-base font-serif">WBGT</strong> Wet Bulb Proxy</div>
@@ -105,34 +118,19 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       <section className="w-full max-w-[1920px] mx-auto bg-[#1d1d1b] text-[#cdc6be] py-14 md:py-24 px-4 md:px-12 select-none hairline-b relative" id="statement">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
-          <motion.span 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: editorialEase }}
-            className="font-mono text-xs uppercase tracking-widest text-[#beb5aa] mb-4"
-          >
+          <AnimatedEyebrow showLine={false} className="text-[#beb5aa] mb-4 text-center justify-center">
             RASHKAR MISSION MANIFESTO
-          </motion.span>
-          <motion.h2 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: editorialEase }}
-            className="font-monument text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tightest leading-none uppercase"
-          >
-            PROTECT THE FARMER BEFORE THE HEAT.<br />
-            <span className="text-[#c03f13]">PROTECT THE HARVEST AFTER THE LOSS.</span>
-          </motion.h2>
-          <motion.p 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: editorialEase }}
-            className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#beb5aa] mt-6 max-w-2xl leading-relaxed"
-          >
+          </AnimatedEyebrow>
+          <div className="font-monument text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tightest leading-none uppercase">
+            <AnimatedWordReveal
+              text="PROTECT THE FARMER BEFORE THE HEAT. PROTECT THE HARVEST AFTER THE LOSS."
+              className="text-center"
+              delay={0.1}
+            />
+          </div>
+          <AnimatedParagraph delay={0.3} className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#beb5aa] mt-6 max-w-2xl leading-relaxed">
             A DUAL PREVENTIVE AND RECOVERY PROTOCOL FOR 140 MILLION SMALLHOLDERS ACROSS INDIA — 100% CLOUD &amp; SMARTPHONE
-          </motion.p>
+          </AnimatedParagraph>
 
           {/* Iconic Oval Pill Buttons ('ALL WORK' style from Image 7) */}
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -164,24 +162,24 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 3. PROBLEM ARCHITECTURE SPREAD                                            */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be] py-16 px-6 md:px-12" id="problem">
-        <SectionHeading label="01 / THE PROBLEM" className="mb-6" />
+        <AnimatedEyebrow className="mb-6">01 / THE PROBLEM</AnimatedEyebrow>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-6">
-            <RevealText as="h2" className="font-monument text-4xl sm:text-6xl uppercase tracking-tight text-[#1d1d1b] leading-tight">
+            <AnimatedH2 showAccentRule className="font-monument text-4xl sm:text-6xl uppercase tracking-tight text-[#1d1d1b] leading-tight">
               CLIMATE RISK DOES NOT ARRIVE<br />
               <span className="text-[#c03f13]">AS A SINGLE PROBLEM.</span>
-            </RevealText>
-            <p className="font-editorial text-xl text-[#1d1d1b] leading-relaxed">
+            </AnimatedH2>
+            <AnimatedParagraph className="font-editorial text-xl text-[#1d1d1b] leading-relaxed">
               Agricultural communities face multiple interconnected climate hazards throughout the seasonal lifecycle. Standard systems treat these hazards in total isolation.
-            </p>
+            </AnimatedParagraph>
             <div className="border-t-2 border-b-2 border-[#1d1d1b] py-6 space-y-2 font-editorial">
-              <div className="font-mono text-xs uppercase tracking-widest text-[#c03f13] font-bold">
+              <AnimatedEyebrow showLine={false} className="text-[#c03f13] font-bold">
                 THE THREE DISCONNECTED LAYERS
-              </div>
-              <p className="text-xl text-[#1d1d1b] italic leading-snug">
+              </AnimatedEyebrow>
+              <AnimatedQuote className="text-xl text-[#1d1d1b] italic leading-snug">
                 “The farmer experiences the climate event. The system needs to understand the event. The decision-maker needs evidence. Rashkar connects these three layers.”
-              </p>
+              </AnimatedQuote>
             </div>
           </div>
 
@@ -190,36 +188,36 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <MotionCard delay={0.05} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 01 // HEAT STRESS</span>
-                <span className="text-[10px] text-[#625e57] uppercase">PHYSIOLOGICAL DEFENSE</span>
+                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">PHYSIOLOGICAL DEFENSE</AnimatedLabel>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase">Extreme Heat Threatens Human Life</h4>
-              <p className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Extreme Heat Threatens Human Life</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
                 Agricultural workers frequently perform heavy outdoor manual labor during peak solar hours. Broad regional warnings arrive without personal demographic adjustments, leading to preventable heatstroke, chronic kidney disease, and fatalities.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             {/* Risk Card 2 */}
             <MotionCard delay={0.15} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 02 // CROP LOSS</span>
-                <span className="text-[10px] text-[#625e57] uppercase">AGRARIAN ASSETS</span>
+                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">AGRARIAN ASSETS</AnimatedLabel>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase">Sudden Perils Devastate Smallholder Plots</h4>
-              <p className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Sudden Perils Devastate Smallholder Plots</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
                 Unseasonal hail, catastrophic inundation, localized cloudbursts, severe drought, and pest outbreaks wipe out entire crop yields in minutes, stripping smallholders of income and plunging them into predatory debt cycles.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             {/* Risk Card 3 */}
             <MotionCard delay={0.25} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 03 // VERIFICATION</span>
-                <span className="text-[10px] text-[#625e57] uppercase">EVIDENCE GAP</span>
+                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">EVIDENCE GAP</AnimatedLabel>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase">Fragmented Proof Stalls Recovery</h4>
-              <p className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Fragmented Proof Stalls Recovery</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
                 Assessing crop loss requires fragmented ground evidence and physical surveying. When loss adjusters and patwaris cannot verify claims quickly, settlement takes 45 to 60 days, during which time honest farmers cannot replant or survive.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
           </div>
         </div>
@@ -232,72 +230,72 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
         <div className="p-6 md:px-12 py-6 hairline-b flex flex-col sm:flex-row justify-between items-baseline font-mono text-xs text-[#625e57] gap-2">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#c03f13]"></span>
-            <span className="font-bold text-[#1d1d1b] uppercase">RESEARCH &amp; DOCUMENTATION LEDGER</span>
+            <AnimatedLabel className="font-bold text-[#1d1d1b] uppercase">RESEARCH &amp; DOCUMENTATION LEDGER</AnimatedLabel>
           </div>
-          <div className="text-[#c03f13] font-semibold uppercase">
+          <AnimatedLabel className="text-[#c03f13] font-semibold uppercase">
             NOTE: RESEARCH AND LITERATURE FIGURES · NOT LIVE RASHKAR TELEMETRY
-          </div>
+          </AnimatedLabel>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1d1d1b] font-mono">
           {/* Stat 01 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
             <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
-              <span>EXPOSURE DEMOGRAPHY</span>
+              <AnimatedLabel>EXPOSURE DEMOGRAPHY</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">RESEARCH</span>
             </div>
             <div className="my-3">
-              <AnimatedNumber 
+              <AnimatedStat 
                 value={100} 
                 suffix="M+" 
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <div className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
               Agricultural field workers exposed daily to hazardous wet-bulb heat stress across India.
-            </div>
+            </AnimatedParagraph>
           </div>
 
           {/* Stat 02 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
             <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
-              <span>RECORD HEAT EVENTS</span>
+              <AnimatedLabel>RECORD HEAT EVENTS</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">2024 RECORD</span>
             </div>
             <div className="my-3">
-              <AnimatedNumber 
+              <AnimatedStat 
                 value={280} 
                 suffix="+" 
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <div className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
               Cumulative heatwave days recorded across 18 Indian states during the 2024 agricultural calendar.
-            </div>
+            </AnimatedParagraph>
           </div>
 
           {/* Stat 03 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
             <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
-              <span>PMFBY ENROLLMENT</span>
+              <AnimatedLabel>PMFBY ENROLLMENT</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">GOV DATA</span>
             </div>
             <div className="my-3">
-              <AnimatedNumber 
+              <AnimatedStat 
                 value={12} 
                 suffix=" Cr" 
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <div className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
               Agrarian farmer-plot enrollments in Pradhan Mantri Fasal Bima Yojana awaiting rapid audit modernizations.
-            </div>
+            </AnimatedParagraph>
           </div>
 
           {/* Stat 04 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
             <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
-              <span>STATUS QUO SETTLEMENT</span>
+              <AnimatedLabel>STATUS QUO SETTLEMENT</AnimatedLabel>
               <span className="text-[10px] bg-[#c03f13] text-[#cdc6be] px-1 font-bold">BOTTLENECK</span>
             </div>
             <div className="my-3">
@@ -305,9 +303,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 45–60 D
               </span>
             </div>
-            <div className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
               Average claim-verification timeframe in traditional manual surveys; targeted by Rashkar to 48 hours.
-            </div>
+            </AnimatedParagraph>
           </div>
         </div>
       </section>
@@ -318,15 +316,15 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#ded7ce]/30" id="gaps">
         <div className="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
           <div>
-            <SectionHeading label="GAP ANALYSIS · SYSTEM SHORTFALLS" />
-            <h2 className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow>GAP ANALYSIS · SYSTEM SHORTFALLS</AnimatedEyebrow>
+            <AnimatedH2 showAccentRule className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               THE DATA EXISTS.<br />
               <span className="text-[#c03f13]">THE INTELLIGENCE IS FRAGMENTED.</span>
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
             Current systems leave critical blind spots. Rashkar connects the signals into a unified software pipeline.
-          </div>
+          </AnimatedParagraph>
         </div>
 
         {/* 4 Core Signal Gaps + Connecting Layer */}
@@ -334,87 +332,87 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           <MotionCard delay={0.05} className="p-6 flex flex-col justify-between hover:bg-[#ded7ce] transition-colors">
             <div>
               <span className="text-[#c03f13] font-bold text-sm">GAP 01</span>
-              <h4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
+              <AnimatedH4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
                 GENERIC HEAT ALERTS
-              </h4>
+              </AnimatedH4>
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Personalization
               </div>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
                 Broadcast weather forecasts provide district-wide ambient temperatures. They ignore solar radiation flux, humidity, worker age, exertion level, and acclimatization.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase">
+            <AnimatedLabel className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase block">
               RASHKAR: Personalized WBGT Proxy
-            </div>
+            </AnimatedLabel>
           </MotionCard>
 
           <MotionCard delay={0.12} className="p-6 flex flex-col justify-between hover:bg-[#ded7ce] transition-colors">
             <div>
               <span className="text-[#c03f13] font-bold text-sm">GAP 02</span>
-              <h4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
+              <AnimatedH4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
                 SATELLITE MONITORING
-              </h4>
+              </AnimatedH4>
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Field Evidence
               </div>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
                 Orbital multispectral imagery offers broad spectral vegetation indices (NDVI/NDRE) but is blinded by monsoonal cloud decks and lacks micro-level foliar damage proof.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase">
+            <AnimatedLabel className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase block">
               RASHKAR: Orthogonal Signal Fusion
-            </div>
+            </AnimatedLabel>
           </MotionCard>
 
           <MotionCard delay={0.19} className="p-6 flex flex-col justify-between hover:bg-[#ded7ce] transition-colors">
             <div>
               <span className="text-[#c03f13] font-bold text-sm">GAP 03</span>
-              <h4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
+              <AnimatedH4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
                 SMARTPHONE EVIDENCE
-              </h4>
+              </AnimatedH4>
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Historical Context
               </div>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
                 Ground smartphone photos capture visible damage but lack historical phenology curves, meteorological verification, and spatial plot boundary confirmation.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase">
+            <AnimatedLabel className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase block">
               RASHKAR: EXIF Cryptographic Anchoring
-            </div>
+            </AnimatedLabel>
           </MotionCard>
 
           <MotionCard delay={0.26} className="p-6 flex flex-col justify-between hover:bg-[#ded7ce] transition-colors">
             <div>
               <span className="text-[#c03f13] font-bold text-sm">GAP 04</span>
-              <h4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
+              <AnimatedH4 className="font-serif font-bold text-lg text-[#1d1d1b] uppercase mt-2 mb-1">
                 MANUAL VERIFICATION
-              </h4>
+              </AnimatedH4>
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Slow &amp; Fragmented
               </div>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
                 Physical Crop Cutting Experiments (CCEs) and manual adjuster visits take 45–60 days to survey millions of plots, creating dispute cycles and delayed insurance relief.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase">
+            <AnimatedLabel className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b]/60 uppercase block">
               RASHKAR: 48-Hour Evidence Dossiers
-            </div>
+            </AnimatedLabel>
           </MotionCard>
         </div>
 
         {/* Banner: Connect the Signals */}
         <div className="hairline-t p-6 bg-[#1d1d1b] text-[#cdc6be] flex flex-col sm:flex-row justify-between items-center font-mono text-xs gap-3">
-          <span className="uppercase tracking-widest font-bold text-[#c03f13]">
+          <AnimatedLabel className="uppercase tracking-widest font-bold text-[#c03f13]">
             RASHKAR'S ARCHITECTURAL ROLE:
-          </span>
+          </AnimatedLabel>
           <span className="font-monument text-lg uppercase tracking-tight text-center">
             CONNECT THE SIGNALS: SMARTPHONE + SATELLITE + WEATHER + CLOUD AI
           </span>
-          <span className="text-[#beb5aa] hidden md:inline-block uppercase text-[11px]">
+          <AnimatedLabel className="text-[#beb5aa] hidden md:inline-block uppercase text-[11px]">
             ZERO PHYSICAL HARDWARE
-          </span>
+          </AnimatedLabel>
         </div>
       </section>
 
@@ -424,15 +422,15 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b" id="engines">
         <div className="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
           <div>
-            <SectionHeading label="THE RASHKAR SOLUTION" />
-            <h2 className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow>THE RASHKAR SOLUTION</AnimatedEyebrow>
+            <AnimatedH2 showAccentRule className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               TWO INTELLIGENCE ENGINES.<br />
               <span className="text-[#c03f13]">ONE CLIMATE-RESILIENT PLATFORM.</span>
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
             Distinct operational engines sharing a common cloud pipeline to protect life before the crisis and recover livelihood after the loss.
-          </div>
+          </AnimatedParagraph>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#1d1d1b]">
@@ -456,19 +454,19 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </div>
 
               <div className="flex items-center space-x-2 mb-2">
-                <h3 className="font-monument text-xl uppercase font-bold text-[#1d1d1b] tracking-tight">
+                <AnimatedH3 className="font-monument text-xl uppercase font-bold text-[#1d1d1b] tracking-tight">
                   HEAT-RISK INTELLIGENCE
-                </h3>
+                </AnimatedH3>
               </div>
-              <p className="font-serif text-base text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif text-base text-[#625e57] leading-relaxed">
                 Predict heat risk before exposure becomes a crisis. Translates environmental data, worker age, exertion level, and acclimatization into personalized 0–100 risk scores with vernacular work-rest pacing guidance.
-              </p>
+              </AnimatedParagraph>
             </div>
 
             <div className="border-t border-[#1d1d1b]/20 pt-6 mt-8 space-y-4">
               <div className="flex justify-between font-mono text-xs text-[#625e57] uppercase">
-                <span>PREDICTION HORIZON: 0–6 HOURS</span>
-                <span className="font-bold text-[#1d1d1b]">HUMAN LIFE DEFENSE</span>
+                <AnimatedLabel>PREDICTION HORIZON: 0–6 HOURS</AnimatedLabel>
+                <AnimatedLabel className="font-bold text-[#1d1d1b]">HUMAN LIFE DEFENSE</AnimatedLabel>
               </div>
               <motion.button 
                 whileHover={{ scale: 1.02 }}
@@ -484,15 +482,15 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           {/* Center Column: Monumental Calling Card (Like 'ALL WORK!' in Image 3, 4) */}
           <div className="lg:col-span-4 p-6 md:p-12 text-center flex flex-col justify-between items-center bg-[#ded7ce]/40">
             <div className="w-full">
-              <span className="font-mono text-xs text-[#c03f13] font-semibold tracking-widest uppercase block mb-3">
+              <AnimatedEyebrow showLine={false} className="text-[#c03f13] font-semibold tracking-widest uppercase block mb-3 justify-center">
                 INTEGRATED PROTOCOL
-              </span>
-              <h3 className="font-monument text-4xl sm:text-5xl md:text-6xl text-[#1d1d1b] font-extrabold tracking-tight uppercase leading-none">
+              </AnimatedEyebrow>
+              <AnimatedH3 className="font-monument text-4xl sm:text-5xl md:text-6xl text-[#1d1d1b] font-extrabold tracking-tight uppercase leading-none">
                 THE DUAL<br />ENGINE!
-              </h3>
-              <p className="font-serif text-base sm:text-lg text-[#625e57] italic mt-4 max-w-xs mx-auto leading-relaxed">
+              </AnimatedH3>
+              <AnimatedParagraph className="font-serif text-base sm:text-lg text-[#625e57] italic mt-4 max-w-xs mx-auto leading-relaxed">
                 A unified cloud intelligence suite protecting human life &amp; agrarian assets across India.
-              </p>
+              </AnimatedParagraph>
             </div>
 
             <div className="my-8">
@@ -533,19 +531,19 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </div>
 
               <div className="flex items-center space-x-2 mb-2">
-                <h3 className="font-monument text-xl uppercase font-bold text-[#1d1d1b] tracking-tight">
+                <AnimatedH3 className="font-monument text-xl uppercase font-bold text-[#1d1d1b] tracking-tight">
                   CROP-LOSS INTELLIGENCE
-                </h3>
+                </AnimatedH3>
               </div>
-              <p className="font-serif text-base text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif text-base text-[#625e57] leading-relaxed">
                 Turn fragmented field and environmental signals into structured crop-loss evidence. Cross-verifies farmer smartphone photos with Sentinel-2 spectral drops to compress claim settlement from 60 days to 48 hours.
-              </p>
+              </AnimatedParagraph>
             </div>
 
             <div className="border-t border-[#1d1d1b]/20 pt-6 mt-8 space-y-4">
               <div className="flex justify-between font-mono text-xs text-[#625e57] uppercase">
-                <span>CONFIDENCE: 91% MULTIMODAL</span>
-                <span className="font-bold text-[#1d1d1b]">FINANCIAL RECOVERY</span>
+                <AnimatedLabel>CONFIDENCE: 91% MULTIMODAL</AnimatedLabel>
+                <AnimatedLabel className="font-bold text-[#1d1d1b]">FINANCIAL RECOVERY</AnimatedLabel>
               </div>
               <motion.button 
                 whileHover={{ scale: 1.02 }}
@@ -573,70 +571,73 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be]" id="stakeholders">
         <div className="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
           <div>
-            <SectionHeading label="USER CENTRICITY" />
-            <h2 className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow text="USER CENTRICITY" className="mb-2" />
+            <AnimatedH2
+              accent="left"
+              className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2"
+            >
               FIVE STAKEHOLDER EXPERIENCES
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="font-mono text-xs text-[#625e57] uppercase mt-3 md:mt-0 max-w-sm">
+          <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-3 md:mt-0 max-w-sm" delay={0.15}>
             Tailored interfaces delivering transparent value across the agrarian lifecycle.
-          </div>
+          </AnimatedParagraph>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[#1d1d1b] font-mono text-xs">
           <MotionCard delay={0.05} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
             <div>
-              <span className="text-[#c03f13] font-bold">ROLE 01</span>
-              <h4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FARMER</h4>
-              <p className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedLabel text="ROLE 01" className="text-[#c03f13] font-bold block" />
+              <AnimatedH4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FARMER</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed" delay={0.08}>
                 Receives understandable, hyper-local risk warnings via native Marathi/Hindi SMS and voice calls. Submits damage photos directly without specialized hardware.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <span className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Zero Tech Barrier</span>
+            <AnimatedLabel text="Zero Tech Barrier" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.1} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
             <div>
-              <span className="text-[#c03f13] font-bold">ROLE 02</span>
-              <h4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FIELD VERIFIER</h4>
-              <p className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedLabel text="ROLE 02" className="text-[#c03f13] font-bold block" />
+              <AnimatedH4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FIELD VERIFIER</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed" delay={0.12}>
                 Reviews structured mathematical evidence packages reconciling ground photos with satellite NDVI anomalies, eliminating manual field logging delays.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <span className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">70% CCE Cost Reduction</span>
+            <AnimatedLabel text="70% CCE Cost Reduction" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.15} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
             <div>
-              <span className="text-[#c03f13] font-bold">ROLE 03</span>
-              <h4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">INSURER</h4>
-              <p className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedLabel text="ROLE 03" className="text-[#c03f13] font-bold block" />
+              <AnimatedH4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">INSURER</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed" delay={0.16}>
                 Accesses tamper-evident loss evidence with cross-modal confidence scores, enabling rapid 48-hour claim disbursements while curbing fraudulent filings.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <span className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">50% Fraud Mitigation</span>
+            <AnimatedLabel text="50% Fraud Mitigation" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.2} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
             <div>
-              <span className="text-[#c03f13] font-bold">ROLE 04</span>
-              <h4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">GOVERNMENT</h4>
-              <p className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedLabel text="ROLE 04" className="text-[#c03f13] font-bold block" />
+              <AnimatedH4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">GOVERNMENT</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed" delay={0.2}>
                 Monitors aggregated district-level climate anomalies, heat-stress clusters, and localized disaster declarations through real-time state dashboards.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <span className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Policy Resilience</span>
+            <AnimatedLabel text="Policy Resilience" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.25} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
             <div>
-              <span className="text-[#c03f13] font-bold">ROLE 05</span>
-              <h4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FPO / COOPERATIVE</h4>
-              <p className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed">
+              <AnimatedLabel text="ROLE 05" className="text-[#c03f13] font-bold block" />
+              <AnimatedH4 className="font-monument text-lg text-[#1d1d1b] uppercase mt-2 mb-2">FPO / COOPERATIVE</AnimatedH4>
+              <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 leading-relaxed" delay={0.24}>
                 Schedules community harvesting shifts, distributes electrolyte supplies, and supports member claim intimations with aggregated village data.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <span className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Community Defense</span>
+            <AnimatedLabel text="Community Defense" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -647,15 +648,16 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be]" id="impact">
         <div className="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
           <div>
-            <SectionHeading label="PROJECT PROJECTIONS" />
-            <h2 className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow text="PROJECT PROJECTIONS" className="mb-2" />
+            <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               TURN CLIMATE DATA<br />
               <span className="text-[#c03f13]">INTO BETTER DECISIONS.</span>
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="font-mono text-xs text-[#c03f13] font-bold uppercase mt-3 md:mt-0">
-            ALL METRICS ARE PROPOSED RESEARCH TARGETS · NOT ACHIEVED HISTORICAL RESULTS
-          </div>
+          <AnimatedLabel 
+            text="ALL METRICS ARE PROPOSED RESEARCH TARGETS · NOT ACHIEVED HISTORICAL RESULTS"
+            className="font-mono text-xs text-[#c03f13] font-bold uppercase mt-3 md:mt-0"
+          />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#1d1d1b] font-mono">
@@ -666,23 +668,21 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 PROPOSED TARGET: HEATSTROKE
               </span>
               <div className="mb-3">
-                <AnimatedNumber 
+                <AnimatedStat 
                   value={35} 
                   prefix="30–" 
                   suffix="%" 
                   className="font-monument text-5xl sm:text-6xl font-extrabold text-[#1d1d1b] leading-none" 
                 />
               </div>
-              <div className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
+              <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 Targeted Reduction In Clinical Heatstroke
-              </div>
-              <p className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              </AnimatedH4>
+              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
                 Projected reduction in acute heat-stress collapses through forward-looking 6-hour personalized work-rest schedule notifications during peak summer harvest.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase">
-              Target Horizon: 2026–2027 Field Trial
-            </div>
+            <AnimatedLabel text="Target Horizon: 2026–2027 Field Trial" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           {/* Impact 02 */}
@@ -692,22 +692,20 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 PROPOSED TARGET: VERIFICATION
               </span>
               <div className="mb-3">
-                <AnimatedNumber 
+                <AnimatedStat 
                   value={48} 
                   suffix=" Hours" 
                   className="font-monument text-5xl sm:text-6xl font-extrabold text-[#1d1d1b] leading-none" 
                 />
               </div>
-              <div className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
+              <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 From 45–60 Days To 48 Hours
-              </div>
-              <p className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              </AnimatedH4>
+              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
                 Projected compression of PMFBY claim intimation, multimodal cross-verification, and official patwari approval cycle for catastrophic loss relief.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase">
-              Target Horizon: Pilot Sub-District
-            </div>
+            <AnimatedLabel text="Target Horizon: Pilot Sub-District" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           {/* Impact 03 */}
@@ -717,23 +715,21 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 PROPOSED TARGET: SURVEYING COST
               </span>
               <div className="mb-3">
-                <AnimatedNumber 
+                <AnimatedStat 
                   value={150} 
                   prefix="₹" 
                   suffix=" / Ac" 
                   className="font-monument text-5xl sm:text-6xl font-extrabold text-[#c03f13] leading-none" 
                 />
               </div>
-              <div className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
+              <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 Reduced From ₹500–800 / Acre
-              </div>
-              <p className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              </AnimatedH4>
+              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
                 Projected 70% reduction in physical Crop Cutting Experiment (CCE) surveying overhead by automating satellite &amp; smartphone multimodal correlation.
-              </p>
+              </AnimatedParagraph>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase">
-              Target Horizon: PMFBY Integration
-            </div>
+            <AnimatedLabel text="Target Horizon: PMFBY Integration" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -744,14 +740,12 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be] py-12 px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-4 mb-6">
           <div>
-            <SectionHeading label="GLOBAL COMMITMENT" />
-            <h3 className="font-monument text-2xl sm:text-4xl uppercase text-[#1d1d1b] mt-1">
+            <AnimatedEyebrow text="GLOBAL COMMITMENT" className="mb-1" />
+            <AnimatedH3 className="font-monument text-2xl sm:text-4xl uppercase text-[#1d1d1b] mt-1">
               UNITED NATIONS SUSTAINABLE DEVELOPMENT GOALS
-            </h3>
+            </AnimatedH3>
           </div>
-          <span className="font-mono text-xs text-[#625e57] uppercase mt-2 md:mt-0">
-            Direct alignment with 5 UN targets
-          </span>
+          <AnimatedLabel text="Direct alignment with 5 UN targets" className="font-mono text-xs text-[#625e57] uppercase mt-2 md:mt-0" />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 font-mono text-xs">
@@ -789,14 +783,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#ded7ce]/40 p-6 md:p-12" id="feasibility">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
           <div>
-            <SectionHeading label="TRANSPARENT ENGINEERING AUDIT" />
-            <h2 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow text="TRANSPARENT ENGINEERING AUDIT" className="mb-2" />
+            <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               36-HOUR FEASIBILITY EVALUATION
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="max-w-md font-mono text-xs text-[#625e57] uppercase">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
             Honest, rigorous delineation between what was delivered in the hackathon prototype versus required long-term institutional deployment.
-          </div>
+          </AnimatedParagraph>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
@@ -807,9 +801,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 <span>36 HOURS</span>
                 <span className="bg-[#c03f13] text-[#cdc6be] px-1.5 py-0.5 text-[10px]">CURRENT PROTOTYPE</span>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
                 Functional Prototype
-              </h4>
+              </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#c03f13]">WHAT IS ACHIEVED:</div>
                 <ul className="space-y-1 text-[11px] text-[#625e57]">
@@ -823,9 +817,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">
-              STATUS: DEMONSTRATION VERIFIED
-            </div>
+            <AnimatedLabel text="STATUS: DEMONSTRATION VERIFIED" className="mt-6 pt-3 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
           </MotionCard>
 
           {/* Tier 2: 3-4 Months MVP */}
@@ -835,9 +827,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 <span>3–4 MONTHS</span>
                 <span className="border border-[#1d1d1b] px-1.5 py-0.5 text-[10px]">ROADMAP MVP</span>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
                 District-Scale MVP
-              </h4>
+              </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#1d1d1b]">WHAT IS PLANNED:</div>
                 <ul className="space-y-1 text-[11px] text-[#625e57]">
@@ -850,9 +842,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase">
-              STATUS: ACTIVE RESEARCH ROADMAP
-            </div>
+            <AnimatedLabel text="STATUS: ACTIVE RESEARCH ROADMAP" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
 
           {/* Tier 3: Longer Term Production */}
@@ -862,9 +852,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 <span>LONGER TERM</span>
                 <span className="border border-[#1d1d1b] px-1.5 py-0.5 text-[10px]">SOVEREIGN SCALE</span>
               </div>
-              <h4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
+              <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase mt-3 mb-3">
                 National Production
-              </h4>
+              </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#1d1d1b]">WHAT IS REQUIRED:</div>
                 <ul className="space-y-1 text-[11px] text-[#625e57]">
@@ -877,9 +867,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase">
-              STATUS: NATIONAL VISION
-            </div>
+            <AnimatedLabel text="STATUS: NATIONAL VISION" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -890,69 +878,68 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be] p-6 md:p-12" id="research">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
           <div>
-            <SectionHeading label="ACADEMIC CITATION & SYNTHESIS" />
-            <h2 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            <AnimatedEyebrow text="ACADEMIC CITATION & SYNTHESIS" className="mb-2" />
+            <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               RESEARCH ARCHIVES
-            </h2>
+            </AnimatedH2>
           </div>
-          <div className="max-w-md font-mono text-xs text-[#625e57] uppercase">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
             Rigorous analysis of existing literature on occupational heat stress, satellite agriculture, and insurance auditing.
-          </div>
+          </AnimatedParagraph>
         </div>
 
         {/* Cautious Research Gap Statement */}
         <MotionCard className="dashed-card p-6 md:p-8 bg-[#ded7ce]/60 mb-8 font-editorial">
-          <span className="font-mono text-xs uppercase tracking-widest text-[#c03f13] font-bold block mb-2">
-            RESEARCH GAP ASSESSMENT
-          </span>
-          <blockquote className="text-xl md:text-2xl text-[#1d1d1b] italic leading-relaxed">
-            “Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow.”
-          </blockquote>
-          <p className="font-mono text-xs text-[#625e57] mt-3 uppercase">
+          <AnimatedLabel text="RESEARCH GAP ASSESSMENT" className="font-mono text-xs uppercase tracking-widest text-[#c03f13] font-bold block mb-2" />
+          <AnimatedQuote
+            quote="Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow."
+            className="text-xl md:text-2xl text-[#1d1d1b] italic leading-relaxed"
+          />
+          <AnimatedParagraph className="font-mono text-xs text-[#625e57] mt-3 uppercase" delay={0.2}>
             Prior studies isolated meteorological WBGT models from personal work intensity, or examined satellite NDVI loss without ground smartphone damage computer vision. Rashkar bridges these disparate disciplines into a single cloud-native protocol.
-          </p>
+          </AnimatedParagraph>
         </MotionCard>
 
         {/* Research Topics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
           <MotionCard delay={0.05} className="border border-[#1d1d1b] p-5 bg-[#ded7ce]/30">
-            <span className="text-[#c03f13] font-bold">TOPIC 01</span>
-            <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
+            <AnimatedLabel text="TOPIC 01" className="text-[#c03f13] font-bold block" />
+            <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               HEAT-STRESS PREDICTION
-            </h4>
-            <p className="text-[#625e57] leading-relaxed">
+            </AnimatedH4>
+            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
               Liljegren WBGT formulation, ISO 7243 standards, and exertional heat collapse risks among tropical agricultural manual laborers.
-            </p>
+            </AnimatedParagraph>
           </MotionCard>
 
           <MotionCard delay={0.1} className="border border-[#1d1d1b] p-5 bg-[#ded7ce]/30">
-            <span className="text-[#c03f13] font-bold">TOPIC 02</span>
-            <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
+            <AnimatedLabel text="TOPIC 02" className="text-[#c03f13] font-bold block" />
+            <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               SATELLITE SPECTRAL PHENOLOGY
-            </h4>
-            <p className="text-[#625e57] leading-relaxed">
+            </AnimatedH4>
+            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
               Copernicus Sentinel-2 MSI red-edge bands (B5, B6, B7) for early drought transpiration decay and NDVI sudden anomaly detection.
-            </p>
+            </AnimatedParagraph>
           </MotionCard>
 
           <MotionCard delay={0.15} className="border border-[#1d1d1b] p-5 bg-[#ded7ce]/30">
-            <span className="text-[#c03f13] font-bold">TOPIC 03</span>
-            <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
+            <AnimatedLabel text="TOPIC 03" className="text-[#c03f13] font-bold block" />
+            <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               COMPUTER VISION PATHOLOGY
-            </h4>
-            <p className="text-[#625e57] leading-relaxed">
+            </AnimatedH4>
+            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
               YOLOv8 micro-geometry detection of mechanical stem fracture and foliar stripping paired with ViT damage classification tiers.
-            </p>
+            </AnimatedParagraph>
           </MotionCard>
 
           <MotionCard delay={0.2} className="border border-[#1d1d1b] p-5 bg-[#ded7ce]/30">
-            <span className="text-[#c03f13] font-bold">TOPIC 04</span>
-            <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
+            <AnimatedLabel text="TOPIC 04" className="text-[#c03f13] font-bold block" />
+            <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               PMFBY VERIFICATION BOTTLENECKS
-            </h4>
-            <p className="text-[#625e57] leading-relaxed">
+            </AnimatedH4>
+            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
               Crop Cutting Experiments (CCE) statistical error margins, yield estimation delays, and dispute resolution models under extreme weather perils.
-            </p>
+            </AnimatedParagraph>
           </MotionCard>
         </div>
       </section>
@@ -962,25 +949,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       <section className="w-full max-w-[1920px] mx-auto bg-[#1d1d1b] text-[#cdc6be] py-16 md:py-28 px-4 md:px-12 select-none hairline-b relative">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-          <motion.span 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: editorialEase }}
-            className="font-mono text-xs uppercase tracking-widest text-[#c03f13] mb-4 font-bold"
-          >
-            CONVERGENCE STATEMENT
-          </motion.span>
-          <motion.h2 
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1, ease: editorialEase }}
-            className="font-monument text-3xl sm:text-5xl md:text-7xl uppercase tracking-tightest leading-none"
+          <AnimatedEyebrow text="CONVERGENCE STATEMENT" className="text-[#c03f13] mb-4" />
+          <AnimatedH2 
+            accent="none"
+            className="font-monument text-3xl sm:text-5xl md:text-7xl uppercase tracking-tightest leading-none text-[#cdc6be]"
           >
             CLIMATE RISK BECOMES ACTIONABLE<br />
             <span className="text-[#c03f13]">WHEN THE SIGNALS COME TOGETHER.</span>
-          </motion.h2>
+          </AnimatedH2>
           <motion.div 
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -990,9 +966,9 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
           >
             Rashkar
           </motion.div>
-          <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#beb5aa] mt-2">
+          <AnimatedParagraph className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#beb5aa] mt-2" delay={0.25}>
             AI FOR CLIMATE-RESILIENT AGRICULTURE · 100% CLOUD &amp; SMARTPHONE
-          </p>
+          </AnimatedParagraph>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <motion.button 

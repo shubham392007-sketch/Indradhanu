@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  AnimatedH2,
+  AnimatedEyebrow,
+  AnimatedParagraph,
+  AnimatedLabel,
+} from './motion/Typography';
 
 interface FooterProps {
   navigate: (path: string) => void;
@@ -15,28 +21,26 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
         {/* Col 1: Brand & Blackletter Wordmark */}
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div>
-            <div className="font-monument text-4xl sm:text-5xl font-black text-[#1d1d1b] tracking-tightest uppercase">
+            <AnimatedH2 accent="none" className="font-monument text-4xl sm:text-5xl font-black text-[#1d1d1b] tracking-tightest uppercase">
               RASHKAR
-            </div>
+            </AnimatedH2>
             <div className="font-blackletter text-2xl text-[#1d1d1b] mt-2">
               Rashkar©
             </div>
-            <p className="font-editorial text-sm text-[#1d1d1b]/80 mt-4 leading-relaxed max-w-md">
+            <AnimatedParagraph className="font-editorial text-sm text-[#1d1d1b]/80 mt-4 leading-relaxed max-w-md" delay={0.1}>
               An open scientific research specification and cloud AI architecture protocol dedicated to human heatstroke prevention and automated crop loss audit for smallholder farmers across India.
-            </p>
+            </AnimatedParagraph>
           </div>
           <div className="mt-8 font-mono text-[11px] text-[#625e57] space-y-1">
-            <div>RESEARCH SPECIFICATION · VOL. IV, EDITION 2026</div>
-            <div className="text-[#c03f13] font-bold">
-              100% CLOUD &amp; SMARTPHONE · SATELLITE TELEMETRY CORE
-            </div>
+            <AnimatedLabel text="RESEARCH SPECIFICATION · VOL. IV, EDITION 2026" className="block" />
+            <AnimatedLabel text="100% CLOUD &amp; SMARTPHONE · SATELLITE TELEMETRY CORE" className="text-[#c03f13] font-bold block" />
           </div>
         </div>
 
         {/* Col 2: Navigation Links */}
         <div className="lg:col-span-4 grid grid-cols-2 gap-4 font-mono text-xs uppercase">
           <div>
-            <div className="font-bold text-[#c03f13] mb-3">SYSTEM ENGINES</div>
+            <AnimatedLabel text="SYSTEM ENGINES" className="font-bold text-[#c03f13] mb-3 block" />
             <ul className="space-y-2 text-[#625e57]">
               <li>
                 <button 
@@ -88,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
           </div>
 
           <div>
-            <div className="font-bold text-[#c03f13] mb-3">DOCUMENTATION</div>
+            <AnimatedLabel text="DOCUMENTATION" className="font-bold text-[#c03f13] mb-3 block" />
             <ul className="space-y-2 text-[#625e57]">
               <li>
                 <button 

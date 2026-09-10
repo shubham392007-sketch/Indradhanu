@@ -5,6 +5,17 @@ import { SectionHeading } from '../components/motion/SectionHeading';
 import { AnimatedNumber } from '../components/motion/AnimatedNumber';
 import { MotionCard } from '../components/motion/MotionCard';
 import { editorialEase } from '../lib/motionVariants';
+import {
+  AnimatedH1,
+  AnimatedH2,
+  AnimatedH3,
+  AnimatedH4,
+  AnimatedEyebrow,
+  AnimatedParagraph,
+  AnimatedLabel,
+  AnimatedStat,
+  AnimatedQuote,
+} from '../components/motion/Typography';
 
 interface CropLossPageProps {
   navigate: (path: string) => void;
@@ -111,11 +122,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       <section className="border-b-2 editorial-rule-bold overflow-hidden relative bg-[#cdc6be]">
         <div className="pt-6 sm:pt-8 px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-baseline justify-between border-b editorial-rule pb-3 font-mono text-xs text-[#625e57] gap-2">
           <div className="flex items-center gap-4">
-            <span>EVIDENCE REANALYSIS 2026</span>
-            <span className="text-[#c03f13] font-bold">PMFBY CLAIM SPECIFICATION</span>
+            <AnimatedLabel text="EVIDENCE REANALYSIS 2026" />
+            <AnimatedLabel text="PMFBY CLAIM SPECIFICATION" className="text-[#c03f13] font-bold" />
           </div>
           <div className="text-left sm:text-right">
-            <span>SATELLITE &amp; SMARTPHONE MULTIMODAL AUDIT</span>
+            <AnimatedLabel text="SATELLITE &amp; SMARTPHONE MULTIMODAL AUDIT" />
           </div>
         </div>
 
@@ -138,9 +149,10 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             >
               intelligence
             </motion.span>
-            <span className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#625e57] mt-2 md:mt-0 max-w-md text-left md:text-right">
-              Autonomous Plot-Loss Audit Engine · Fusing Ground Imagery with Sentinel-2 Multispectral Telemetry
-            </span>
+            <AnimatedEyebrow 
+              text="Autonomous Plot-Loss Audit Engine · Fusing Ground Imagery with Sentinel-2 Multispectral Telemetry"
+              className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#625e57] mt-2 md:mt-0 max-w-md text-left md:text-right"
+            />
           </div>
         </div>
       </section>
@@ -152,22 +164,22 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
         <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Boxed Drop-Cap 'W' */}
           <div className="lg:col-span-6 space-y-6">
-            <SectionHeading label="01 / PROBLEM UNDERSTANDING" />
+            <AnimatedEyebrow text="01 / PROBLEM UNDERSTANDING" />
 
             <div>
               <div className="drop-cap-boxed">W</div>
-              <RevealText as="h2" className="font-editorial text-2xl sm:text-3xl text-[#1d1d1b] font-light leading-snug">
+              <AnimatedH2 className="font-editorial text-2xl sm:text-3xl text-[#1d1d1b] font-light leading-snug">
                 hen a crop is damaged, the evidence should tell the story.
-              </RevealText>
+              </AnimatedH2>
             </div>
 
             <div className="space-y-4 font-editorial text-lg text-[#1d1d1b]/90 leading-relaxed pt-2">
-              <p>
+              <AnimatedParagraph>
                 A smartphone photograph shows what is visible on the plant. Satellite imagery shows how the vegetation canopy changes over space and time. Weather data provides environmental context. Soil and crop data add agricultural context.
-              </p>
-              <p className="text-[#625e57] text-base">
+              </AnimatedParagraph>
+              <AnimatedParagraph className="text-[#625e57] text-base" delay={0.1}>
                 Each signal alone is incomplete: ground photos lack spatial context to prove 2-hectare loss, while optical satellites are blinded by monsoonal clouds during extreme cyclonic storms. Rashkar combines them into one unified, indisputable evidence package.
-              </p>
+              </AnimatedParagraph>
             </div>
 
             <div className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/60 font-mono text-xs text-[#625e57] space-y-1">
@@ -179,15 +191,13 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
           {/* Right Column: Statement Stack */}
           <div className="lg:col-span-6 lg:border-l editorial-rule lg:pl-12 flex flex-col justify-between h-full space-y-6">
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-3">
-                CONVERGENT EVIDENCE FORMULATION
-              </div>
-              <div className="font-monument text-4xl sm:text-5xl md:text-6xl uppercase text-[#1d1d1b] leading-tight border-b-2 editorial-rule-bold pb-6">
+              <AnimatedLabel text="CONVERGENT EVIDENCE FORMULATION" className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-3 block" />
+              <AnimatedH2 accent="none" className="font-monument text-4xl sm:text-5xl md:text-6xl uppercase text-[#1d1d1b] leading-tight border-b-2 editorial-rule-bold pb-6">
                 ONE PLOT.<br />
                 MULTIPLE SIGNALS.<br />
                 <span className="text-[#c03f13]">INDISPUTABLE</span><br />
                 EVIDENCE PACKAGE.
-              </div>
+              </AnimatedH2>
               <p className="font-editorial italic text-lg text-[#625e57] mt-4">
                 Satellite Telemetry · Weather Grids · Smartphone Photogrammetry · 100% Cloud.
               </p>
@@ -222,70 +232,71 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
         <div className="max-w-[1500px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
             <div>
-              <SectionHeading label="02 / ECOSYSTEM STAKEHOLDERS & DELAY ANALYSIS" />
-              <h2 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+              <AnimatedEyebrow text="02 / ECOSYSTEM STAKEHOLDERS & DELAY ANALYSIS" />
+              <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
                 WHO IS IMPACTED BY DELAYED PROOF
-              </h2>
+              </AnimatedH2>
             </div>
-            <div className="font-mono text-xs text-[#c03f13] font-bold uppercase">
-              STATUS QUO TIMEFRAME: 45 TO 60 DAYS
-            </div>
+            <AnimatedLabel 
+              text="STATUS QUO TIMEFRAME: 45 TO 60 DAYS"
+              className="font-mono text-xs text-[#c03f13] font-bold uppercase"
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-[#1d1d1b] font-mono text-xs">
             <MotionCard delay={0.04} className="p-5 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[#c03f13] font-bold uppercase">AFFECTED 01</span>
-                <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FARMERS</h4>
-                <p className="text-[#625e57] leading-relaxed">
+                <AnimatedLabel text="AFFECTED 01" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FARMERS</AnimatedH4>
+                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                   Loss of crops completely destroys seasonal household cashflow. Waiting 60 days forces smallholders into informal predatory loans at 36%+ interest.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">Immediate Relief Need</span>
+              <AnimatedLabel text="Immediate Relief Need" className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.08} className="p-5 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[#c03f13] font-bold uppercase">AFFECTED 02</span>
-                <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">INSURERS</h4>
-                <p className="text-[#625e57] leading-relaxed">
+                <AnimatedLabel text="AFFECTED 02" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">INSURERS</AnimatedH4>
+                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                   Must process millions of concurrent individual claims without reliable mathematical evidence, creating massive operational leakage and litigation.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">Fraud Prevention</span>
+              <AnimatedLabel text="Fraud Prevention" className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.12} className="p-5 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[#c03f13] font-bold uppercase">AFFECTED 03</span>
-                <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FIELD VERIFIERS</h4>
-                <p className="text-[#625e57] leading-relaxed">
+                <AnimatedLabel text="AFFECTED 03" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FIELD VERIFIERS</AnimatedH4>
+                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                   Loss adjusters and Patwaris face overwhelming paperwork, disputed boundaries, and logistical exhaustion surveying impassable flooded terrain.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">Auditable Dossiers</span>
+              <AnimatedLabel text="Auditable Dossiers" className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.16} className="p-5 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[#c03f13] font-bold uppercase">AFFECTED 04</span>
-                <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">GOVERNMENT</h4>
-                <p className="text-[#625e57] leading-relaxed">
+                <AnimatedLabel text="AFFECTED 04" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">GOVERNMENT</AnimatedH4>
+                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                   Needs objective, uncompromised plot-level loss maps to trigger state disaster relief budgets and subsidy disbursements transparently.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">Sovereign Integrity</span>
+              <AnimatedLabel text="Sovereign Integrity" className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.2} className="p-5 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[#c03f13] font-bold uppercase">AFFECTED 05</span>
-                <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PMFBY SYSTEM</h4>
-                <p className="text-[#625e57] leading-relaxed">
+                <AnimatedLabel text="AFFECTED 05" className="text-[#c03f13] font-bold uppercase block" />
+                <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PMFBY SYSTEM</AnimatedH4>
+                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                   National crop insurance requires scalable modernization to maintain farmer trust, reduce administrative overhead, and ensure financial solvency.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase">Digital Public Infra</span>
+              <AnimatedLabel text="Digital Public Infra" className="mt-4 pt-2 hairline-t text-[10px] text-[#1d1d1b] font-bold uppercase block" />
             </MotionCard>
           </div>
         </div>
@@ -298,14 +309,14 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
         <div className="max-w-[1500px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
             <div>
-              <SectionHeading label="03 / PYTORCH MODEL SPECIFICATION" />
-              <h2 className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+              <AnimatedEyebrow text="03 / PYTORCH MODEL SPECIFICATION" />
+              <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
                 ORTHOGONAL MODEL STACK
-              </h2>
+              </AnimatedH2>
             </div>
-            <div className="font-mono text-xs text-[#625e57] uppercase">
+            <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
               100% Centralized Cloud Inference · Sub-150ms Response
-            </div>
+            </AnimatedParagraph>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
@@ -316,9 +327,9 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   <span>GROUND VISION</span>
                   <span>MODEL 01</span>
                 </div>
-                <h4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
+                <AnimatedH4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
                   YOLOv8 DETECTOR
-                </h4>
+                </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Visible Crop-Damage Detection</span>
                 <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
                   Detects visible foliar perforation, torn leaves, stem fracture node points, boll detachment, and mechanical lodging directly from farmer smartphone photos.
@@ -337,9 +348,9 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   <span>PATHOLOGY CLASSIFIER</span>
                   <span>MODEL 02</span>
                 </div>
-                <h4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
+                <AnimatedH4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
                   ViT / MOBILENETV3
-                </h4>
+                </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Damage Severity Tiers</span>
                 <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
                   Vision Transformer extracts fine-grained foliar necrosis, chlorosis, and desiccation patterns, classifying damage into calibrated insurance compensation tiers.
@@ -358,9 +369,9 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   <span>SPATIAL SEGMENTATION</span>
                   <span>MODEL 03</span>
                 </div>
-                <h4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
+                <AnimatedH4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
                   UNET / SEGFORMER
-                </h4>
+                </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Plot &amp; Canopy Isolation</span>
                 <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
                   Pixel-level semantic segmentation isolating standing crop canopy from background dry soil, intrusive weeds, standing flood pools, and cadastral field boundaries.
@@ -379,9 +390,9 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   <span>ORBITAL TIME-SERIES</span>
                   <span>MODEL 04</span>
                 </div>
-                <h4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
+                <AnimatedH4 className="font-monument text-xl uppercase text-[#1d1d1b] mt-3 mb-1">
                   SENTINEL-2 LSTM
-                </h4>
+                </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Satellite Anomaly Detection</span>
                 <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
                   Evaluates 5-day cadence NDVI and NDRE spectral trajectories against 5-year historical phenology baselines to verify catastrophe event divergence.
@@ -399,18 +410,17 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       {/* 5. INTERACTIVE PLOT SPECIMEN AUDIT (Plot #MH-VRB-0247, Vidarbha)          */}
       {/* ========================================================================= */}
-      {/* ========================================================================= */}
-      {/* 5. INTERACTIVE PLOT SPECIMEN AUDIT (Plot #MH-VRB-0247, Vidarbha)          */}
-      {/* ========================================================================= */}
       <section className="border-b editorial-rule-bold px-4 sm:px-8 lg:px-14 py-16 bg-[#cdc6be]" id="plot-specimen">
         <div className="max-w-[1500px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
             <div>
-              <SectionHeading
-                label="04 / INTERACTIVE VERIFICATION DOSSIER"
-                title="VERIFY A PLOT: SPECIMEN #MH-VRB-0247"
-                subtitle="Bt Cotton holding in Morshi, Amravati Taluka, Vidarbha, Maharashtra."
-              />
+              <AnimatedEyebrow text="04 / INTERACTIVE VERIFICATION DOSSIER" />
+              <AnimatedH2 accent="left" className="font-monument text-2xl sm:text-4xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+                VERIFY A PLOT: SPECIMEN #MH-VRB-0247
+              </AnimatedH2>
+              <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-1">
+                Bt Cotton holding in Morshi, Amravati Taluka, Vidarbha, Maharashtra.
+              </AnimatedParagraph>
             </div>
 
             {/* Peril Selector Pill Buttons ('ALL WORK' style from Image 7) */}
@@ -466,7 +476,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 </span>
                 <div className="flex items-baseline gap-4 mt-2">
                   <span className="font-monument text-6xl sm:text-7xl lg:text-8xl font-black text-[#c03f13] leading-none">
-                    <AnimatedNumber value={current.lossEstimate} suffix="%" />
+                    <AnimatedStat value={current.lossEstimate} suffix="%" />
                   </span>
                   <div>
                     <span className="font-monument text-xl sm:text-2xl uppercase text-[#1d1d1b] block leading-tight">
@@ -485,7 +495,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <div className="flex justify-between items-center">
                   <span className="text-[#625e57] uppercase font-bold">AI FUSION CONFIDENCE:</span>
                   <span className="font-monument text-3xl text-[#1d1d1b] font-bold">
-                    <AnimatedNumber value={current.confidence} suffix="%" />
+                    <AnimatedStat value={current.confidence} suffix="%" />
                   </span>
                 </div>
                 <div className="w-full bg-[#ded7ce] h-2 rounded-full overflow-hidden">
@@ -618,11 +628,13 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       <section className="border-b editorial-rule-bold px-6 lg:px-14 py-16 bg-[#ded7ce]/40">
         <div className="max-w-[1500px] mx-auto">
-          <SectionHeading
-            label="05 / INSTITUTIONAL WORKFLOW ACCELERATION"
-            title="REDUCING SETTLEMENT FROM 60 DAYS TO 48 HOURS"
-            subtitle="Important: Rashkar does NOT automatically approve or reject insurance claims. It empowers authorized human adjusters with reconciled mathematical evidence."
-          />
+          <AnimatedEyebrow text="05 / INSTITUTIONAL WORKFLOW ACCELERATION" />
+          <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            REDUCING SETTLEMENT FROM 60 DAYS TO 48 HOURS
+          </AnimatedH2>
+          <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-2 max-w-3xl" delay={0.1}>
+            Important: Rashkar does NOT automatically approve or reject insurance claims. It empowers authorized human adjusters with reconciled mathematical evidence.
+          </AnimatedParagraph>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 font-mono text-xs mt-10">
             {/* Status Quo */}
@@ -693,36 +705,38 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       <section className="border-b editorial-rule-bold px-6 lg:px-14 py-20 bg-[#1d1d1b] text-[#cdc6be]">
         <div className="max-w-[1200px] mx-auto text-center space-y-6">
-          <SectionHeading
-            center
-            label="ETHICAL GOVERNANCE & LEGAL ARCHITECTURE"
-            title="AI CAN ASSIST. HUMANS DECIDE."
-            subtitle="Rashkar never executes autonomous financial payouts or unilateral claim rejections. Machine learning models produce mathematically auditable evidence; certified agrarian officials retain sovereign legal decision authority."
+          <AnimatedEyebrow text="ETHICAL GOVERNANCE & LEGAL ARCHITECTURE" className="text-[#c03f13]" />
+          <AnimatedQuote
+            quote="AI CAN ASSIST. HUMANS DECIDE."
+            className="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tightest text-[#cdc6be] not-italic my-4"
           />
+          <AnimatedParagraph className="font-editorial text-base sm:text-lg text-[#beb5aa] max-w-2xl mx-auto leading-relaxed" delay={0.2}>
+            Rashkar never executes autonomous financial payouts or unilateral claim rejections. Machine learning models produce mathematically auditable evidence; certified agrarian officials retain sovereign legal decision authority.
+          </AnimatedParagraph>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-left pt-8 font-mono text-xs">
             <MotionCard delay={0.05} className="p-4 border border-[#cdc6be]/30 bg-[#33302a]">
-              <span className="text-[#c03f13] font-bold block mb-1">AI ROLE 01</span>
+              <AnimatedLabel text="AI ROLE 01" className="text-[#c03f13] font-bold block mb-1" />
               <strong className="text-[#cdc6be] uppercase block">LOSS ESTIMATION</strong>
               <p className="text-[11px] text-[#beb5aa] mt-1">Mathematical bounds (e.g. 64% ±3.4%) based on multimodal inputs.</p>
             </MotionCard>
             <MotionCard delay={0.1} className="p-4 border border-[#cdc6be]/30 bg-[#33302a]">
-              <span className="text-[#c03f13] font-bold block mb-1">AI ROLE 02</span>
+              <AnimatedLabel text="AI ROLE 02" className="text-[#c03f13] font-bold block mb-1" />
               <strong className="text-[#cdc6be] uppercase block">CONFIDENCE METRIC</strong>
               <p className="text-[11px] text-[#beb5aa] mt-1">Bayesian evidentiary agreement between satellite and ground imagery.</p>
             </MotionCard>
             <MotionCard delay={0.15} className="p-4 border border-[#cdc6be]/30 bg-[#33302a]">
-              <span className="text-[#c03f13] font-bold block mb-1">AI ROLE 03</span>
+              <AnimatedLabel text="AI ROLE 03" className="text-[#c03f13] font-bold block mb-1" />
               <strong className="text-[#cdc6be] uppercase block">PATHOLOGY TIERS</strong>
               <p className="text-[11px] text-[#beb5aa] mt-1">Categorizing mechanical damage vs biological foliar diseases.</p>
             </MotionCard>
             <MotionCard delay={0.2} className="p-4 border border-[#cdc6be]/30 bg-[#33302a]">
-              <span className="text-[#c03f13] font-bold block mb-1">AI ROLE 04</span>
+              <AnimatedLabel text="AI ROLE 04" className="text-[#c03f13] font-bold block mb-1" />
               <strong className="text-[#cdc6be] uppercase block">EVIDENCE AGGREGATION</strong>
               <p className="text-[11px] text-[#beb5aa] mt-1">Compiling EXIF, satellite timelines, and weather into single dossier.</p>
             </MotionCard>
             <MotionCard delay={0.25} className="p-4 border border-[#cdc6be]/30 bg-[#33302a]">
-              <span className="text-[#c03f13] font-bold block mb-1">AI ROLE 05</span>
+              <AnimatedLabel text="AI ROLE 05" className="text-[#c03f13] font-bold block mb-1" />
               <strong className="text-[#cdc6be] uppercase block">REVIEW QUEUE</strong>
               <p className="text-[11px] text-[#beb5aa] mt-1">Prioritizing catastrophic wiped-out smallholders for rapid review.</p>
             </MotionCard>
@@ -735,59 +749,61 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       {/* ========================================================================= */}
       <section className="border-b editorial-rule-bold px-6 lg:px-14 py-16 bg-[#cdc6be]">
         <div className="max-w-[1500px] mx-auto">
-          <SectionHeading
-            label="06 / CORE INNOVATION"
-            title="THE INNOVATION IS IN THE FUSION"
-            subtitle="Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow."
-          />
+          <AnimatedEyebrow text="06 / CORE INNOVATION" />
+          <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+            THE INNOVATION IS IN THE FUSION
+          </AnimatedH2>
+          <AnimatedParagraph className="font-editorial text-base text-[#625e57] mt-2 max-w-3xl" delay={0.1}>
+            Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow.
+          </AnimatedParagraph>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs mt-10">
             <MotionCard delay={0.05} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">01</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">MULTIMODAL EVIDENCE</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="01" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">MULTIMODAL EVIDENCE</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Overcoming single-sensor failure modes by cross-validating commodity phone images with orbital reflectance and Doppler radar.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             <MotionCard delay={0.1} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">02</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PLOT-LEVEL INTELLIGENCE</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="02" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PLOT-LEVEL INTELLIGENCE</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Operating at individual cadastral survey numbers (1–2 hectares) rather than coarse district-level administrative aggregations.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             <MotionCard delay={0.15} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">03</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">TIME-SERIES + VISUALS</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="03" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">TIME-SERIES + VISUALS</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Pairing longitudinal 5-year spectral decay trajectories with acute point-in-time smartphone stem fracture detections.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             <MotionCard delay={0.2} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">04</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">CLOUD AI COMPUTATION</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="04" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">CLOUD AI COMPUTATION</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Zero field hardware to maintain. All neural inference executed on centralized cloud clusters, keeping farmer hardware costs at ₹0.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             <MotionCard delay={0.25} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">05</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">EVIDENCE-FIRST OUTPUT</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="05" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">EVIDENCE-FIRST OUTPUT</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Every percentage loss estimate is accompanied by cryptographic hash verification, bounding polygon overlays, and radar confirmation.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
 
             <MotionCard delay={0.3} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
-              <span className="text-[#c03f13] font-bold text-sm">06</span>
-              <h4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">HUMAN-REVIEWED WORKFLOW</h4>
-              <p className="text-[#625e57] leading-relaxed">
+              <AnimatedLabel text="06" className="text-[#c03f13] font-bold text-sm block" />
+              <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">HUMAN-REVIEWED WORKFLOW</AnimatedH4>
+              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
                 Designed to empower agrarian officers and insurers with defensible data, preserving human accountability under PMFBY statutes.
-              </p>
+              </AnimatedParagraph>
             </MotionCard>
           </div>
         </div>
@@ -800,79 +816,80 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
         <div className="max-w-[1500px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end hairline-b pb-6 mb-8 gap-4">
             <div>
-              <SectionHeading
-                label="07 / TARGET PROJECTIONS"
-                title="PROJECTED SYSTEM EFFICIENCY"
-              />
+              <AnimatedEyebrow text="07 / TARGET PROJECTIONS" />
+              <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
+                PROJECTED SYSTEM EFFICIENCY
+              </AnimatedH2>
             </div>
-            <div className="font-mono text-xs text-[#c03f13] font-bold uppercase mb-2">
-              IMPORTANT: PROPOSED TARGETS · NOT ACHIEVED HISTORICAL OUTCOMES
-            </div>
+            <AnimatedLabel 
+              text="IMPORTANT: PROPOSED TARGETS · NOT ACHIEVED HISTORICAL OUTCOMES"
+              className="font-mono text-xs text-[#c03f13] font-bold uppercase mb-2"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1d1d1b] font-mono">
             <MotionCard delay={0.05} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[10px] uppercase text-[#c03f13] font-bold">CYCLE COMPRESSION</span>
-                <div className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b] my-2">
-                  <AnimatedNumber value={48} suffix=" Hrs" />
+                <AnimatedLabel text="CYCLE COMPRESSION" className="text-[10px] uppercase text-[#c03f13] font-bold block" />
+                <div className="my-2">
+                  <AnimatedStat value={48} suffix=" Hrs" className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b]" />
                 </div>
-                <div className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
+                <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   From 45–60 Days To 48h
-                </div>
-                <p className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                </AnimatedH4>
+                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
                   Proposed target to accelerate post-disaster claim intimation and verification sign-off.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Proposed Target</span>
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.1} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[10px] uppercase text-[#c03f13] font-bold">COST REDUCTION</span>
-                <div className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b] my-2">
-                  <AnimatedNumber value={70} suffix="%" />
+                <AnimatedLabel text="COST REDUCTION" className="text-[10px] uppercase text-[#c03f13] font-bold block" />
+                <div className="my-2">
+                  <AnimatedStat value={70} suffix="%" className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b]" />
                 </div>
-                <div className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
+                <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   CCE Survey Overhead Drop
-                </div>
-                <p className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                </AnimatedH4>
+                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
                   Targeted reduction in logistical expenditure associated with manual Crop Cutting Experiments.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Proposed Target</span>
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.15} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[10px] uppercase text-[#c03f13] font-bold">UNIT SURVEY COST</span>
-                <div className="font-monument text-4xl sm:text-5xl font-extrabold text-[#c03f13] my-2">
-                  <AnimatedNumber value={150} prefix="₹" />
+                <AnimatedLabel text="UNIT SURVEY COST" className="text-[10px] uppercase text-[#c03f13] font-bold block" />
+                <div className="my-2">
+                  <AnimatedStat value={150} prefix="₹" className="font-monument text-4xl sm:text-5xl font-extrabold text-[#c03f13]" />
                 </div>
-                <div className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
+                <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   Down from ₹500–800 / Acre
-                </div>
-                <p className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                </AnimatedH4>
+                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
                   Proposed surveying cost per enrolled plot acreage achieved through cloud automation.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Proposed Target</span>
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.2} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
               <div>
-                <span className="text-[10px] uppercase text-[#c03f13] font-bold">FRAUD MITIGATION</span>
-                <div className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b] my-2">
-                  <AnimatedNumber value={50} suffix="%" />
+                <AnimatedLabel text="FRAUD MITIGATION" className="text-[10px] uppercase text-[#c03f13] font-bold block" />
+                <div className="my-2">
+                  <AnimatedStat value={50} suffix="%" className="font-monument text-4xl sm:text-5xl font-extrabold text-[#1d1d1b]" />
                 </div>
-                <div className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
+                <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   ₹1,500 Cr → ₹750 Cr / Year
-                </div>
-                <p className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                </AnimatedH4>
+                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
                   Projected reduction in disputed claims through cryptographic satellite and EXIF cross-checking.
-                </p>
+                </AnimatedParagraph>
               </div>
-              <span className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase">Proposed Target</span>
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
             </MotionCard>
           </div>
 
