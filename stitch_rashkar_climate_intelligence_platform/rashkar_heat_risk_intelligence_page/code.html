@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Heat-Risk Intelligence — Rashkar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&amp;family=UnifrakturMaguntia&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#cdc6be',
+          'paper-light': '#ded7ce',
+          'paper-muted': '#c4bcae',
+          ink: '#1d1d1b',
+          'ink-pure': '#0a0a09',
+          rust: '#c03f13',
+          secondary: '#69645f',
+          rule: '#1d1d1b',
+        },
+        fontFamily: {
+          display: ['Playfair Display', 'Georgia', 'serif'],
+          editorial: ['Newsreader', 'Georgia', 'serif'],
+          gothic: ['UnifrakturMaguntia', 'cursive'],
+          mono: ['"Space Mono"', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #cdc6be;
+    color: #1d1d1b;
+    background-image: radial-gradient(rgba(29, 29, 27, 0.04) 1px, transparent 0);
+    background-size: 20px 20px;
+    font-feature-settings: "lnum" 1;
+  }
+  .editorial-rule { border-color: rgba(29, 29, 27, 0.25); }
+  .editorial-rule-bold { border-color: #1d1d1b; }
+  
+  /* Condensed ultra-impact display font emulation for Canopee/Miranda */
+  .font-monumental {
+    font-family: 'Playfair Display', Impact, 'Arial Black', serif;
+    font-stretch: ultra-condensed;
+    letter-spacing: -0.05em;
+    line-height: 0.82;
+  }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marquee 32s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* Custom oval pill button matching Miranda reference */
+  .oval-pill-btn {
+    border-radius: 9999px;
+    padding: 18px 42px;
+    border: 1.5px solid #1d1d1b;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .oval-pill-btn:hover {
+    background-color: #1d1d1b;
+    color: #cdc6be;
+    transform: scale(1.02);
+  }
+  
+  /* Dashed editorial cards */
+  .dashed-card {
+    border: 1.5px dashed #1d1d1b;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body class="min-h-screen font-editorial selection:bg-rust selection:text-paper antialiased overflow-x-hidden">
+<!-- 1. FIXED EDITORIAL HEADER -->
+<header class="sticky top-0 z-50 bg-[#cdc6be]/95 backdrop-blur-md border-b editorial-rule px-6 lg:px-12 py-3.5 flex items-center justify-between transition-all">
+<!-- Left: Subsystem Tag -->
+<div class="flex items-center gap-3">
+<a class="font-mono text-xs uppercase tracking-widest text-ink hover:text-rust transition-colors font-bold" href="#">
+        RASHKAR <span class="text-rust">/</span> ENGINE 01
+      </a>
+<span class="w-1.5 h-1.5 rounded-full bg-rust animate-pulse hidden sm:inline-block"></span>
+<span class="hidden md:inline-block font-mono text-[10px] uppercase tracking-widest text-secondary">
+        HEAT-RISK INTELLIGENCE
+      </span>
+</div>
+<!-- Center: Gothic / Blackletter wordmark like The Paper Portfolio -->
+<div class="font-gothic text-2xl md:text-3xl text-ink tracking-normal select-none pointer-events-none text-center">
+      KisanSuraksha–FasalSuraksha
+    </div>
+<!-- Right: Minimal 2-bar hamburger menu & Quick Switch -->
+<div class="flex items-center gap-6">
+<a class="hidden lg:inline-block font-mono text-xs uppercase tracking-wider text-secondary hover:text-rust transition-colors" href="#crop-loss-anchor">
+        Twin Engine 02 →
+      </a>
+<button aria-label="Toggle Menu" class="flex items-center gap-2 text-ink hover:text-rust transition-colors group cursor-pointer" onclick="document.getElementById('nav-drawer').classList.toggle('hidden')">
+<span class="font-mono text-xs uppercase tracking-widest hidden sm:inline">Index</span>
+<div class="w-6 flex flex-col gap-1.5 justify-center items-end py-1">
+<div class="h-[2px] w-6 bg-ink group-hover:bg-rust transition-all"></div>
+<div class="h-[2px] w-4 bg-ink group-hover:bg-rust transition-all"></div>
+</div>
+</button>
+</div>
+</header>
+<!-- NAVIGATION DRAWER / MODAL -->
+<div class="hidden fixed inset-0 z-50 bg-ink text-paper p-8 lg:p-16 flex flex-col justify-between" id="nav-drawer">
+<div class="flex justify-between items-start border-b border-paper/20 pb-6">
+<div>
+<div class="font-gothic text-4xl text-paper">KisanSuraksha</div>
+<div class="font-mono text-xs text-rust mt-1 tracking-widest uppercase">Autonomous Agrarian Cloud Resilience · 2026</div>
+</div>
+<button class="font-mono text-sm uppercase tracking-widest text-paper hover:text-rust" onclick="document.getElementById('nav-drawer').classList.add('hidden')">
+        [CLOSE ESC ✕]
+      </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 my-auto max-w-5xl">
+<div>
+<div class="font-mono text-xs text-rust mb-3 uppercase tracking-widest">Active Engine 01</div>
+<a class="block font-display text-4xl lg:text-5xl text-paper hover:text-rust transition-colors mb-4" href="#" onclick="document.getElementById('nav-drawer').classList.add('hidden')">
+          Heat-Risk Intelligence
+        </a>
+<p class="font-editorial text-paper/70 text-lg max-w-md">
+          Personalized WBGT proxy modeling, physiological heat-stress simulation, and automated multilingual Indic dispatch for manual agricultural laborers.
+        </p>
+</div>
+<div class="border-t md:border-t-0 md:border-l border-paper/20 pt-6 md:pt-0 md:pl-10">
+<div class="font-mono text-xs text-paper/50 mb-3 uppercase tracking-widest">Twin Engine 02</div>
+<a class="block font-display text-3xl lg:text-4xl text-paper/60 hover:text-paper transition-colors mb-4" href="#crop-loss-anchor" onclick="document.getElementById('nav-drawer').classList.add('hidden')">
+          Crop-Loss Intelligence →
+        </a>
+<p class="font-editorial text-paper/50 text-base max-w-md">
+          Field smartphone computer vision, Sentinel-2 spectral indices, and multimodal PMFBY claim verification pipeline.
+        </p>
+</div>
+</div>
+<div class="border-t border-paper/20 pt-4 flex flex-col sm:flex-row justify-between text-xs font-mono text-paper/60">
+<span>ZERO HARDWARE · 100% SATELLITE &amp; SYNOPTIC CLOUD DATA</span>
+<span>RESEARCH DOSSIER · VOL. VI</span>
+</div>
+</div>
+<!-- 2. MONUMENTAL HERO SPREAD -->
+<section class="border-b editorial-rule-bold pt-8 pb-14 px-4 sm:px-8 lg:px-14 overflow-hidden relative">
+<!-- Top Metadata Ledger Bar -->
+<div class="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 pb-6 border-b editorial-rule text-xs font-mono">
+<div>
+<span class="text-rust uppercase tracking-widest block font-bold">RASHKAR / INTELLIGENCE ENGINE 01</span>
+<span class="text-ink uppercase tracking-wider block">Autonomous Worker Heat-Defense Engine</span>
+</div>
+<div class="text-secondary leading-relaxed">
+        ARCHITECTURAL STANDARD: <strong class="text-ink">ZERO SENSORS · ZERO WEARABLES</strong><br/>
+        INGESTION: IMD METEOROLOGY + ERA5 REANALYSIS + BHUVAN
+      </div>
+<div class="flex md:justify-end items-center gap-3">
+<a class="px-4 py-1.5 border border-ink bg-ink text-paper hover:bg-rust hover:border-rust transition-colors uppercase tracking-wider font-bold" href="#specimen">
+          Explore Specimen
+        </a>
+<a class="px-4 py-1.5 border border-ink text-ink hover:bg-ink hover:text-paper transition-colors uppercase tracking-wider" href="#architecture">
+          Cloud Topology
+        </a>
+</div>
+</div>
+<!-- Massive Monumental Typographic Block (Miranda / Canopee style) -->
+<div class="max-w-[1500px] mx-auto mt-6">
+<div class="w-full bg-ink text-[#cdc6be] px-4 sm:px-8 lg:px-12 py-6 sm:py-10 border-2 border-ink select-none overflow-hidden flex items-center justify-center">
+<h1 class="font-monumental text-[18vw] leading-[0.82] uppercase tracking-tight text-center whitespace-nowrap text-[#ded7ce]">
+          HEAT-RISK
+        </h1>
+</div>
+<div class="flex flex-col md:flex-row items-baseline justify-between pt-4 pb-8 border-b editorial-rule gap-4">
+<span class="font-editorial italic font-normal text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-rust lowercase tracking-normal">
+          intelligence
+        </span>
+<div class="font-mono text-xs uppercase tracking-widest text-secondary text-right">
+          PERSONALIZED WBGT PROXY ENGINE · 6-HR PREDICTIVE HORIZON
+        </div>
+</div>
+<!-- Hero Subhead & Lead Dossier -->
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-7">
+<p class="font-editorial text-2xl sm:text-3xl text-ink leading-snug">
+            Predicting acute agricultural worker heat stress before outdoor exposure becomes a biological crisis.
+          </p>
+<p class="font-editorial text-lg text-secondary mt-4 leading-relaxed max-w-2xl">
+            Rashkar’s Heat-Risk Intelligence engine synthesizes cloud atmospheric thermodynamics, satellite vegetation transpiration indicators, and farmer demographic workload context into a localized 6-hour forward-looking heat vulnerability score — delivered in native dialects via SMS, IVR, and WhatsApp.
+          </p>
+</div>
+<div class="lg:col-span-5 border-l editorial-rule pl-0 lg:pl-8">
+<div class="bg-paper-light/50 p-6 border editorial-rule-bold space-y-4">
+<div class="flex justify-between items-center text-xs font-mono uppercase text-secondary pb-2 border-b editorial-rule">
+<span>Algorithmic Specimen</span>
+<span class="text-rust font-bold">WBGT-Proxy v2.4</span>
+</div>
+<div class="grid grid-cols-2 gap-4 text-xs font-mono">
+<div>
+<span class="text-secondary block uppercase text-[10px]">Atmospheric Model</span>
+<strong class="font-editorial text-base text-ink block mt-0.5">XGBoost + Bi-LSTM</strong>
+</div>
+<div>
+<span class="text-secondary block uppercase text-[10px]">Worker Risk Estimator</span>
+<strong class="font-editorial text-base text-ink block mt-0.5">Random Forest Regressor</strong>
+</div>
+<div>
+<span class="text-secondary block uppercase text-[10px]">Dispatch Pipeline</span>
+<strong class="font-editorial text-base text-ink block mt-0.5">IndicBERT Multilingual</strong>
+</div>
+<div>
+<span class="text-secondary block uppercase text-[10px]">Spatial Resolution</span>
+<strong class="font-editorial text-base text-ink block mt-0.5">1 km² Gridded Reanalysis</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. STATS ROW (IMAGE_7 inspired: 4-column horizontal with thin 1px vertical dividers) -->
+<section class="border-b editorial-rule-bold bg-paper">
+<div class="max-w-[1500px] mx-auto grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x editorial-rule">
+<div class="p-6 lg:p-8 flex items-baseline justify-between gap-4">
+<div>
+<span class="font-editorial text-xs uppercase tracking-wider text-secondary block">Heatwave Days In 2024</span>
+<span class="font-monumental text-3xl sm:text-4xl text-ink uppercase tracking-tight block mt-1">RESEARCH</span>
+</div>
+<div class="font-editorial font-light text-5xl sm:text-6xl text-rust">280+</div>
+</div>
+<div class="p-6 lg:p-8 flex items-baseline justify-between gap-4">
+<div>
+<span class="font-editorial text-xs uppercase tracking-wider text-secondary block">Exposed Demography</span>
+<span class="font-monumental text-3xl sm:text-4xl text-ink uppercase tracking-tight block mt-1">WORKERS</span>
+</div>
+<div class="font-editorial font-light text-5xl sm:text-6xl text-ink">100<span class="text-2xl text-rust">M</span></div>
+</div>
+<div class="p-6 lg:p-8 flex items-baseline justify-between gap-4">
+<div>
+<span class="font-editorial text-xs uppercase tracking-wider text-secondary block">Forward Looking</span>
+<span class="font-monumental text-3xl sm:text-4xl text-ink uppercase tracking-tight block mt-1">HORIZON</span>
+</div>
+<div class="font-editorial font-light text-5xl sm:text-6xl text-ink">0–6<span class="text-2xl text-secondary">h</span></div>
+</div>
+<div class="p-6 lg:p-8 flex items-baseline justify-between gap-4">
+<div>
+<span class="font-editorial text-xs uppercase tracking-wider text-secondary block">Field Sensor Burden</span>
+<span class="font-monumental text-3xl sm:text-4xl text-ink uppercase tracking-tight block mt-1">HARDWARE</span>
+</div>
+<div class="font-editorial font-light text-5xl sm:text-6xl text-rust">₹0</div>
+</div>
+</div>
+</section>
+<!-- 3. EDITORIAL TWO-COLUMN PROBLEM SPREAD (IMAGE_9 & IMAGE_8 inspired) -->
+<section class="border-b editorial-rule-bold px-6 lg:px-14 py-20" id="problem">
+<div class="max-w-[1500px] mx-auto">
+<div class="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-rust mb-6">
+<span>01 / Problem Understanding</span>
+<div class="h-px w-16 bg-rust"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: Boxed Drop-Cap 'A' with narrative & pull quote -->
+<div class="lg:col-span-6 space-y-8">
+<div>
+<div class="float-left mr-4 mb-2 w-14 h-16 bg-ink text-paper flex items-center justify-center font-display text-4xl font-bold border border-ink">
+              A
+            </div>
+<p class="font-editorial text-xl sm:text-2xl text-ink leading-relaxed">
+              gricultural workers spend 8 to 12 consecutive hours outdoors engaged in intensive physical exertion. While standard public alerts rely strictly on ambient dry-bulb temperature, biological thermal strain is governed by solar radiation flux, relative humidity, wind speed, metabolic exertion rate, clothing insulation, worker age, and baseline hydration.
+            </p>
+</div>
+<p class="font-editorial text-lg text-secondary leading-relaxed">
+            In 2024, extreme heat events surged across central, northern, and eastern India with over 280 heatwave days recorded. Broad public advisories failed to curb agricultural collapse because they arrived post-facto without specific work-rest pacing schedules mapped to agrarian tasks.
+          </p>
+<!-- Editorial Hard Border Divider Pull Quote -->
+<div class="border-t-2 border-b-2 border-ink py-6 my-6">
+<span class="font-mono text-xs uppercase tracking-widest text-rust block mb-2 font-bold">Clinical Principle</span>
+<blockquote class="font-editorial text-2xl sm:text-3xl lg:text-4xl text-ink leading-tight">
+              “The heat is environmental. The risk is strictly personal.”
+            </blockquote>
+<p class="font-editorial text-base text-secondary mt-3 italic">
+              Broad state forecasts tell an office worker in Pune that it is 41°C. They do not tell a 52-year-old cotton picker in Vidarbha with latent kidney strain when solar radiant load will trigger exertional heat collapse.
+            </p>
+</div>
+</div>
+<!-- Right Column: Bold condensed uppercase serif statement -->
+<div class="lg:col-span-6 border-t lg:border-t-0 lg:border-l editorial-rule pt-8 lg:pt-0 lg:pl-12">
+<h2 class="font-monumental text-5xl sm:text-6xl lg:text-7xl uppercase text-ink leading-[0.92] tracking-tight">
+            100M+ AGRICULTURAL WORKERS / ZERO WEARABLES / CLOUD-BASED METEOROLOGY REANALYSIS.
+          </h2>
+<div class="mt-8 space-y-4 font-editorial text-lg text-secondary leading-relaxed">
+<p>
+              Smallholders and landless agrarian field laborers work without artificial shade, hydration telemetry, or wearable sensors. Providing wearable monitors across 100 million workers is economically unviable and operationally fragile.
+            </p>
+<p>
+              Rashkar shifts the entire burden into the cloud: mathematically extracting physiological wet-bulb globe temperature from open satellite grids and translating it into hyper-local phone dispatch.
+            </p>
+</div>
+<div class="mt-8 p-4 border border-ink/40 bg-paper-light/40 font-mono text-xs text-secondary flex items-center justify-between">
+<span>DATA PROVENANCE: IMD + ECMWF ERA5 REANALYSIS</span>
+<span class="text-rust font-bold">ZERO SENSORS REQUIRED</span>
+</div>
+</div>
+</div>
+<!-- 4. FIVE SYSTEMIC FAILURES (Dashed cards like IMAGE_6) -->
+<div class="mt-20 pt-12 border-t editorial-rule">
+<div class="flex flex-col sm:flex-row justify-between items-baseline mb-8">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-rust font-bold">Systemic Analysis</span>
+<h3 class="font-monumental text-3xl sm:text-4xl uppercase tracking-tight text-ink mt-1">What Exists Is Not Enough</h3>
+</div>
+<span class="font-mono text-xs uppercase text-secondary mt-2 sm:mt-0">The 5 Gaps in Conventional Weather Alerts</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- Failure 01 -->
+<div class="dashed-card p-6 bg-paper-light/30 hover:bg-paper-light/60 transition-all flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs font-bold text-rust tracking-widest uppercase">01 / GENERIC</span>
+<h4 class="font-display text-xl uppercase font-bold text-ink mt-2 mb-2">Generic Alerts</h4>
+<p class="font-editorial text-sm text-secondary leading-relaxed">
+                Broadcast television and SMS alerts emit regional bulk warnings without actionable guidance tailored to manual outdoor laborers.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-dashed border-ink/30 font-mono text-[10px] text-rust uppercase font-bold">
+              Status Quo: Inaction
+            </div>
+</div>
+<!-- Failure 02 -->
+<div class="dashed-card p-6 bg-paper-light/30 hover:bg-paper-light/60 transition-all flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs font-bold text-rust tracking-widest uppercase">02 / UNWEIGHTED</span>
+<h4 class="font-display text-xl uppercase font-bold text-ink mt-2 mb-2">Zero Personalization</h4>
+<p class="font-editorial text-sm text-secondary leading-relaxed">
+                Fails to modulate risk according to worker age, baseline acclimatization status, pre-existing conditions, or metabolic task intensity.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-dashed border-ink/30 font-mono text-[10px] text-rust uppercase font-bold">
+              Status Quo: Blind Spots
+            </div>
+</div>
+<!-- Failure 03 -->
+<div class="dashed-card p-6 bg-paper-light/30 hover:bg-paper-light/60 transition-all flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs font-bold text-rust tracking-widest uppercase">03 / SILOED</span>
+<h4 class="font-display text-xl uppercase font-bold text-ink mt-2 mb-2">Fragmented Data</h4>
+<p class="font-editorial text-sm text-secondary leading-relaxed">
+                Synoptic surface weather, satellite soil heat flux, and reanalysis data live in isolated government silos unavailable to agrarian workers.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-dashed border-ink/30 font-mono text-[10px] text-rust uppercase font-bold">
+              Status Quo: Disconnected
+            </div>
+</div>
+<!-- Failure 04 -->
+<div class="dashed-card p-6 bg-paper-light/30 hover:bg-paper-light/60 transition-all flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs font-bold text-rust tracking-widest uppercase">04 / LATE</span>
+<h4 class="font-display text-xl uppercase font-bold text-ink mt-2 mb-2">Reactive Warnings</h4>
+<p class="font-editorial text-sm text-secondary leading-relaxed">
+                Warnings report conditions that have already peaked, leaving field laborers exposed without forward-looking rest windows.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-dashed border-ink/30 font-mono text-[10px] text-rust uppercase font-bold">
+              Status Quo: Post-Facto
+            </div>
+</div>
+<!-- Failure 05 -->
+<div class="dashed-card p-6 bg-paper-light/30 hover:bg-paper-light/60 transition-all flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs font-bold text-rust tracking-widest uppercase">05 / FACTORY</span>
+<h4 class="font-display text-xl uppercase font-bold text-ink mt-2 mb-2">Industrial Bias</h4>
+<p class="font-editorial text-sm text-secondary leading-relaxed">
+                Existing ergonomics standards assume indoor air-conditioned breakrooms or mechanized tools, completely ignoring dryland agrarian realities.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-dashed border-ink/30 font-mono text-[10px] text-rust uppercase font-bold">
+              Status Quo: Irrelevant
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CLOUD ARCHITECTURE BLUEPRINT (Software-only flow) -->
+<section class="border-b editorial-rule-bold px-6 lg:px-14 py-20 bg-paper-light/30" id="architecture">
+<div class="max-w-[1500px] mx-auto">
+<div class="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-rust mb-6">
+<span>02 / Software-Defined Architecture</span>
+<div class="h-px w-16 bg-rust"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5">
+<h2 class="font-monumental text-4xl sm:text-5xl uppercase tracking-tight text-ink leading-tight">
+            ZERO SENSORS.<br/>ZERO WEARABLES.<br/>
+<span class="font-editorial italic font-normal text-rust lowercase tracking-normal">100% cloud intelligence.</span>
+</h2>
+<p class="font-editorial text-lg text-secondary mt-6 leading-relaxed">
+            By completely eliminating field IoT hardware, Rashkar circumvents device theft, battery depletion, sensor drift, and prohibitive capital expenditures that make wearable technology non-viable across smallholder farming populations.
+          </p>
+<div class="mt-8 border editorial-rule-bold p-6 bg-paper font-mono text-xs space-y-3">
+<div class="flex justify-between border-b editorial-rule pb-2 font-bold uppercase text-ink">
+<span>Cloud Microservices</span>
+<span class="text-rust">Production Blueprint</span>
+</div>
+<div class="flex justify-between"><span class="text-secondary">Data Ingestion:</span><span class="font-bold text-ink">Async Python FastAPI Workers</span></div>
+<div class="flex justify-between"><span class="text-secondary">Atmospheric ML:</span><span class="font-bold text-ink">Bi-LSTM (Liljegren Proxy)</span></div>
+<div class="flex justify-between"><span class="text-secondary">Risk Classifier:</span><span class="font-bold text-ink">Random Forest Regressor</span></div>
+<div class="flex justify-between"><span class="text-secondary">Spatial Storage:</span><span class="font-bold text-ink">PostgreSQL / PostGIS</span></div>
+<div class="flex justify-between"><span class="text-secondary">NLP Dialect Engine:</span><span class="font-bold text-ink">IndicBERT Localization</span></div>
+<div class="flex justify-between"><span class="text-secondary">Zero-Hardware Gate:</span><span class="font-bold text-rust">Direct SMS / IVR / Webhook</span></div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<!-- Architecture Flow Steps Blueprint -->
+<div class="border-2 border-ink bg-paper p-6 lg:p-8 font-mono text-xs">
+<div class="flex justify-between items-center pb-4 border-b editorial-rule text-ink uppercase font-bold">
+<span>Cloud Dataflow Pipeline</span>
+<span class="text-rust">Synchronous 15-min Cycle</span>
+</div>
+<div class="space-y-3 mt-6">
+<!-- Step 1 -->
+<div class="p-4 border editorial-rule bg-paper-light/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+<span class="text-rust text-[10px] font-bold block uppercase">01 // INGESTION LAYER</span>
+<span class="font-bold text-ink text-sm">IMD Synoptic Surface + ERA5 Radiative Flux</span>
+<span class="text-secondary text-[11px] block">Pulls real-time dry-bulb, solar zenith, dew-point, and surface wind friction</span>
+</div>
+<span class="px-2 py-1 bg-ink text-paper text-[10px] font-bold uppercase whitespace-nowrap">Open Feeds</span>
+</div>
+<div class="text-center text-ink text-sm font-bold">↓</div>
+<!-- Step 2 -->
+<div class="p-4 border editorial-rule bg-paper-light/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+<span class="text-rust text-[10px] font-bold block uppercase">02 // NORMALIZATION</span>
+<span class="font-bold text-ink text-sm">Microclimate Spatial Interpolator</span>
+<span class="text-secondary text-[11px] block">1 km² gridded surface harmonization with land-cover albedo</span>
+</div>
+<span class="px-2 py-1 border border-ink text-ink text-[10px] font-bold uppercase whitespace-nowrap">1 km² Grid</span>
+</div>
+<div class="text-center text-ink text-sm font-bold">↓</div>
+<!-- Step 3 -->
+<div class="p-4 border-2 border-rust bg-paper flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+<span class="text-rust text-[10px] font-bold block uppercase">03 // WBGT-PROXY INFERENCE</span>
+<span class="font-bold text-ink text-sm">XGBoost + Bi-LSTM Sequence Model</span>
+<span class="text-secondary text-[11px] block">Predicts 0–6 hour forward Wet Bulb Globe Temperature (WBGT) without black-globe sensors</span>
+</div>
+<span class="px-2 py-1 bg-rust text-paper text-[10px] font-bold uppercase whitespace-nowrap">0–6h Forecast</span>
+</div>
+<div class="text-center text-ink text-sm font-bold">↓</div>
+<!-- Step 4 -->
+<div class="p-4 border editorial-rule bg-paper-light/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+<span class="text-rust text-[10px] font-bold block uppercase">04 // PERSONALIZATION</span>
+<span class="font-bold text-ink text-sm">Random Forest Worker Risk Engine</span>
+<span class="text-secondary text-[11px] block">Modulates WBGT against worker age, labor intensity (cotton weeding vs. tilling), and acclimatization</span>
+</div>
+<span class="px-2 py-1 border border-ink text-ink text-[10px] font-bold uppercase whitespace-nowrap">Score 0–100</span>
+</div>
+<div class="text-center text-ink text-sm font-bold">↓</div>
+<!-- Step 5 -->
+<div class="p-4 border border-ink bg-ink text-paper flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div>
+<span class="text-rust text-[10px] font-bold block uppercase">05 // BROADCAST DISPATCH</span>
+<span class="font-bold text-paper text-sm">IndicBERT Multilingual Alert Engine</span>
+<span class="text-paper/70 text-[11px] block">Translates work-rest schedules into Marathi, Hindi, Telugu voice/SMS alerts</span>
+</div>
+<span class="px-2 py-1 bg-rust text-paper text-[10px] font-bold uppercase whitespace-nowrap">SMS · IVR · PWA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. INTERACTIVE 6-HOUR SPECIMEN PANEL (Archival field dossier with wide oval pill button) -->
+<section class="border-b editorial-rule-bold px-6 lg:px-14 py-20 bg-paper" id="specimen">
+<div class="max-w-[1500px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-8">
+<div>
+<div class="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-rust mb-2">
+<span>03 / Archival Field Dossier &amp; Simulator</span>
+<div class="h-px w-12 bg-rust"></div>
+</div>
+<h2 class="font-monumental text-4xl sm:text-5xl uppercase tracking-tight text-ink">
+            Specimen 01: 6-Hour Vulnerability Reader
+          </h2>
+<p class="font-editorial text-secondary text-lg mt-1">
+            Simulate agrarian worker physiological heat vulnerability in Vidarbha, Maharashtra.
+          </p>
+</div>
+<div class="mt-4 md:mt-0 font-mono text-xs border border-rust text-rust px-3 py-1 uppercase tracking-widest font-bold">
+          DEMONSTRATION SPECIMEN · NON-CLINICAL
+        </div>
+</div>
+<!-- Main Dossier Card -->
+<div class="border-2 border-ink bg-paper-light/20 p-6 lg:p-12 shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Controls Column -->
+<div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r editorial-rule pb-8 lg:pb-0 lg:pr-10 space-y-6">
+<span class="font-mono text-xs uppercase tracking-widest font-bold text-ink block border-b editorial-rule pb-2">
+              FIELD WORKER PROFILE
+            </span>
+<div>
+<label class="font-mono text-xs uppercase text-secondary block mb-2">Agrarian Agro-Climatic Zone</label>
+<select class="w-full bg-paper border editorial-rule-bold p-3 font-mono text-xs text-ink focus:outline-none focus:border-rust" id="sim-region">
+<option value="vidarbha">Nagpur District, Vidarbha (Cotton Belt)</option>
+<option value="marathwada">Chhatrapati Sambhajinagar, Marathwada</option>
+<option value="bundelkhand">Jhansi, Bundelkhand (Dryland Pulse)</option>
+</select>
+</div>
+<div>
+<label class="font-mono text-xs uppercase text-secondary block mb-2">Manual Work Intensity</label>
+<select class="w-full bg-paper border editorial-rule-bold p-3 font-mono text-xs text-ink focus:outline-none focus:border-rust" id="sim-work">
+<option value="heavy">Heavy Manual Labor (Hand Plowing / Weeding)</option>
+<option value="moderate">Moderate Physical Task (Transplanting / Carrying)</option>
+<option value="light">Light Agricultural Task (Inspection / Sorter)</option>
+</select>
+</div>
+<div>
+<label class="font-mono text-xs uppercase text-secondary block mb-2">Worker Age Bracket</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="age-btn py-2 border editorial-rule font-mono text-xs uppercase hover:border-ink" onclick="setAge('young', this)" type="button">18–35</button>
+<button class="age-btn py-2 border-2 border-ink bg-ink text-paper font-mono text-xs uppercase font-bold" onclick="setAge('mid', this)" type="button">36–50</button>
+<button class="age-btn py-2 border editorial-rule font-mono text-xs uppercase hover:border-ink" onclick="setAge('senior', this)" type="button">51–65+</button>
+</div>
+</div>
+<div>
+<label class="font-mono text-xs uppercase text-secondary block mb-2">Acclimatization Baseline</label>
+<select class="w-full bg-paper border editorial-rule-bold p-3 font-mono text-xs text-ink focus:outline-none focus:border-rust" id="sim-acclim">
+<option value="acclimated">Locally Acclimated (&gt;14 days in zone)</option>
+<option value="unacclimated">Migrant Laborer (Unacclimated)</option>
+</select>
+</div>
+<!-- Wide Oval Pill Button (like Miranda 'ALL WORK' pill in IMAGE_7) -->
+<div class="pt-6 border-t editorial-rule flex justify-center">
+<button class="oval-pill-btn font-monumental text-2xl uppercase tracking-wider text-ink bg-transparent flex items-center justify-center cursor-pointer w-full text-center" onclick="calculateSimulation()" type="button">
+                RECALCULATE RISK
+              </button>
+</div>
+</div>
+<!-- Dynamic Output Display -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Live Score Banner -->
+<div class="p-6 border editorial-rule-bold bg-paper flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<span class="font-mono text-xs uppercase text-secondary block">Computed Heat-Vulnerability Index</span>
+<div class="flex items-baseline gap-3 mt-1">
+<span class="font-monumental text-6xl sm:text-7xl font-bold text-rust" id="risk-score">78</span>
+<span class="font-mono text-2xl text-secondary">/ 100</span>
+<span class="font-mono text-xs uppercase tracking-widest bg-rust text-paper px-3 py-1 font-bold ml-2" id="risk-badge">
+                    High Risk
+                  </span>
+</div>
+</div>
+<div class="font-mono text-xs sm:text-right border-l sm:border-l-0 border-ink pl-4 sm:pl-0">
+<span class="text-secondary block uppercase">Calculated WBGT Proxy</span>
+<span class="font-display text-4xl font-bold text-ink" id="wbgt-val">31.8°C</span>
+<span class="text-rust block text-[10px] uppercase font-bold mt-0.5">Critical Human Threshold</span>
+</div>
+</div>
+<!-- 6-Hour Forecast Trajectory Strip -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs uppercase tracking-widest font-bold text-ink">
+                  Predictive 6-Hour Trajectory (Forward Window)
+                </span>
+<span class="font-mono text-[10px] text-secondary uppercase">Spatial Model: Vidarbha Grid</span>
+</div>
+<div class="grid grid-cols-6 gap-2 text-center font-mono text-xs">
+<div class="border editorial-rule p-3 bg-paper">
+<span class="text-secondary block text-[10px]">08:00</span>
+<span class="text-xl font-bold text-ink block my-1">61</span>
+<span class="text-[9px] uppercase text-secondary">Moderate</span>
+</div>
+<div class="border editorial-rule p-3 bg-paper">
+<span class="text-secondary block text-[10px]">10:00</span>
+<span class="text-xl font-bold text-ink block my-1">68</span>
+<span class="text-[9px] uppercase text-secondary">Moderate</span>
+</div>
+<div class="border-2 border-rust p-3 bg-paper">
+<span class="text-rust font-bold block text-[10px]">12:00</span>
+<span class="text-xl font-bold text-rust block my-1">78</span>
+<span class="text-[9px] uppercase text-rust font-bold">High</span>
+</div>
+<div class="border-2 border-rust p-3 bg-rust/10">
+<span class="text-rust font-bold block text-[10px]">14:00</span>
+<span class="text-xl font-bold text-rust block my-1">84</span>
+<span class="text-[9px] uppercase text-rust font-bold">Critical</span>
+</div>
+<div class="border editorial-rule p-3 bg-paper">
+<span class="text-secondary block text-[10px]">16:00</span>
+<span class="text-xl font-bold text-ink block my-1">73</span>
+<span class="text-[9px] uppercase text-rust">High</span>
+</div>
+<div class="border editorial-rule p-3 bg-paper">
+<span class="text-secondary block text-[10px]">18:00</span>
+<span class="text-xl font-bold text-ink block my-1">55</span>
+<span class="text-[9px] uppercase text-secondary">Moderate</span>
+</div>
+</div>
+</div>
+<!-- Prescribed Work/Rest Guidance & Localized Indic Dialect Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-2">
+<!-- Work/Rest Guidance Card -->
+<div class="md:col-span-6 border editorial-rule p-5 bg-paper flex flex-col justify-between">
+<div>
+<span class="font-mono text-xs uppercase text-rust font-bold block mb-2">
+                    Prescribed Work/Rest Ratio
+                  </span>
+<p class="font-editorial text-base text-ink leading-relaxed" id="prescribed-text">
+                    Mandatory rest pause: Limit continuous manual cotton weeding to <strong>35 minutes per hour</strong>. Mandatory 25-minute hydration recovery under tree shade between 12:30 and 15:30. Ensure 750ml electrolyte intake per hour.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t editorial-rule font-mono text-[10px] text-secondary">
+                  ADAPTED CLINICAL PROTOCOL · NIOSH/OSHA AGRARIAN COHORT
+                </div>
+</div>
+<!-- Indic Multilingual SMS/Voice Specimen Cards -->
+<div class="md:col-span-6 border editorial-rule p-5 bg-paper flex flex-col justify-between space-y-3">
+<div class="flex justify-between items-center border-b editorial-rule pb-2">
+<span class="font-mono text-xs uppercase font-bold text-ink">Localized Dialect Alert</span>
+<span class="font-mono text-[10px] text-rust uppercase">IndicBERT Broadcast</span>
+</div>
+<div class="space-y-3 font-editorial text-xs">
+<!-- Marathi Card -->
+<div class="p-3 border border-ink/20 bg-paper-light/50">
+<span class="font-mono text-[9px] text-secondary block uppercase">मराठी (Marathi Advisory)</span>
+<p class="text-ink font-medium mt-1 leading-snug">
+                      "दुपारी १२ ते ३ या वेळेत तीव्र उष्णतेचा धोका आहे. सलग काम ३५ मिनिटांपेक्षा जास्त करू नका आणि सावलीत विश्रांती घ्या."
+                    </p>
+</div>
+<!-- Hindi Card -->
+<div class="p-3 border border-ink/20 bg-paper-light/50">
+<span class="font-mono text-[9px] text-secondary block uppercase">हिन्दी (Hindi Advisory)</span>
+<p class="text-ink font-medium mt-1 leading-snug">
+                      "दोपहर १२ से ३ बजे तक तेज धूप का खतरा है। लगातार काम करने से बचें, हर घंटे २५ मिनट पेड़ की छाया में आराम करें।"
+                    </p>
+</div>
+<!-- English Card -->
+<div class="p-3 border border-ink/20 bg-paper-light/50">
+<span class="font-mono text-[9px] text-secondary block uppercase">English (SMS Summary)</span>
+<p class="text-ink font-medium mt-1 leading-snug">
+                      "Rashkar Alert: Extreme thermal strain forecasted for 12:00-15:30. Shift to 35m work / 25m shade rest."
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. FOOTER MARQUEE & OUTRO (IMAGE_5 inspired ticker & sister engine portal) -->
+<div class="border-b-2 editorial-rule-bold py-6 overflow-hidden bg-ink text-[#cdc6be] whitespace-nowrap">
+<div class="animate-marquee font-monumental text-3xl sm:text-4xl uppercase tracking-wider flex items-center gap-10">
+<span>THE FORECAST IS NOT THE FINAL ANSWER · THE DECISION IS ·</span>
+<span class="text-rust">✦</span>
+<span>RASHKAR ZERO-HARDWARE CLOUD HEAT DEFENSE ·</span>
+<span class="text-rust">✦</span>
+<span>PROTECTING 100M+ AGRARIAN WORKERS BEFORE PEAK EXPOSURE ·</span>
+<span class="text-rust">✦</span>
+<span>SYNOPTIC METEOROLOGY + SATELLITE REANALYSIS ·</span>
+<span class="text-rust">✦</span>
+<span>THE FORECAST IS NOT THE FINAL ANSWER · THE DECISION IS ·</span>
+<span class="text-rust">✦</span>
+<span>RASHKAR ZERO-HARDWARE CLOUD HEAT DEFENSE ·</span>
+<span class="text-rust">✦</span>
+</div>
+</div>
+<!-- SISTER ENGINE PORTAL (TWIN ENGINE: CROP-LOSS INTELLIGENCE) -->
+<section class="border-b editorial-rule-bold px-6 lg:px-14 py-20 bg-paper" id="crop-loss-anchor">
+<div class="max-w-[1500px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+<div class="max-w-3xl">
+<span class="font-mono text-xs uppercase tracking-widest text-rust block mb-2 font-bold">
+          SISTER SUBSYSTEM · COMPREHENSIVE CLIMATE DEFENSE
+        </span>
+<h3 class="font-monumental text-4xl sm:text-5xl uppercase tracking-tight text-ink">
+          Twin Engine: Crop-Loss Intelligence
+        </h3>
+<p class="font-editorial text-xl text-secondary mt-3 leading-relaxed">
+          While Heat-Risk protects the human laborer prior to outdoor work, explore how Rashkar’s sister engine protects the crop and harvest after severe weather damage through smartphone computer vision and Sentinel-2 spectral loss fusion for automated PMFBY claim validation.
+        </p>
+</div>
+<div>
+<a class="oval-pill-btn font-monumental text-xl uppercase tracking-wider text-paper bg-ink hover:bg-rust hover:border-rust inline-flex items-center justify-center whitespace-nowrap" href="#">
+          EXPLORE ENGINE 02: CROP-LOSS →
+        </a>
+</div>
+</div>
+</section>
+<!-- PUBLICATION FOOTER -->
+<footer class="px-6 lg:px-14 py-16 bg-[#cdc6be] text-ink">
+<div class="max-w-[1500px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b editorial-rule pb-10">
+<div>
+<div class="font-gothic text-4xl text-ink">KisanSuraksha–FasalSuraksha</div>
+<div class="font-mono text-xs uppercase tracking-widest text-secondary mt-1">
+          RASHKAR RESEARCH COLLABORATIVE · CLOUD METEOROLOGY FOR SMALLHOLDERS
+        </div>
+</div>
+<div class="flex flex-wrap gap-8 font-mono text-xs uppercase tracking-wider text-secondary">
+<a class="hover:text-ink" href="#problem">01 Problem</a>
+<a class="hover:text-ink" href="#architecture">02 Topology</a>
+<a class="hover:text-ink" href="#specimen">03 Specimen</a>
+<a class="hover:text-ink" href="#crop-loss-anchor">04 Twin Engine</a>
+</div>
+</div>
+<div class="max-w-[1500px] mx-auto pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-xs text-secondary">
+<div>© 2026 RASHKAR RESEARCH INITIATIVE. STRICT ZERO-HARDWARE SPECIFICATION.</div>
+<div class="text-rust uppercase font-bold">Scientific Edition · Vol. VI</div>
+</div>
+</footer>
+<!-- SIMULATION SCRIPT -->
+<script>
+    let currentAge = 'mid';
+
+    function setAge(age, btn) {
+      currentAge = age;
+      document.querySelectorAll('.age-btn').forEach(b => {
+        b.className = 'age-btn py-2 border editorial-rule font-mono text-xs uppercase hover:border-ink';
+      });
+      btn.className = 'age-btn py-2 border-2 border-ink bg-ink text-paper font-mono text-xs uppercase font-bold';
+      calculateSimulation();
+    }
+
+    function calculateSimulation() {
+      const region = document.getElementById('sim-region').value;
+      const work = document.getElementById('sim-work').value;
+      const acclim = document.getElementById('sim-acclim').value;
+
+      let score = 72;
+      let wbgt = 31.2;
+
+      if (work === 'heavy') score += 12;
+      else if (work === 'moderate') score += 4;
+      else score -= 10;
+
+      if (currentAge === 'senior') score += 8;
+      else if (currentAge === 'young') score -= 5;
+
+      if (acclim === 'unacclimated') score += 10;
+
+      if (region === 'vidarbha') wbgt = 32.4;
+      else if (region === 'marathwada') wbgt = 31.8;
+      else wbgt = 30.9;
+
+      score = Math.min(Math.max(score, 45), 96);
+
+      document.getElementById('risk-score').innerText = score;
+      document.getElementById('wbgt-val').innerText = wbgt + '°C';
+
+      const badge = document.getElementById('risk-badge');
+      const presc = document.getElementById('prescribed-text');
+
+      if (score >= 80) {
+        badge.innerText = 'Critical Risk';
+        badge.className = 'font-mono text-xs uppercase tracking-widest bg-rust text-paper px-3 py-1 font-bold ml-2';
+        presc.innerHTML = 'Immediate halt on heavy work: High biological danger of heat exhaustion. Limit activity to <strong>20 minutes per hour</strong>. Mandatory 40-minute shade recovery with constant hydration.';
+      } else if (score >= 65) {
+        badge.innerText = 'High Risk';
+        badge.className = 'font-mono text-xs uppercase tracking-widest bg-rust text-paper px-3 py-1 font-bold ml-2';
+        presc.innerHTML = 'Mandatory rest pause: Limit continuous manual cotton weeding to <strong>35 minutes per hour</strong>. Mandatory 25-minute hydration recovery under tree shade between 12:30 and 15:30. Ensure 750ml intake per hour.';
+      } else {
+        badge.innerText = 'Moderate Risk';
+        badge.className = 'font-mono text-xs uppercase tracking-widest bg-ink text-paper px-3 py-1 font-bold ml-2';
+        presc.innerHTML = 'Standard heat protocol: Continuous work permissible up to <strong>50 minutes per hour</strong> with scheduled 10-minute water breaks. Monitor unacclimated workers closely.';
+      }
+    }
+  </script>
+</body></html>

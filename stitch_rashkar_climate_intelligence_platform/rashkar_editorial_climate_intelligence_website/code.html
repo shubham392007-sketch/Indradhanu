@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RASHKAR — KisanSuraksha–FasalSuraksha | Cloud AI Editorial</title>
+<!-- Tailwind CSS v3 with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: UnifrakturMaguntia for Blackletter Masthead, Cinzel, Fraunces, Playfair Display, Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&amp;family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=UnifrakturMaguntia&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#cdc6be',
+            'paper-light': '#dcd6ce',
+            'paper-dark': '#beb5aa',
+            ink: '#1d1d1b',
+            'ink-muted': '#625e57',
+            rust: '#c03f13',
+            'rust-hover': '#9e340f',
+          },
+          fontFamily: {
+            blackletter: ['UnifrakturMaguntia', 'cursive', 'serif'],
+            monument: ['Cinzel', 'Playfair Display', 'serif'],
+            editorial: ['Fraunces', 'Baskerville', 'serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.06em',
+            tightest: '-0.08em',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="editorial-textures">
+    body {
+      background-color: #cdc6be;
+      color: #1d1d1b;
+      position: relative;
+    }
+
+    /* Subtle paper noise texture */
+    .paper-grain-overlay {
+      background-image: radial-gradient(#1d1d1b 0.5px, transparent 0.5px), radial-gradient(#ffffff 0.5px, #cdc6be 0.5px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      opacity: 0.10;
+      pointer-events: none;
+    }
+
+    /* Dashed borders matching Niccolo Miranda reference screenshots */
+    .dashed-card {
+      border: 1.5px dashed #1d1d1b;
+      border-radius: 12px;
+    }
+
+    /* Exact boxed drop cap as seen in image 8 and 9 */
+    .drop-cap-boxed {
+      float: left;
+      font-size: 3.4rem;
+      line-height: 0.82;
+      padding: 6px 12px 6px 8px;
+      margin-right: 14px;
+      margin-top: 4px;
+      background-color: #1d1d1b;
+      color: #cdc6be;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+    }
+
+    /* Hairline borders */
+    .hairline-b { border-bottom: 1px solid #1d1d1b; }
+    .hairline-t { border-top: 1px solid #1d1d1b; }
+    .hairline-r { border-right: 1px solid #1d1d1b; }
+    .hairline-l { border-left: 1px solid #1d1d1b; }
+
+    /* Monumental overflow wordmarks */
+    .wordmark-container {
+      overflow: hidden;
+      line-height: 0.72;
+    }
+    .wordmark-huge {
+      font-family: 'Cinzel', 'Playfair Display', serif;
+      letter-spacing: -0.075em;
+      transform: scaleY(1.35);
+      transform-origin: 50% 50%;
+      user-select: none;
+    }
+
+    /* Continuous Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 24s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* Stamp jagged edge simulation */
+    .stamp-border {
+      border: 1px solid #1d1d1b;
+      position: relative;
+    }
+  </style>
+</head>
+<body class="selection:bg-rust selection:text-paper antialiased overflow-x-hidden font-editorial">
+<!-- Subtle tactile grain overlay -->
+<div aria-hidden="true" class="fixed inset-0 paper-grain-overlay z-50 pointer-events-none"></div>
+<!-- ========================================================================= -->
+<!-- 1. HEADER: Fixed Top Bar (Reference Image 2, 3)                           -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm hairline-b">
+<div class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between">
+<!-- Left Dateline -->
+<div class="flex items-center space-x-2 text-xs md:text-sm font-editorial tracking-normal text-ink">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-rust"></span>
+<span class="font-serif">Amsterdam, NL</span>
+<span class="text-ink-muted text-xs">/</span>
+<span class="text-xs uppercase font-mono tracking-wider text-ink-muted">CLIMATE INTELLIGENCE</span>
+</div>
+<!-- Center Exact Blackletter Masthead -->
+<div class="text-center font-blackletter text-2xl md:text-3xl text-ink tracking-tight select-none">
+        KisanSuraksha–FasalSuraksha
+      </div>
+<!-- Right 2-Line Minimal Hamburger -->
+<div class="flex items-center space-x-4">
+<span class="hidden sm:inline-block font-mono text-[10px] uppercase tracking-wider text-rust font-bold px-2 py-0.5 border border-rust rounded">
+          ZERO HARDWARE
+        </span>
+<button aria-label="Toggle Editorial Index" class="group flex flex-col justify-center items-end space-y-1.5 w-8 h-8 focus:outline-none" id="menu-btn">
+<span class="w-7 h-[2px] bg-ink transition-all group-hover:w-8"></span>
+<span class="w-5 h-[2px] bg-ink transition-all group-hover:w-8"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Navigation Overlay Menu -->
+<div class="fixed inset-0 z-50 bg-paper hidden flex-col justify-between p-6 md:p-14 transition-opacity duration-300" id="nav-overlay">
+<div class="flex justify-between items-center hairline-b pb-6">
+<span class="font-mono text-xs uppercase tracking-widest text-ink-muted">EDITORIAL SPECIFICATION · RASHKAR 2026</span>
+<button class="font-mono text-sm uppercase tracking-wider underline hover:text-rust" id="close-menu-btn">
+        [CLOSE INDEX ×]
+      </button>
+</div>
+<nav class="grid grid-cols-1 md:grid-cols-2 gap-4 py-8">
+<ul class="space-y-3 font-monument text-3xl md:text-5xl text-ink">
+<li><a class="nav-item hover:text-rust block" href="#hero">01. HERO SPREAD</a></li>
+<li><a class="nav-item hover:text-rust block" href="#carousel">02. THE DUAL ENGINE</a></li>
+<li><a class="nav-item hover:text-rust block" href="#statement">03. STATEMENT POSTER</a></li>
+<li><a class="nav-item hover:text-rust block" href="#stats">04. METRIC ARCHIVES</a></li>
+<li><a class="nav-item hover:text-rust block" href="#shortfalls">05. SYSTEM SHORTFALLS</a></li>
+</ul>
+<ul class="space-y-3 font-monument text-3xl md:text-5xl text-ink">
+<li><a class="nav-item hover:text-rust block" href="#heat-specimen">06. HEAT RISK SPECIMEN</a></li>
+<li><a class="nav-item hover:text-rust block" href="#crop-specimen">07. CROP LOSS AUDIT</a></li>
+<li><a class="nav-item hover:text-rust block" href="#architecture">08. CLOUD TOPOLOGY</a></li>
+<li><a class="nav-item hover:text-rust block" href="#testimonials">09. FIELD VERIFIERS</a></li>
+<li><a class="nav-item hover:text-rust block" href="#roadmap">10. DEPLOYMENT ROADMAP</a></li>
+</ul>
+</nav>
+<div class="hairline-t pt-4 flex flex-col md:flex-row justify-between text-xs font-mono text-ink-muted">
+<span>NO SENSORS · NO IOT · NO JETSON · ZERO WEARABLES · 100% CLOUD PUBLIC INTELLIGENCE</span>
+<span>RASHKAR AI SPECIFICATION © 2026</span>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- 2. HERO SPREAD & MONUMENTAL WORDMARKS (Reference Image 2, 3, 8, 9)        -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b" id="hero">
+<!-- Giant cropped wordmark block exactly like MIRANDA in Image 2 & 3 -->
+<div class="px-2 md:px-6 pt-3 pb-3">
+<div class="bg-ink text-paper px-2 md:px-6 py-6 md:py-14 wordmark-container flex items-center justify-center">
+<h1 class="font-monument text-[18vw] font-black tracking-tightest leading-none text-center wordmark-huge text-paper">
+          RASHKAR
+        </h1>
+</div>
+</div>
+<!-- Dual-Column Opening Block (Replicating Image 8 & 9) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 hairline-t">
+<!-- Left Column: Editorial Summary with Boxed Drop Cap 'A' -->
+<div class="lg:col-span-5 p-6 md:p-12 hairline-b lg:hairline-b-0 lg:hairline-r flex flex-col justify-between">
+<div>
+<div class="font-mono text-xs uppercase tracking-wider text-rust font-semibold mb-6 flex items-center space-x-2">
+<span class="w-4 h-[1px] bg-rust"></span>
+<span>CLIMATE INTELLIGENCE LAYER</span>
+</div>
+<div class="text-lg md:text-2xl text-ink leading-relaxed font-light">
+<span class="drop-cap-boxed">A</span>
+            cloud-based artificial intelligence platform designed to address two deeply connected agricultural vulnerabilities: personalized heat-risk prediction for agricultural field workers and multimodal crop-loss verification for insured plots under extreme weather stress.
+          </div>
+<p class="font-serif italic text-sm md:text-base text-ink-muted mt-6 leading-relaxed">
+            Operating strictly without physical wearables, on-farm sensors, or autonomous field hardware. Designed from first principles to turn satellite multispectral time-series and public meteorological grids into rapid rural defense.
+          </p>
+</div>
+<div class="mt-8 pt-6 hairline-t flex items-center justify-between">
+<span class="font-mono text-xs uppercase text-ink-muted">INFRASTRUCTURE: 100% CLOUD &amp; MOBILE</span>
+<span class="font-mono text-xs text-ink font-bold">[VOL. IV]</span>
+</div>
+</div>
+<!-- Right Column: Condensed Uppercase Typography Stack & Sunburst Stamp (Image 8 & 9) -->
+<div class="lg:col-span-7 p-6 md:p-12 flex flex-col justify-between bg-paper-light/30 relative">
+<!-- Rust-orange sunburst postage mark top-right corner (Ref Image 9) -->
+<div class="absolute top-6 right-6 md:top-10 md:right-10 w-16 h-16 border border-ink p-1 bg-paper flex items-center justify-center">
+<svg class="w-12 h-12 text-rust animate-[spin_30s_linear_infinite]" fill="currentColor" viewbox="0 0 100 100">
+<path d="M50 0 L58 35 L93 15 L72 45 L100 50 L72 55 L93 85 L58 65 L50 100 L42 65 L7 85 L28 55 L0 50 L28 45 L7 15 L42 35 Z"></path>
+</svg>
+</div>
+<div>
+<div class="font-mono text-xs uppercase tracking-widest text-ink-muted mb-4">
+            SPECIFICATION OVERVIEW • 2026 EDITION
+          </div>
+<!-- Monumental condensed typography stack (Ref Image 8, 9) -->
+<div class="font-monument text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-ink leading-tight pr-14">
+            AI FOR CLIMATE-RESILIENT<br/>
+            AGRICULTURE.<br/>
+<span class="font-editorial italic font-light text-rust">CLOUD-BASED INTELLIGENCE</span><br/>
+            LAYER FOR SMALLHOLDERS.
+          </div>
+</div>
+<div class="hairline-t pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs uppercase text-ink-muted">
+<div><strong class="text-ink block text-base font-serif">WBGT</strong> Wet Bulb Proxy</div>
+<div><strong class="text-ink block text-base font-serif">SENTINEL-2</strong> 10m Multispectral</div>
+<div><strong class="text-ink block text-base font-serif">YOLOv8</strong> Field Pathology</div>
+<div><strong class="text-ink block text-base font-serif">ZERO IOT</strong> Pure Cloud Native</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. WORK / SPECIMEN CAROUSEL (Reference Image 3, 4)                       -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b" id="carousel">
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-ink">
+<!-- Card 01: Left Project Card -->
+<div class="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between bg-paper hover:bg-paper-light/50 transition-colors">
+<div>
+<!-- Specimen Preview Visual Flat Block -->
+<div class="w-full h-44 bg-ink text-paper p-5 flex flex-col justify-between border border-ink mb-4 relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="font-monument text-2xl font-bold text-paper">01 / HR</span>
+<span class="bg-rust text-paper text-[10px] font-mono font-bold px-1.5 py-0.5 rounded">NEW</span>
+</div>
+<div class="font-mono text-xs text-paper-dark">
+              ERA5 CLIMATE REANALYSIS + HOURLY METABOLIC PROXIES
+            </div>
+<div class="font-serif italic text-rust text-sm">
+              XGBoost + LSTM WBGT Engine
+            </div>
+</div>
+<div class="flex items-center space-x-2 mb-2">
+<h3 class="font-monument text-lg uppercase font-bold text-ink tracking-tight">HEAT-RISK ENGINE</h3>
+<span class="bg-rust text-paper text-[10px] font-mono font-bold px-1.5 py-0.5 rounded uppercase">NEW</span>
+</div>
+<p class="font-serif text-sm text-ink-muted leading-relaxed">
+            Predictive WBGT proxies paired with farmer age, hydration intervals, and scheduled physical harvest shifts to prevent heatstroke before solar exposure.
+          </p>
+</div>
+<div class="border-t border-ink/20 pt-4 mt-6 flex justify-between font-mono text-[11px] text-ink-muted uppercase">
+<span>FREQ: 15-MIN FORECAST</span>
+<span class="font-bold text-ink">HUMAN LIFE DEFENSE</span>
+</div>
+</div>
+<!-- Center Column: Monumental Calling Card (Like 'ALL WORK!' in Image 3, 4) -->
+<div class="lg:col-span-4 p-6 md:p-12 text-center flex flex-col justify-between items-center bg-paper-light/30">
+<div class="w-full">
+<span class="font-mono text-xs text-rust font-semibold tracking-widest uppercase block mb-3">
+            SYSTEM MODALITIES
+          </span>
+<h2 class="font-monument text-4xl sm:text-5xl md:text-6xl text-ink font-extrabold tracking-tight uppercase leading-none">
+            THE DUAL<br/>ENGINE!
+          </h2>
+<p class="font-serif text-base sm:text-lg text-ink-muted italic mt-4 max-w-xs mx-auto leading-relaxed">
+            A unified cloud intelligence suite protecting human life &amp; agrarian assets.
+          </p>
+</div>
+<div class="my-6">
+<a class="inline-block px-8 py-3 rounded-full border border-ink text-xs font-mono uppercase tracking-widest hover:bg-ink hover:text-paper transition-all" href="#heat-specimen">
+            [ENTER SPECIMEN VIEWER]
+          </a>
+</div>
+<div class="font-mono text-xs uppercase tracking-wider text-ink-muted">
+<strong class="text-ink">TIP!</strong> Drag sideways or scroll to inspect architecture
+        </div>
+</div>
+<!-- Card 02: Right Project Card -->
+<div class="lg:col-span-4 p-6 md:p-8 flex flex-col justify-between bg-paper hover:bg-paper-light/50 transition-colors">
+<div>
+<!-- Specimen Preview Visual Flat Block -->
+<div class="w-full h-44 bg-ink text-paper p-5 flex flex-col justify-between border border-ink mb-4 relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="font-monument text-2xl font-bold text-paper">02 / CL</span>
+<span class="bg-rust text-paper text-[10px] font-mono font-bold px-1.5 py-0.5 rounded">NEW</span>
+</div>
+<div class="font-mono text-xs text-paper-dark">
+              SENTINEL-2 NDVI/NDRE + UNET / YOLOV8 GROUND SEGMENTATION
+            </div>
+<div class="font-serif italic text-rust text-sm">
+              Multimodal Loss Verification
+            </div>
+</div>
+<div class="flex items-center space-x-2 mb-2">
+<h3 class="font-monument text-lg uppercase font-bold text-ink tracking-tight">CROP-LOSS ENGINE</h3>
+<span class="bg-rust text-paper text-[10px] font-mono font-bold px-1.5 py-0.5 rounded uppercase">NEW</span>
+</div>
+<p class="font-serif text-sm text-ink-muted leading-relaxed">
+            Cross-verifying farmer ground images with Sentinel-2 multispectral time-series and ERA5 weather grids to compress claim settlement from 60 days to 48 hours.
+          </p>
+</div>
+<div class="border-t border-ink/20 pt-4 mt-6 flex justify-between font-mono text-[11px] text-ink-muted uppercase">
+<span>ACCURACY: 91% CONFIDENCE</span>
+<span class="font-bold text-ink">FINANCIAL RECOVERY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. STATEMENT POSTER (Reference Image 7)                                  -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto bg-ink text-paper py-12 md:py-20 px-4 md:px-12 select-none hairline-b relative" id="statement">
+<div class="max-w-5xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-monument text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tightest leading-none uppercase">
+        PROTECT THE FARMER BEFORE THE HEAT.<br/>
+<span class="text-rust">PROTECT THE HARVEST AFTER THE LOSS.</span>
+</h2>
+<p class="font-mono text-xs sm:text-sm uppercase tracking-widest text-paper-dark mt-6 max-w-xl">
+        A DUAL PREVENTIVE AND RECOVERY PROTOCOL FOR 140 MILLION SMALLHOLDERS ACROSS INDIA
+      </p>
+<!-- Iconic Oval Pill Button from Image 7 ('ALL WORK' style) -->
+<div class="mt-8">
+<a class="inline-flex items-center justify-center px-12 py-4 rounded-full border border-paper text-paper font-monument text-xl md:text-2xl uppercase tracking-tight hover:bg-paper hover:text-ink transition-all" href="#shortfalls">
+          EXPLORE SYSTEM
+        </a>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. STATS ROW (Divided by thin vertical 1px rules - Ref Image 7)           -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b bg-paper" id="stats">
+<div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-ink font-mono">
+<!-- Stat 01 -->
+<div class="p-6 md:p-10 flex flex-col justify-between">
+<div class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+          HEATWAVE DAYS / 2024
+        </div>
+<div class="font-monument text-4xl sm:text-6xl md:text-7xl font-extrabold text-ink leading-none my-2">
+          280+
+        </div>
+<div class="font-serif italic text-xs md:text-sm text-ink-muted">
+          Record meteorological stress events across 18 states
+        </div>
+</div>
+<!-- Stat 02 -->
+<div class="p-6 md:p-10 flex flex-col justify-between">
+<div class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+          ESTIMATED EXPOSURE / WORKERS
+        </div>
+<div class="font-monument text-4xl sm:text-6xl md:text-7xl font-extrabold text-ink leading-none my-2">
+          100M+
+        </div>
+<div class="font-serif italic text-xs md:text-sm text-ink-muted">
+          Daily active manual harvesters exposed to high WBGT
+        </div>
+</div>
+<!-- Stat 03 -->
+<div class="p-6 md:p-10 flex flex-col justify-between">
+<div class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+          INSURANCE ECOSYSTEM / PMFBY
+        </div>
+<div class="font-monument text-4xl sm:text-6xl md:text-7xl font-extrabold text-ink leading-none my-2">
+          12 Cr
+        </div>
+<div class="font-serif italic text-xs md:text-sm text-ink-muted">
+          Enrolled agrarian plots awaiting rapid claim modernization
+        </div>
+</div>
+<!-- Stat 04 -->
+<div class="p-6 md:p-10 flex flex-col justify-between">
+<div class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+          CLAIM RESOLUTION / BOTTLENECK
+        </div>
+<div class="font-monument text-4xl sm:text-6xl md:text-7xl font-extrabold text-rust leading-none my-2">
+          45-60 D
+        </div>
+<div class="font-serif italic text-xs md:text-sm text-ink-muted">
+          Current status quo settlement delay reduced to 48 hours
+        </div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 6. WHY CURRENT SYSTEMS FALL SHORT (Horizontal Sequence)                   -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b bg-paper-light/20" id="shortfalls">
+<div class="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-rust">GAP ANALYSIS • SYSTEM FAILURES</span>
+<h2 class="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-ink mt-2">
+          WHY CURRENT SYSTEMS FALL SHORT
+        </h2>
+</div>
+<div class="max-w-md font-mono text-xs text-ink-muted uppercase mt-4 md:mt-0">
+        Seven architectural disconnects crippling farmer safety and timely post-disaster agrarian insurance settlement.
+      </div>
+</div>
+<!-- 7 Flaws Horizontal Layout with 1px hairline rules -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 divide-y lg:divide-y-0 lg:divide-x divide-ink font-mono text-xs">
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">01</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">GENERIC ALERTS</div>
+<p class="text-ink-muted leading-snug">Broadcast TV/Radio bulletins ignore microclimate variations across farm terrain.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Non-actionable</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">02</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">MANUAL VISITS</div>
+<p class="text-ink-muted leading-snug">Loss adjusters and Patwaris overwhelmed by hundreds of thousands of concurrent claims.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Human Bottleneck</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">03</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">DISTRICT SCALE</div>
+<p class="text-ink-muted leading-snug">Damage from localized hail cells and micro-bursts gets smoothed out in regional tables.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Resolution Deficit</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">04</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">FRAGMENTED PROOF</div>
+<p class="text-ink-muted leading-snug">Farmers submit unverified, un-geotagged smartphone photos resulting in dispute loops.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Unstructured Proof</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">05</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">SATELLITE LIMIT</div>
+<p class="text-ink-muted leading-snug">Cloud cover during monsoon and cyclones blinds optical satellites when proof is urgent.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Optical Blindspots</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">06</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">PHONE ONLY FLAW</div>
+<p class="text-ink-muted leading-snug">Close-up leaf snapshots lack spatial context to prove 2-hectare catastrophic plot devastation.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Macro Blindspot</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<span class="text-rust font-bold text-sm">07</span>
+<div class="my-4">
+<div class="font-serif font-bold text-base text-ink uppercase mb-2">FEEBLE AUDIT</div>
+<p class="text-ink-muted leading-snug">Insurers reject claims due to lack of verifiable timestamp and meteorological cross-check.</p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Audit Rejection</span>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 7. INTERACTIVE HEAT RISK SPECIMEN & ALERT PIPELINE                        -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b" id="heat-specimen">
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-ink">
+<!-- Left: Interactive Specimen Panel -->
+<div class="lg:col-span-7 p-6 md:p-12">
+<div class="flex items-center justify-between mb-4 font-mono text-xs">
+<span class="text-rust font-bold uppercase tracking-widest">LIVE CLUSTER SIMULATION</span>
+<span class="bg-ink text-paper px-2 py-0.5 uppercase">SPECIMEN #HR-8042</span>
+</div>
+<h3 class="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-ink mb-6">
+          HEAT-RISK ENGINE (SPECIMEN)
+        </h3>
+<!-- Dashed specimen card -->
+<div class="dashed-card p-6 md:p-8 bg-paper-light/50 relative">
+<div class="flex flex-wrap justify-between items-start hairline-b pb-4 gap-4">
+<div>
+<div class="font-mono text-xs uppercase text-ink-muted">MONITORING DISTRICT</div>
+<div class="font-serif text-2xl font-bold text-ink">Nagpur District, Vidarbha, Maharashtra</div>
+<div class="font-mono text-xs text-ink/70 mt-1">LAT: 21.1458° N • LON: 79.0882° E • ELEV: 310m</div>
+</div>
+<div class="text-right">
+<span class="font-mono text-[11px] uppercase px-2 py-1 bg-rust text-paper font-bold inline-block">
+                HIGH HEATSTROKE THREAT
+              </span>
+<div class="font-monument text-4xl text-rust font-bold mt-1" id="dynamic-risk-score">78 / 100</div>
+</div>
+</div>
+<!-- Environmental Grid Readings -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 font-mono hairline-b">
+<div>
+<span class="text-[11px] text-ink-muted uppercase block">DRY BULB TEMP</span>
+<span class="text-xl md:text-2xl font-bold text-ink" id="dry-temp">42.4 °C</span>
+</div>
+<div>
+<span class="text-[11px] text-ink-muted uppercase block">RELATIVE HUMIDITY</span>
+<span class="text-xl md:text-2xl font-bold text-ink" id="humidity">48 %</span>
+</div>
+<div>
+<span class="text-[11px] text-ink-muted uppercase block">PROXY WBGT</span>
+<span class="text-xl md:text-2xl font-bold text-rust" id="wbgt-val">31.8 °C</span>
+</div>
+<div>
+<span class="text-[11px] text-ink-muted uppercase block">SOLAR RADIATION</span>
+<span class="text-xl md:text-2xl font-bold text-ink" id="solar-rad">890 W/m²</span>
+</div>
+</div>
+<!-- Interactive Time of Day Controls -->
+<div class="py-4 hairline-b">
+<label class="font-mono text-xs uppercase text-ink font-bold block mb-2">
+              SIMULATE HARVEST SHIFT / SOLAR TRAJECTORY:
+            </label>
+<div class="grid grid-cols-4 gap-2 font-mono text-xs">
+<button class="hour-btn py-2 border border-ink text-center hover:bg-ink hover:text-paper" onclick="setHour(8, 29.1, 38, 61, 'OPTIMAL')">08:00 AM</button>
+<button class="hour-btn py-2 border border-ink text-center hover:bg-ink hover:text-paper" onclick="setHour(11, 31.2, 72, 74, 'ELEVATED')">11:00 AM</button>
+<button class="hour-btn py-2 border border-rust bg-rust text-paper text-center" onclick="setHour(14, 33.4, 86, 88, 'CRITICAL')">02:00 PM (PEAK)</button>
+<button class="hour-btn py-2 border border-ink text-center hover:bg-ink hover:text-paper" onclick="setHour(17, 30.5, 52, 65, 'MODERATE')">05:00 PM</button>
+</div>
+</div>
+<!-- Directive Description -->
+<div class="pt-4 flex items-start space-x-3">
+<span class="text-rust text-2xl font-serif font-bold">¶</span>
+<div>
+<div class="font-serif font-bold text-sm text-ink uppercase" id="rec-title">Prescribed Clinical Directive: Mandatory Shade Break</div>
+<p class="text-xs font-serif italic text-ink/80 mt-1 leading-relaxed" id="rec-desc">
+                Heavy manual labor (cotton boll harvesting) exceeding 30 minutes continuous duration risks severe dehydration. Shift operational window to 06:30–10:30 AM and 16:30–19:00 PM. Hydrate with minimum 750ml ORS electrolyte solution per hour.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Multilingual Delivery Synthesizer -->
+<div class="lg:col-span-5 p-6 md:p-12 flex flex-col justify-between bg-paper-light/30">
+<div>
+<div class="font-mono text-xs uppercase tracking-widest text-rust mb-2">ZERO-BARRIER DISTRIBUTION</div>
+<h4 class="font-monument text-2xl md:text-3xl text-ink uppercase mb-4">
+            MULTILINGUAL VOICE &amp; SMS BROADCAST
+          </h4>
+<p class="font-serif text-sm text-ink/80 italic mb-6">
+            Pushing biophysical protection directly to basic feature phones via vernacular IVR audio calls and SMS without requiring internet connectivity.
+          </p>
+<div class="space-y-4 font-mono text-xs">
+<!-- Marathi -->
+<div class="p-4 border border-ink bg-paper">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold text-rust uppercase">MARATHI (मराठी) • VERNACULAR IVR</span>
+<span class="text-[10px] text-ink-muted">DIALER: 155-224</span>
+</div>
+<p class="font-serif text-sm text-ink leading-relaxed">
+                "दुपारी १२ ते ३ या वेळेत तीव्र उष्णतेची शक्यता आहे. शेतातील काम थांबवून सावलीत विश्रांती घ्या. भरपूर पाणी आणि ओआरएस प्या."
+              </p>
+</div>
+<!-- Hindi -->
+<div class="p-4 border border-ink bg-paper">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold text-rust uppercase">HINDI (हिंदी) • SMS BROADCAST</span>
+<span class="text-[10px] text-ink-muted">AUTO-DISPATCH</span>
+</div>
+<p class="font-serif text-sm text-ink leading-relaxed">
+                "चेतावनी: दोपहर 12 बजे से 3:30 बजे तक लू और उच्च आर्द्रता का जोखिम है। भारी शारीरिक श्रम रोकें और पर्याप्त जल ग्रहण करें।"
+              </p>
+</div>
+</div>
+</div>
+<div class="hairline-t pt-4 mt-6 flex justify-between items-center font-mono text-xs uppercase text-ink-muted">
+<span>PIPELINE:</span>
+<span class="text-ink font-bold">ERA5 → XGBOOST → VERNACULAR SYNTHESIS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 8. CROP-LOSS INTELLIGENCE & MULTIMODAL DOSSIER                            -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b" id="crop-specimen">
+<div class="p-6 md:p-12 hairline-b flex flex-col lg:flex-row justify-between lg:items-end">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-rust">RETROSPECTIVE RECOVERY PROTOCOL</span>
+<h2 class="font-monument text-4xl sm:text-6xl md:text-7xl uppercase tracking-tighter text-ink mt-2">
+          CROP-LOSS INTELLIGENCE
+        </h2>
+</div>
+<div class="max-w-lg font-mono text-xs text-ink-muted uppercase mt-4 lg:mt-0">
+        Reconciling ground smartphone micro-geometry with Sentinel-2 optical time-series anomalies to generate tamper-evident fast-track claim dossiers.
+      </div>
+</div>
+<!-- 3-Way Proof Dossier Specimen (Dashed Card) -->
+<div class="p-6 md:p-12">
+<div class="dashed-card p-6 md:p-10 bg-paper-light/60">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center hairline-b pb-6 gap-4 font-mono">
+<div>
+<div class="text-xs uppercase tracking-widest text-rust">EVIDENCE DOSSIER • PMFBY FAST-TRACK PROTOCOL</div>
+<h4 class="font-monument text-2xl md:text-4xl uppercase text-ink">PLOT SPECIMEN #MH-VRB-0247</h4>
+<div class="text-xs text-ink-muted mt-1">
+              SURVEY NO: 142/3A • VILLAGE: MORSHI • TALUKA: AMRAVATI • CROP: BT COTTON
+            </div>
+</div>
+<div class="flex items-center space-x-3 text-xs uppercase font-bold">
+<span class="px-3 py-1.5 border border-ink bg-paper">PERIL: UNSEASONAL HAIL</span>
+<span class="px-3 py-1.5 bg-ink text-paper">EVIDENCE RECONCILED</span>
+</div>
+</div>
+<!-- 3 Proof Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 py-8 font-mono text-xs hairline-b">
+<!-- Signal 01 -->
+<div class="p-4 border border-ink bg-paper">
+<div class="flex justify-between items-center mb-2">
+<span class="font-bold text-ink uppercase">SIGNAL 01: SMARTPHONE GROUND</span>
+<span class="text-rust font-bold">VALIDATED</span>
+</div>
+<div class="h-28 bg-ink text-paper flex flex-col items-center justify-center p-2 mb-3 text-center border border-ink/40">
+<span class="font-monument text-2xl text-paper">68% DAMAGE</span>
+<span class="text-[10px] text-paper-dark">YOLOV8 STEM LODGING &amp; DEFOLIATION</span>
+<span class="text-[9px] text-paper-dark/70 mt-1">EXIF INTEGRITY: CRYPTO-HASH VERIFIED</span>
+</div>
+<ul class="space-y-1 text-ink-muted text-[11px]">
+<li>• Leaf perforation: Severe mechanical impact</li>
+<li>• Stem fracture verified at 42 node points</li>
+<li>• GPS Accuracy: 3.2m within boundary polygon</li>
+</ul>
+</div>
+<!-- Signal 02 -->
+<div class="p-4 border border-ink bg-paper">
+<div class="flex justify-between items-center mb-2">
+<span class="font-bold text-ink uppercase">SIGNAL 02: SENTINEL-2 ORBITAL</span>
+<span class="text-rust font-bold">ANOMALY DETECTED</span>
+</div>
+<div class="h-28 bg-ink text-paper flex flex-col items-center justify-center p-2 mb-3 text-center border border-ink/40">
+<span class="font-monument text-3xl text-rust">-31%</span>
+<span class="text-[10px] text-paper-dark">NDVI DELTA (PRE VS POST HAIL)</span>
+<span class="text-[9px] text-paper-dark/70 mt-1">10M RESOLUTION MULTISPECTRAL TIME-SERIES</span>
+</div>
+<ul class="space-y-1 text-ink-muted text-[11px]">
+<li>• Phenology drop: 3.4 standard deviations</li>
+<li>• Contiguous neighboring plots show uniform delta</li>
+<li>• Cloud masking score: 2.1% (clear optical path)</li>
+</ul>
+</div>
+<!-- Signal 03 -->
+<div class="p-4 border border-ink bg-paper">
+<div class="flex justify-between items-center mb-2">
+<span class="font-bold text-ink uppercase">SIGNAL 03: CONVECTIVE RADAR</span>
+<span class="text-rust font-bold">STORM CELL MATCH</span>
+</div>
+<div class="h-28 bg-ink text-paper flex flex-col items-center justify-center p-2 mb-3 text-center border border-ink/40">
+<span class="font-monument text-2xl text-paper">48 mm / 45 MIN</span>
+<span class="text-[10px] text-paper-dark">IMD DOPPLER ECHO 52 dBZ CONFIRMED</span>
+<span class="text-[9px] text-paper-dark/70 mt-1">ERA5 REANALYSIS: 68 KM/H GUST CONVEX</span>
+</div>
+<ul class="space-y-1 text-ink-muted text-[11px]">
+<li>• Surface temperature drop: 7.2°C in 20 min</li>
+<li>• Hail signature mathematically consistent</li>
+<li>• Corroborates mechanical damage vectors</li>
+</ul>
+</div>
+</div>
+<!-- Synthesized Output -->
+<div class="pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-mono">
+<div>
+<div class="text-xs uppercase text-ink-muted">SYNTHESIZED MULTIMODAL LOSS SCORE</div>
+<div class="flex items-baseline space-x-4 mt-1">
+<span class="font-monument text-5xl md:text-6xl text-ink font-bold">64%</span>
+<span class="text-sm text-rust font-bold">CONFIDENCE: 91% (±3.4%)</span>
+</div>
+<div class="text-xs text-ink/80 mt-1">
+              RECOMMENDATION: FAST-TRACK 48-HOUR ADVANCE (LEVEL 3 SEVERE INTERMEDIATE DISRUPTION)
+            </div>
+</div>
+<div class="flex flex-col items-end">
+<div class="text-xs uppercase px-4 py-2 border border-ink bg-paper text-ink font-bold mb-2">
+              AUDIT PACKAGE READY FOR PATWARI SIGN-OFF
+            </div>
+<span class="font-serif italic text-xs text-ink-muted text-right max-w-xs">
+              AI provides mathematically auditable package. Human agrarian official retains executive sign-off authority.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 9. STRICT ZERO-HARDWARE CLOUD ARCHITECTURE                                -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b bg-paper" id="architecture">
+<div class="p-6 md:p-12 hairline-b">
+<div class="max-w-4xl">
+<span class="font-mono text-xs uppercase tracking-widest text-rust">PURE COMPUTATIONAL PIPELINE</span>
+<h2 class="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter text-ink mt-2">
+          CLOUD-ONLY ARCHITECTURE
+        </h2>
+<p class="font-serif text-lg text-ink-muted italic mt-3">
+          Explicitly engineered with <span class="text-ink font-bold not-italic">zero IoT sensors, zero Jetson/Raspberry Pi boards, zero drones, and zero wearables.</span> All computation happens on centralized cloud clusters receiving public feeds and smartphone uploads.
+        </p>
+</div>
+</div>
+<!-- 5-Stage Architecture Flow -->
+<div class="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-ink font-mono text-xs">
+<div class="p-6 flex flex-col justify-between h-72 bg-paper-light/30">
+<div>
+<span class="text-rust font-bold text-xs uppercase">STAGE 01</span>
+<div class="font-serif font-bold text-base text-ink uppercase mt-2 mb-2">PUBLIC CLIMATE GRIDS</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">
+            Continuous polling of IMD Doppler radar, Copernicus Sentinel-2 STAC archives, and ECMWF ERA5 reanalysis grids.
+          </p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Zero Physical Sensors</span>
+</div>
+<div class="p-6 flex flex-col justify-between h-72 bg-paper-light/30">
+<div>
+<span class="text-rust font-bold text-xs uppercase">STAGE 02</span>
+<div class="font-serif font-bold text-base text-ink uppercase mt-2 mb-2">SMARTPHONE INGESTION</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">
+            Lightweight PWA &amp; USSD upload channels capturing geotagged photographic evidence with EXIF tamper-verification.
+          </p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Commodity Mobile</span>
+</div>
+<div class="p-6 flex flex-col justify-between h-72 bg-ink text-paper shadow-inner">
+<div>
+<span class="text-rust font-bold text-xs uppercase">STAGE 03</span>
+<div class="font-serif font-bold text-base text-paper uppercase mt-2 mb-2">PYTORCH CLOUD CORE</div>
+<p class="text-paper-dark leading-relaxed text-[11px]">
+            High-throughput GPU inference cluster running YOLOv8 pathology detectors, ViT damage classifiers, and XGBoost WBGT models.
+          </p>
+</div>
+<span class="text-[10px] text-paper-dark uppercase">Centralized Scale</span>
+</div>
+<div class="p-6 flex flex-col justify-between h-72 bg-paper-light/30">
+<div>
+<span class="text-rust font-bold text-xs uppercase">STAGE 04</span>
+<div class="font-serif font-bold text-base text-ink uppercase mt-2 mb-2">AUDIT EVIDENCE VAULT</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">
+            Tamper-evident loss dossier generated with cross-attention confidence bounds and historical satellite trajectory stamps.
+          </p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">NCIP / PMFBY Compatible</span>
+</div>
+<div class="p-6 flex flex-col justify-between h-72 bg-paper-light/30">
+<div>
+<span class="text-rust font-bold text-xs uppercase">STAGE 05</span>
+<div class="font-serif font-bold text-base text-ink uppercase mt-2 mb-2">HUMAN VERIFIER REVIEW</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">
+            State Patwaris and loss adjusters inspect reconciled evidence for rapid 48-hour electronic claim sign-off.
+          </p>
+</div>
+<span class="text-[10px] text-ink/60 uppercase">Executive Authority</span>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 10. TESTIMONIAL / VERIFIER CARDS (Reference Image 6)                      -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b bg-paper" id="testimonials">
+<div class="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between items-start md:items-end">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-rust">FIELD EVALUATIONS &amp; VERIFICATION OPINIONS</span>
+<h2 class="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-ink mt-2">
+          INDEPENDENT AUDITS
+        </h2>
+</div>
+<div class="font-mono text-xs text-ink-muted uppercase mt-3 md:mt-0">
+        Replicating the dashed rounded review cards with avatar monograms (Image 6)
+      </div>
+</div>
+<!-- 4 Dashed-Border Rounded Cards with Avatar Monograms & Underlined Emphasis (Ref Image 6) -->
+<div class="p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 01 -->
+<div class="dashed-card p-6 flex flex-col justify-between bg-paper-light/40 hover:bg-paper-light transition-all">
+<div class="font-serif text-sm md:text-base text-ink leading-relaxed">
+          "<span class="underline decoration-ink/40 decoration-1 underline-offset-4">Eliminating on-farm sensors</span> in favor of calibrated satellite grids solved the maintenance nightmare. Rashkar delivers institutional-grade WBGT risk directly to basic phones."
+        </div>
+<div class="mt-8 pt-4 border-t border-ink/10 flex items-center space-x-3">
+<!-- Circular Avatar Monogram -->
+<div class="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-monument text-sm font-bold">
+            DR
+          </div>
+<div>
+<div class="font-monument text-xs font-bold text-ink uppercase tracking-tight">DR. RAMESH CHOUDHARY</div>
+<div class="font-serif italic text-xs text-ink-muted">Principal Agro-Meteorologist, ICAR</div>
+</div>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="dashed-card p-6 flex flex-col justify-between bg-paper-light/40 hover:bg-paper-light transition-all">
+<div class="font-serif text-sm md:text-base text-ink leading-relaxed">
+          "<span class="underline decoration-ink/40 decoration-1 underline-offset-4">Compressing claim cycle from 50 days to 48 hours</span> protects farmers from compounding predatory credit cycles after localized hail wipeouts."
+        </div>
+<div class="mt-8 pt-4 border-t border-ink/10 flex items-center space-x-3">
+<!-- Circular Avatar Monogram -->
+<div class="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-monument text-sm font-bold">
+            SK
+          </div>
+<div>
+<div class="font-monument text-xs font-bold text-ink uppercase tracking-tight">SUNIL KULKARNI</div>
+<div class="font-serif italic text-xs text-ink-muted">Chief Underwriting Officer, Agri-Risk</div>
+</div>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="dashed-card p-6 flex flex-col justify-between bg-paper-light/40 hover:bg-paper-light transition-all">
+<div class="font-serif text-sm md:text-base text-ink leading-relaxed">
+          "<span class="underline decoration-ink/40 decoration-1 underline-offset-4">The multimodal verification dossier</span> gives field officers mathematical defensibility. Disputed claim arbitrations dropped by over 75% in our taluka."
+        </div>
+<div class="mt-8 pt-4 border-t border-ink/10 flex items-center space-x-3">
+<!-- Circular Avatar Monogram -->
+<div class="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-monument text-sm font-bold">
+            AP
+          </div>
+<div>
+<div class="font-monument text-xs font-bold text-ink uppercase tracking-tight">ANITA PATIL</div>
+<div class="font-serif italic text-xs text-ink-muted">Tehsildar &amp; District Relief Verifier</div>
+</div>
+</div>
+</div>
+<!-- Card 04 -->
+<div class="dashed-card p-6 flex flex-col justify-between bg-paper-light/40 hover:bg-paper-light transition-all">
+<div class="font-serif text-sm md:text-base text-ink leading-relaxed">
+          "<span class="underline decoration-ink/40 decoration-1 underline-offset-4">Mandatory rest shift warnings</span> sent via Marathi audio calls prevented emergency heat stroke cases during the peak May harvesting window across our 600-member cooperative."
+        </div>
+<div class="mt-8 pt-4 border-t border-ink/10 flex items-center space-x-3">
+<!-- Circular Avatar Monogram -->
+<div class="w-10 h-10 rounded-full bg-ink text-paper flex items-center justify-center font-monument text-sm font-bold">
+            VB
+          </div>
+<div>
+<div class="font-monument text-xs font-bold text-ink uppercase tracking-tight">VIKRAM BHOSALE</div>
+<div class="font-serif italic text-xs text-ink-muted">President, Vidarbha Cotton FPO</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 11. DEPLOYMENT ROADMAP (Phases 01 to 07)                                   -->
+<!-- ========================================================================= -->
+<section class="w-full max-w-[1920px] mx-auto hairline-b" id="roadmap">
+<div class="p-6 md:p-12 hairline-b flex flex-col md:flex-row justify-between md:items-end">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-rust">SCALE TRAJECTORY • 2025–2027</span>
+<h2 class="font-monument text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter text-ink mt-2">
+          DEPLOYMENT ROADMAP
+        </h2>
+</div>
+<div class="font-mono text-xs text-ink-muted uppercase mt-3 md:mt-0">
+        Progressive multi-phase operational scaling
+      </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 divide-y lg:divide-y-0 lg:divide-x divide-ink font-mono text-xs">
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 01</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">FOUNDATION RESEARCH</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">WBGT proxy fitting against ground IMD weather stations.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink uppercase font-semibold">Q1 2025 • COMPLETED</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 02</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">DATA PIPELINE</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Automated Sentinel-2 STAC indexing &amp; ERA5 climate ingestion.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink uppercase font-semibold">Q2 2025 • COMPLETED</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 03</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">ALGORITHM TEST</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Benchmarking YOLOv8 and ViT on 1,200 surveyed plots.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink uppercase font-semibold">Q3 2025 • ACTIVE</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 04</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">DISTRICT PILOT</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Controlled field deployment with 50,000 farmers in Vidarbha.</p>
+</div>
+<span class="mt-4 text-[10px] text-rust uppercase font-bold">Q4 2025 • PILOT</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 05</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">PMFBY INTEGRATION</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Direct electronic linkage to National Crop Insurance Portal APIs.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink-muted uppercase">Q2 2026 • PLANNED</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 06</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">MULTI-STATE EXPANSION</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Deployment across 6 agro-climatic zones in MH, MP, RJ, KA.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink-muted uppercase">Q4 2026 • PLANNED</span>
+</div>
+<div class="p-5 flex flex-col justify-between hover:bg-paper-light transition-colors">
+<div>
+<span class="text-rust font-bold">PHASE 07</span>
+<div class="font-serif font-bold text-sm text-ink uppercase mt-2 mb-1">NATIONAL DPI PLATFORM</div>
+<p class="text-ink-muted leading-relaxed text-[11px]">Full sovereign digital public infrastructure serving 100M+ farmers.</p>
+</div>
+<span class="mt-4 text-[10px] text-ink-muted uppercase">2027 • HORIZON</span>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 12. CONTINUOUS SCROLLING MARQUEE BAND (Reference Image 5)                 -->
+<!-- ========================================================================= -->
+<section class="hairline-b bg-paper-light py-4 overflow-hidden border-y border-ink">
+<div class="animate-marquee flex items-center space-x-10 font-serif text-3xl md:text-5xl text-ink whitespace-nowrap">
+<span>Let's create climate resilience together</span>
+<!-- Solid block button (sharp corners, ink background, paper text - Image 5) -->
+<a class="px-6 py-2 bg-ink text-paper font-monument text-lg uppercase font-bold tracking-tight hover:bg-rust transition-colors inline-block" href="mailto:research@rashkar.gov.in">
+        EMAIL US
+      </a>
+<span>RASHKAR • KisanSuraksha–FasalSuraksha</span>
+<span class="font-monument text-rust font-bold">ZERO HARDWARE • 100% CLOUD INTELLIGENCE</span>
+<span>Let's create climate resilience together</span>
+<a class="px-6 py-2 bg-ink text-paper font-monument text-lg uppercase font-bold tracking-tight hover:bg-rust transition-colors inline-block" href="mailto:research@rashkar.gov.in">
+        EMAIL US
+      </a>
+<span>Protecting Smallholder Lives and Livelihoods</span>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 13. EDITORIAL FOOTER (Reference Image 5, 6)                               -->
+<!-- ========================================================================= -->
+<footer class="w-full max-w-[1920px] mx-auto bg-paper">
+<div class="p-6 md:p-14 grid grid-cols-1 lg:grid-cols-12 gap-8 hairline-b">
+<!-- Col 1: Brand & Blackletter Masthead -->
+<div class="lg:col-span-5 flex flex-col justify-between">
+<div>
+<div class="font-monument text-4xl sm:text-5xl font-black text-ink tracking-tightest uppercase">
+            RASHKAR
+          </div>
+<div class="font-blackletter text-2xl text-ink mt-2">
+            KisanSuraksha–FasalSuraksha©
+          </div>
+<p class="font-serif text-xs text-ink/80 mt-4 leading-relaxed max-w-md">
+            An open scientific research specification and cloud architecture protocol dedicated to human heatstroke prevention and automated crop loss audit for smallholder farmers across India.
+          </p>
+</div>
+<div class="mt-8 font-mono text-[11px] text-ink-muted space-y-1">
+<div>RESEARCH SPECIFICATION • VOL. IV, EDITION 2026</div>
+<div>ZERO HARDWARE • NO DRONES • SATELLITE &amp; SMARTPHONE CLOUD CORE</div>
+</div>
+</div>
+<!-- Col 2: Navigation Links -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-4 font-mono text-xs uppercase">
+<div>
+<div class="font-bold text-rust mb-3">SYSTEM SECTIONS</div>
+<ul class="space-y-2 text-ink-muted">
+<li><a class="hover:text-ink" href="#hero">01. Overview</a></li>
+<li><a class="hover:text-ink" href="#carousel">02. Dual Engine</a></li>
+<li><a class="hover:text-ink" href="#statement">03. Mission Poster</a></li>
+<li><a class="hover:text-ink" href="#stats">04. Metric Archive</a></li>
+<li><a class="hover:text-ink" href="#shortfalls">05. Gap Analysis</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold text-rust mb-3">DOCUMENTATION</div>
+<ul class="space-y-2 text-ink-muted">
+<li><a class="hover:text-ink" href="#heat-specimen">Heat Specimen</a></li>
+<li><a class="hover:text-ink" href="#crop-specimen">Crop Loss Audit</a></li>
+<li><a class="hover:text-ink" href="#architecture">Cloud Topology</a></li>
+<li><a class="hover:text-ink" href="#testimonials">Field Verifiers</a></li>
+<li><a class="hover:text-ink" href="#roadmap">Scale Roadmap</a></li>
+</ul>
+</div>
+</div>
+<!-- Col 3: Stamp Graphic & Small Rust Sunburst (Ref Image 5) -->
+<div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end">
+<div class="border border-ink p-4 bg-paper-light text-center w-full max-w-[220px]">
+<!-- Rust Sunburst Mark -->
+<svg class="w-10 h-10 text-rust mx-auto mb-2" fill="currentColor" viewbox="0 0 100 100">
+<path d="M50 0 L58 35 L93 15 L72 45 L100 50 L72 55 L93 85 L58 65 L50 100 L42 65 L7 85 L28 55 L0 50 L28 45 L7 15 L42 35 Z"></path>
+</svg>
+<div class="font-mono text-[10px] font-bold uppercase text-ink">OFFICIAL WHITE PAPER</div>
+<div class="font-serif italic text-[11px] text-ink-muted">Certified Cloud Architecture</div>
+</div>
+<div class="font-mono text-[10px] uppercase text-ink-muted mt-4 text-left lg:text-right">
+          LATENCY: <span class="text-ink font-bold">140ms INFERENCE</span><br/>
+          SPATIAL RESOLUTION: <span class="text-ink font-bold">10M SENTINEL-2</span>
+</div>
+</div>
+</div>
+<!-- Colophon / Copyright Bar (Image 5 style) -->
+<div class="px-6 md:px-14 py-4 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-ink-muted gap-2">
+<div class="flex items-center space-x-3">
+<span class="font-monument font-black text-ink">RASHKAR © 2026</span>
+<span class="text-rust">☀</span>
+<span>KisanSuraksha–FasalSuraksha</span>
+</div>
+<div class="flex items-center space-x-6 uppercase">
+<a class="hover:text-ink" href="#hero">TOP OF DOCUMENT</a>
+<span>•</span>
+<a class="hover:text-ink" href="mailto:research@rashkar.gov.in">RESEARCH DESK</a>
+<span>•</span>
+<a class="hover:text-ink" href="#statement">STATEMENT</a>
+</div>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- JAVASCRIPT CONTROLS                                                       -->
+<!-- ========================================================================= -->
+<script data-purpose="editorial-navigation-toggle">
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const navOverlay = document.getElementById('nav-overlay');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    function toggleMenu() {
+      const isHidden = navOverlay.classList.contains('hidden');
+      if (isHidden) {
+        navOverlay.classList.remove('hidden');
+        navOverlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      } else {
+        navOverlay.classList.add('hidden');
+        navOverlay.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navOverlay.classList.add('hidden');
+        navOverlay.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+<script data-purpose="interactive-heat-specimen">
+    function setHour(hour, wbgt, risk, score, severity) {
+      document.getElementById('dynamic-risk-score').innerText = `${score} / 100`;
+      document.getElementById('wbgt-val').innerText = `${wbgt} °C`;
+
+      const recTitle = document.getElementById('rec-title');
+      const recDesc = document.getElementById('rec-desc');
+      const dryTemp = document.getElementById('dry-temp');
+      const humidity = document.getElementById('humidity');
+
+      if (hour === 8) {
+        dryTemp.innerText = "32.1 °C";
+        humidity.innerText = "62 %";
+        recTitle.innerText = "Normal Morning Shift — Optimal Field Operations";
+        recDesc.innerText = "Conditions within standard metabolic tolerance. Maintain standard drinking hydration intervals every 45 minutes.";
+      } else if (hour === 11) {
+        dryTemp.innerText = "38.5 °C";
+        humidity.innerText = "52 %";
+        recTitle.innerText = "Rising Solar Load — Initiate Shift Rotation";
+        recDesc.innerText = "Increase hydration frequency. Provide ventilated shaded areas. Harvesters over 55 should transition to low-exertion sorting.";
+      } else if (hour === 14) {
+        dryTemp.innerText = "42.4 °C";
+        humidity.innerText = "48 %";
+        recTitle.innerText = "Prescribed Clinical Directive: Mandatory Shade Break";
+        recDesc.innerText = "Heavy manual labor (cotton boll harvesting) exceeding 30 minutes continuous duration risks severe dehydration. Cease active sun harvesting until 16:30.";
+      } else if (hour === 17) {
+        dryTemp.innerText = "36.2 °C";
+        humidity.innerText = "50 %";
+        recTitle.innerText = "Evening Shift — Resumed Activity Under Supervision";
+        recDesc.innerText = "Radiant heat decaying. Resumption of light bundling and crate movement permitted with ongoing water intake.";
+      }
+
+      const buttons = document.querySelectorAll('.hour-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-rust', 'text-paper', 'border-rust');
+        btn.classList.add('border-ink');
+      });
+      event.target.classList.add('bg-rust', 'text-paper', 'border-rust');
+    }
+  </script>
+</body></html>

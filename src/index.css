@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #cdc6be;
+  --color-paper-light: #ded7ce;
+  --color-paper-dark: #beb5aa;
+  --color-paper-card: rgba(222, 215, 206, 0.45);
+  --color-ink: #1d1d1b;
+  --color-ink-muted: #625e57;
+  --color-ink-pure: #0a0a09;
+  --color-rust: #c03f13;
+  --color-rust-hover: #9e340f;
+  --color-accent-green: #96b59f;
+
+  --font-monument: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Newsreader', 'Fraunces', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-condensed: 'Bebas Neue', Impact, sans-serif;
+  --font-mono: 'Space Mono', 'Space Grotesk', monospace;
+  --font-blackletter: 'UnifrakturMaguntia', cursive, serif;
+}
+
+/* Base Editorial Textures and Styles */
+body {
+  background-color: #cdc6be;
+  color: #1d1d1b;
+  position: relative;
+  font-feature-settings: "lnum" 1;
+}
+
+/* Tactile paper grain overlay */
+.paper-grain-overlay {
+  background-image: radial-gradient(#1d1d1b 0.6px, transparent 0.6px), radial-gradient(#ffffff 0.6px, #cdc6be 0.6px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Hairline border utilities */
+.hairline-b { border-bottom: 1px solid #1d1d1b; }
+.hairline-t { border-top: 1px solid #1d1d1b; }
+.hairline-r { border-right: 1px solid #1d1d1b; }
+.hairline-l { border-left: 1px solid #1d1d1b; }
+.hairline-all { border: 1px solid #1d1d1b; }
+
+.editorial-rule { border-color: rgba(29, 29, 27, 0.28); }
+.editorial-rule-bold { border-color: #1d1d1b; }
+
+/* Boxed drop cap matching Niccolo Miranda & Stitch reference images */
+.drop-cap-boxed {
+  float: left;
+  font-size: 3.2rem;
+  line-height: 0.82;
+  padding: 6px 12px 6px 8px;
+  margin-right: 14px;
+  margin-top: 4px;
+  background-color: #1d1d1b;
+  color: #cdc6be;
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dashed archival card matching reference */
+.dashed-card {
+  border: 1.5px dashed #1d1d1b;
+  border-radius: 12px;
+}
+
+.dashed-card-subtle {
+  border: 1.5px dashed rgba(29, 29, 27, 0.4);
+  border-radius: 12px;
+}
+
+/* Oval pill button */
+.oval-pill-btn {
+  border-radius: 9999px;
+  padding: 14px 38px;
+  border: 1.5px solid #1d1d1b;
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.oval-pill-btn:hover {
+  background-color: #1d1d1b;
+  color: #cdc6be;
+  transform: translateY(-2px);
+}
+
+/* Monumental display wordmarks */
+.wordmark-huge {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  letter-spacing: -0.075em;
+  transform: scaleY(1.3);
+  transform-origin: 50% 50%;
+  user-select: none;
+}
+
+.giant-condensed-type {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: -0.025em;
+  line-height: 0.8;
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar matching paper aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #cdc6be;
+}
+::-webkit-scrollbar-thumb {
+  background: #1d1d1b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c03f13;
+}
