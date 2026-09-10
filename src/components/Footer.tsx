@@ -31,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               An open scientific research specification and cloud AI architecture protocol dedicated to human heatstroke prevention and automated crop loss audit for smallholder farmers across India.
             </AnimatedParagraph>
           </div>
-          <div className="mt-8 font-mono text-[11px] text-[#625e57] space-y-1">
+          <div className="mt-8 font-mono text-[11px] text-[#2b2825] space-y-1">
             <AnimatedLabel text="RESEARCH SPECIFICATION · VOL. IV, EDITION 2026" className="block" />
             <AnimatedLabel text="100% CLOUD &amp; SMARTPHONE · SATELLITE TELEMETRY CORE" className="text-[#c03f13] font-bold block" />
           </div>
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
         <div className="lg:col-span-4 grid grid-cols-2 gap-4 font-mono text-xs uppercase">
           <div>
             <AnimatedLabel text="SYSTEM ENGINES" className="font-bold text-[#c03f13] mb-3 block" />
-            <ul className="space-y-2 text-[#625e57]">
+            <ul className="space-y-2 text-[#2b2825]">
               <li>
                 <button 
                   onClick={() => navigate('/')} 
@@ -93,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
 
           <div>
             <AnimatedLabel text="DOCUMENTATION" className="font-bold text-[#c03f13] mb-3 block" />
-            <ul className="space-y-2 text-[#625e57]">
+            <ul className="space-y-2 text-[#2b2825]">
               <li>
                 <button 
                   onClick={() => {
@@ -174,12 +174,12 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
             <div className="font-mono text-[10px] font-bold uppercase text-[#1d1d1b]">
               RESEARCH SPECIFICATION
             </div>
-            <div className="font-serif italic text-[11px] text-[#625e57]">
+            <div className="font-serif italic text-[11px] text-[#2b2825]">
               Certified Cloud Architecture
             </div>
           </div>
 
-          <div className="font-mono text-[10px] uppercase text-[#625e57] mt-4 text-left lg:text-right space-y-0.5">
+          <div className="font-mono text-[10px] uppercase text-[#2b2825] mt-4 text-left lg:text-right space-y-0.5">
             <div>LATENCY: <strong className="text-[#1d1d1b]">140ms CLOUD INFERENCE</strong></div>
             <div>SPATIAL RESOLUTION: <strong className="text-[#1d1d1b]">10M SENTINEL-2 MSI</strong></div>
             <div>STATUS: <strong className="text-[#c03f13]">ACADEMIC RESEARCH PROTOTYPE</strong></div>
@@ -188,7 +188,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
       </div>
 
       {/* Colophon / Copyright Bar (Image 5 style) */}
-      <div className="px-6 md:px-14 py-4 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-[#625e57] gap-3">
+      <div className="px-6 md:px-14 py-4 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-[#2b2825] gap-3">
         <div className="flex items-center space-x-3">
           <span className="font-monument font-black text-[#1d1d1b]">RASHKAR © 2026</span>
           <span className="text-[#c03f13]">☀</span>

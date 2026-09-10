@@ -97,7 +97,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               Autonomous Worker Heat-Defense Engine
             </span>
           </div>
-          <div className="text-[#625e57] leading-relaxed">
+          <div className="text-[#2b2825] leading-relaxed">
             PLATFORM ARCHITECTURE: <strong className="text-[#1d1d1b]">100% CLOUD &amp; SMARTPHONE</strong><br />
             INGESTION: IMD METEOROLOGY + ERA5 REANALYSIS + BHUVAN
           </div>
@@ -147,7 +147,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             </motion.span>
             <AnimatedEyebrow 
               text="PERSONALIZED WBGT PROXY ENGINE · 6-HR PREDICTIVE HORIZON" 
-              className="font-mono text-xs uppercase tracking-widest text-[#625e57] text-left md:text-right" 
+              className="font-mono text-xs uppercase tracking-widest text-[#2b2825] text-left md:text-right" 
             />
           </div>
 
@@ -157,31 +157,31 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               <AnimatedH2 className="font-editorial text-2xl sm:text-4xl text-[#1d1d1b] leading-snug">
                 Predicting acute agricultural worker heat stress before outdoor exposure becomes a biological crisis.
               </AnimatedH2>
-              <AnimatedParagraph className="font-editorial text-lg text-[#625e57] mt-4 leading-relaxed max-w-2xl" delay={0.1}>
+              <AnimatedParagraph className="font-editorial text-lg text-[#2b2825] mt-4 leading-relaxed max-w-2xl" delay={0.1}>
                 Rashkar’s Heat-Risk Intelligence engine synthesizes cloud atmospheric thermodynamics, satellite vegetation transpiration indicators, and farmer demographic workload context into a localized 6-hour forward-looking heat vulnerability score — delivered in native dialects via SMS and vernacular IVR audio without internet.
               </AnimatedParagraph>
             </div>
             <div className="lg:col-span-5 border-l editorial-rule pl-0 lg:pl-8">
               <MotionCard delay={0.2} className="bg-[#ded7ce]/50 p-6 border editorial-rule-bold space-y-4">
-                <div className="flex justify-between items-center text-xs font-mono uppercase text-[#625e57] pb-2 border-b editorial-rule">
+                <div className="flex justify-between items-center text-xs font-mono uppercase text-[#2b2825] pb-2 border-b editorial-rule">
                   <span>Algorithmic Specimen</span>
                   <span className="text-[#c03f13] font-bold">WBGT-Proxy v2.4</span>
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-xs font-mono">
                   <div>
-                    <span className="text-[#625e57] block uppercase text-[10px]">Atmospheric Model</span>
+                    <span className="text-[#2b2825] block uppercase text-[10px]">Atmospheric Model</span>
                     <strong className="font-editorial text-base text-[#1d1d1b] block mt-0.5">XGBoost + Bi-LSTM</strong>
                   </div>
                   <div>
-                    <span className="text-[#625e57] block uppercase text-[10px]">Worker Risk Estimator</span>
+                    <span className="text-[#2b2825] block uppercase text-[10px]">Worker Risk Estimator</span>
                     <strong className="font-editorial text-base text-[#1d1d1b] block mt-0.5">Random Forest Regressor</strong>
                   </div>
                   <div>
-                    <span className="text-[#625e57] block uppercase text-[10px]">Dispatch Pipeline</span>
+                    <span className="text-[#2b2825] block uppercase text-[10px]">Dispatch Pipeline</span>
                     <strong className="font-editorial text-base text-[#1d1d1b] block mt-0.5">IndicBERT Multilingual</strong>
                   </div>
                   <div>
-                    <span className="text-[#625e57] block uppercase text-[10px]">Spatial Resolution</span>
+                    <span className="text-[#2b2825] block uppercase text-[10px]">Spatial Resolution</span>
                     <strong className="font-editorial text-base text-[#1d1d1b] block mt-0.5">1 km² Gridded Reanalysis</strong>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
         <div className="max-w-[1500px] mx-auto grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x editorial-rule">
           <div className="p-6 lg:p-8 flex items-baseline justify-between gap-4">
             <div>
-              <span className="font-editorial text-xs uppercase tracking-wider text-[#625e57] block">Heatwave Days In 2024</span>
+              <span className="font-editorial text-xs uppercase tracking-wider text-[#2b2825] block">Heatwave Days In 2024</span>
               <span className="font-monument text-2xl sm:text-3xl text-[#1d1d1b] uppercase tracking-tight block mt-1">RESEARCH</span>
             </div>
             <div className="font-editorial font-light text-5xl sm:text-6xl text-[#c03f13]">
@@ -207,7 +207,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
           </div>
           <div className="p-6 lg:p-8 flex items-baseline justify-between gap-4">
             <div>
-              <span className="font-editorial text-xs uppercase tracking-wider text-[#625e57] block">Exposed Demography</span>
+              <span className="font-editorial text-xs uppercase tracking-wider text-[#2b2825] block">Exposed Demography</span>
               <span className="font-monument text-2xl sm:text-3xl text-[#1d1d1b] uppercase tracking-tight block mt-1">WORKERS</span>
             </div>
             <div className="font-editorial font-light text-5xl sm:text-6xl text-[#1d1d1b]">
@@ -216,14 +216,14 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
           </div>
           <div className="p-6 lg:p-8 flex items-baseline justify-between gap-4">
             <div>
-              <span className="font-editorial text-xs uppercase tracking-wider text-[#625e57] block">Forward Looking</span>
+              <span className="font-editorial text-xs uppercase tracking-wider text-[#2b2825] block">Forward Looking</span>
               <span className="font-monument text-2xl sm:text-3xl text-[#1d1d1b] uppercase tracking-tight block mt-1">HORIZON</span>
             </div>
-            <div className="font-editorial font-light text-5xl sm:text-6xl text-[#1d1d1b]">0–6<span className="text-2xl text-[#625e57]">h</span></div>
+            <div className="font-editorial font-light text-5xl sm:text-6xl text-[#1d1d1b]">0–6<span className="text-2xl text-[#2b2825]">h</span></div>
           </div>
           <div className="p-6 lg:p-8 flex items-baseline justify-between gap-4">
             <div>
-              <span className="font-editorial text-xs uppercase tracking-wider text-[#625e57] block">Field Hardware Cost</span>
+              <span className="font-editorial text-xs uppercase tracking-wider text-[#2b2825] block">Field Hardware Cost</span>
               <span className="font-monument text-2xl sm:text-3xl text-[#1d1d1b] uppercase tracking-tight block mt-1">HARDWARE</span>
             </div>
             <div className="font-editorial font-light text-5xl sm:text-6xl text-[#c03f13]">
@@ -248,7 +248,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                   gricultural workers frequently work outdoors under changing heat conditions. A general temperature or heat warning does not represent the same level of risk for every worker.
                 </p>
               </div>
-              <AnimatedParagraph className="font-editorial text-lg text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-editorial text-lg text-[#2b2825] leading-relaxed">
                 While standard weather broadcasts state ambient dry-bulb temperature (e.g. 41°C), the biological thermal burden on an agrarian laborer is governed by solar radiation flux, relative humidity, wind velocity, metabolic exertion, clothing insulation, worker age, and baseline hydration.
               </AnimatedParagraph>
 
@@ -259,7 +259,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                   quote="“The heat is environmental. The risk is personal.”"
                   className="font-editorial text-3xl sm:text-4xl text-[#1d1d1b] leading-tight not-italic"
                 />
-                <p className="font-editorial text-sm text-[#625e57] mt-3 italic">
+                <p className="font-editorial text-sm text-[#2b2825] mt-3 italic">
                   A 24-year-old acclimatized harvester sorting crops in a shaded shed experiences manageable physiological strain at 40°C. A 56-year-old laborer picking cotton bolls under blazing noon sun faces immediate exertional heatstroke and acute kidney strain.
                 </p>
               </div>
@@ -272,27 +272,27 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               <ul className="space-y-3 font-mono text-xs text-[#1d1d1b]">
                 <MotionCard delay={0.04} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">01 · ENVIRONMENTAL CONDITIONS</span>
-                  <span className="text-[#625e57]">Ambient temp, solar radiation flux, humidity, wind</span>
+                  <span className="text-[#2b2825]">Ambient temp, solar radiation flux, humidity, wind</span>
                 </MotionCard>
                 <MotionCard delay={0.08} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">02 · GEOGRAPHIC LOCATION</span>
-                  <span className="text-[#625e57]">Microclimate terrain, elevation, canopy shade coverage</span>
+                  <span className="text-[#2b2825]">Microclimate terrain, elevation, canopy shade coverage</span>
                 </MotionCard>
                 <MotionCard delay={0.12} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">03 · WORK INTENSITY</span>
-                  <span className="text-[#625e57]">Metabolic rate (light sorting vs intensive harvesting)</span>
+                  <span className="text-[#2b2825]">Metabolic rate (light sorting vs intensive harvesting)</span>
                 </MotionCard>
                 <MotionCard delay={0.16} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">04 · ACCLIMATIZATION</span>
-                  <span className="text-[#625e57]">Seasonal exposure duration and cardiovascular conditioning</span>
+                  <span className="text-[#2b2825]">Seasonal exposure duration and cardiovascular conditioning</span>
                 </MotionCard>
                 <MotionCard delay={0.2} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">05 · INDIVIDUAL CONTEXT</span>
-                  <span className="text-[#625e57]">Worker age, pre-existing kidney conditions, hydration</span>
+                  <span className="text-[#2b2825]">Worker age, pre-existing kidney conditions, hydration</span>
                 </MotionCard>
                 <MotionCard delay={0.24} className="p-3 border border-[#1d1d1b] bg-[#ded7ce]/40 flex justify-between items-center">
                   <span className="font-bold text-[#c03f13]">06 · AGRICULTURAL CONTEXT</span>
-                  <span className="text-[#625e57]">Crop phenology stage, critical harvesting shift windows</span>
+                  <span className="text-[#2b2825]">Crop phenology stage, critical harvesting shift windows</span>
                 </MotionCard>
               </ul>
               <div className="p-4 bg-[#1d1d1b] text-[#cdc6be] font-mono text-xs flex justify-between items-center">
@@ -316,7 +316,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                 FROM RAW ATMOSPHERE TO PERSONALIZED DISPATCH
               </AnimatedH2>
             </div>
-            <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
+            <AnimatedParagraph className="font-mono text-xs text-[#2b2825] uppercase" delay={0.1}>
               Zero Physical Sensors · Multi-Tier PyTorch Computational Graph
             </AnimatedParagraph>
           </div>
@@ -329,19 +329,19 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               </div>
               <MotionCard delay={0.04} className="border border-[#1d1d1b] p-4 bg-[#cdc6be]">
                 <strong className="text-sm font-monument uppercase text-[#1d1d1b] block">IMD METEOROLOGY</strong>
-                <span className="text-[#625e57]">India Meteorological Department gridded surface observations, Doppler radar reflectivity, and synoptic numerical weather forecasts.</span>
+                <span className="text-[#2b2825]">India Meteorological Department gridded surface observations, Doppler radar reflectivity, and synoptic numerical weather forecasts.</span>
               </MotionCard>
               <MotionCard delay={0.08} className="border border-[#1d1d1b] p-4 bg-[#cdc6be]">
                 <strong className="text-sm font-monument uppercase text-[#1d1d1b] block">ECMWF ERA5 REANALYSIS</strong>
-                <span className="text-[#625e57]">Global atmospheric reanalysis providing hourly thermodynamic variables, surface solar radiation downwards (SSRD), dewpoint, and wind vectors.</span>
+                <span className="text-[#2b2825]">Global atmospheric reanalysis providing hourly thermodynamic variables, surface solar radiation downwards (SSRD), dewpoint, and wind vectors.</span>
               </MotionCard>
               <MotionCard delay={0.12} className="border border-[#1d1d1b] p-4 bg-[#cdc6be]">
                 <strong className="text-sm font-monument uppercase text-[#1d1d1b] block">ISRO BHUVAN &amp; MODIS</strong>
-                <span className="text-[#625e57]">High-resolution terrain elevation, land-use surface roughness, and vegetation transpiration indices.</span>
+                <span className="text-[#2b2825]">High-resolution terrain elevation, land-use surface roughness, and vegetation transpiration indices.</span>
               </MotionCard>
               <MotionCard delay={0.16} className="border border-[#1d1d1b] p-4 bg-[#cdc6be]">
                 <strong className="text-sm font-monument uppercase text-[#1d1d1b] block">WORKER &amp; CROP PROFILE</strong>
-                <span className="text-[#625e57]">User demographic profile (age, task, shift timing) captured via lightweight PWA or FPO registration.</span>
+                <span className="text-[#2b2825]">User demographic profile (age, task, shift timing) captured via lightweight PWA or FPO registration.</span>
               </MotionCard>
             </div>
 
@@ -371,7 +371,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                 <h4 className="font-monument text-lg uppercase text-[#1d1d1b]">
                   PERSONALIZED WORKER RISK SCORING (0–100)
                 </h4>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Combines the calculated WBGT proxy with demographic age tiers, workload exertion wattage, and acclimatization coefficients to output a personal risk index.
                 </p>
               </MotionCard>
@@ -384,7 +384,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                 <h4 className="font-monument text-lg uppercase text-[#1d1d1b]">
                   VERNACULAR ALERT DISPATCH PIPELINE
                 </h4>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Translates numeric clinical risk into actionable native dialect guidance (Marathi, Hindi, Telugu) pushed through IVR audio calls and SMS without internet.
                 </p>
               </MotionCard>
@@ -414,13 +414,13 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
           {/* Location & Context Banner */}
           <div className="p-4 border border-[#1d1d1b] bg-[#ded7ce] flex flex-wrap justify-between items-center font-mono text-xs mb-8 gap-4">
             <div>
-              <span className="text-[#625e57] uppercase">DEMONSTRATION LOCATION: </span>
+              <span className="text-[#2b2825] uppercase">DEMONSTRATION LOCATION: </span>
               <strong className="text-[#1d1d1b] font-serif text-base uppercase ml-1">
                 VIDARBHA, MAHARASHTRA ({district})
               </strong>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#625e57]">SWITCH TALUKA:</span>
+              <span className="text-[#2b2825]">SWITCH TALUKA:</span>
               <select 
                 value={district} 
                 onChange={(e) => setDistrict(e.target.value)}
@@ -460,10 +460,10 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                         }`}
                       >
                         <span className="font-bold">{hr < 10 ? `0${hr}:00` : `${hr}:00`}</span>
-                        <span className={`text-[10px] mt-1 ${isSelected ? 'text-[#c03f13]' : 'text-[#625e57]'}`}>
+                        <span className={`text-[10px] mt-1 ${isSelected ? 'text-[#c03f13]' : 'text-[#2b2825]'}`}>
                           {rec.wbgt}°C WBGT
                         </span>
-                        <span className="text-[9px] text-[#625e57] mt-0.5">
+                        <span className="text-[9px] text-[#2b2825] mt-0.5">
                           Score: {rec.baseScore}
                         </span>
                       </motion.button>
@@ -482,7 +482,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                   {/* Worker Age Slider */}
                   <div>
                     <div className="flex justify-between mb-1">
-                      <span className="text-[#625e57]">WORKER AGE:</span>
+                      <span className="text-[#2b2825]">WORKER AGE:</span>
                       <strong className="text-[#1d1d1b]">{workerAge} YRS</strong>
                     </div>
                     <input
@@ -493,7 +493,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                       onChange={(e) => setWorkerAge(Number(e.target.value))}
                       className="w-full accent-[#c03f13] cursor-pointer"
                     />
-                    <div className="flex justify-between text-[10px] text-[#625e57] mt-0.5">
+                    <div className="flex justify-between text-[10px] text-[#2b2825] mt-0.5">
                       <span>18y</span>
                       <span>40y</span>
                       <span>65y</span>
@@ -502,7 +502,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
 
                   {/* Work Intensity Selection */}
                   <div>
-                    <span className="text-[#625e57] block mb-1">WORK INTENSITY:</span>
+                    <span className="text-[#2b2825] block mb-1">WORK INTENSITY:</span>
                     <div className="flex gap-1">
                       {(['low', 'moderate', 'heavy'] as const).map((tier) => (
                         <button
@@ -522,7 +522,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
 
                   {/* Acclimatization Status */}
                   <div>
-                    <span className="text-[#625e57] block mb-1">ACCLIMATIZATION:</span>
+                    <span className="text-[#2b2825] block mb-1">ACCLIMATIZATION:</span>
                     <button
                       onClick={() => setAcclimatized(!acclimatized)}
                       className={`w-full py-1.5 border text-[11px] uppercase font-bold transition-colors cursor-pointer ${
@@ -540,19 +540,19 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               {/* Environmental Telemetry Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
                 <MotionCard delay={0.04} className="p-4 border border-[#1d1d1b] bg-[#cdc6be]">
-                  <span className="text-[10px] text-[#625e57] uppercase block">DRY BULB TEMP</span>
+                  <span className="text-[10px] text-[#2b2825] uppercase block">DRY BULB TEMP</span>
                   <strong className="text-2xl font-bold text-[#1d1d1b] font-serif block mt-1">
                     {currentBase.temp} °C
                   </strong>
-                  <span className="text-[10px] text-[#625e57]">Ambient Air Temp</span>
+                  <span className="text-[10px] text-[#2b2825]">Ambient Air Temp</span>
                 </MotionCard>
 
                 <MotionCard delay={0.08} className="p-4 border border-[#1d1d1b] bg-[#cdc6be]">
-                  <span className="text-[10px] text-[#625e57] uppercase block">RELATIVE HUMIDITY</span>
+                  <span className="text-[10px] text-[#2b2825] uppercase block">RELATIVE HUMIDITY</span>
                   <strong className="text-2xl font-bold text-[#1d1d1b] font-serif block mt-1">
                     {currentBase.hum} %
                   </strong>
-                  <span className="text-[10px] text-[#625e57]">Atmospheric Moisture</span>
+                  <span className="text-[10px] text-[#2b2825]">Atmospheric Moisture</span>
                 </MotionCard>
 
                 <MotionCard delay={0.12} className="p-4 border border-[#1d1d1b] bg-[#cdc6be]">
@@ -560,15 +560,15 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                   <strong className="text-2xl font-bold text-[#c03f13] font-serif block mt-1">
                     {currentBase.wbgt} °C
                   </strong>
-                  <span className="text-[10px] text-[#625e57]">Wet-Bulb Globe Index</span>
+                  <span className="text-[10px] text-[#2b2825]">Wet-Bulb Globe Index</span>
                 </MotionCard>
 
                 <MotionCard delay={0.16} className="p-4 border border-[#1d1d1b] bg-[#cdc6be]">
-                  <span className="text-[10px] text-[#625e57] uppercase block">SOLAR RADIATION</span>
+                  <span className="text-[10px] text-[#2b2825] uppercase block">SOLAR RADIATION</span>
                   <strong className="text-2xl font-bold text-[#1d1d1b] font-serif block mt-1">
                     {currentBase.solar} W/m²
                   </strong>
-                  <span className="text-[10px] text-[#625e57]">Downwards Flux (SSRD)</span>
+                  <span className="text-[10px] text-[#2b2825]">Downwards Flux (SSRD)</span>
                 </MotionCard>
               </div>
             </div>
@@ -629,7 +629,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               <div className="border border-[#1d1d1b] p-5 bg-[#ded7ce]/60 space-y-4 font-mono text-xs">
                 <div className="flex justify-between items-center text-[#c03f13] font-bold uppercase border-b border-[#1d1d1b]/20 pb-2">
                   <span>LOCAL-LANGUAGE DISPATCH PROTOTYPE</span>
-                  <span className="text-[10px] text-[#625e57]">IVR &amp; SMS</span>
+                  <span className="text-[10px] text-[#2b2825]">IVR &amp; SMS</span>
                 </div>
 
                 <AnimatePresence mode="wait">
@@ -645,7 +645,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                     <div className="p-3 border border-[#1d1d1b] bg-[#cdc6be]">
                       <div className="flex justify-between items-center mb-1">
                         <strong className="text-[#c03f13] text-[11px] uppercase">मराठी (MARATHI) · AUDIO IVR CALL</strong>
-                        <span className="text-[10px] text-[#625e57]">DIAL: 155-224</span>
+                        <span className="text-[10px] text-[#2b2825]">DIAL: 155-224</span>
                       </div>
                       <p className="font-serif text-sm text-[#1d1d1b] leading-relaxed">
                         {calculatedScore >= 75
@@ -658,7 +658,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                     <div className="p-3 border border-[#1d1d1b] bg-[#cdc6be]">
                       <div className="flex justify-between items-center mb-1">
                         <strong className="text-[#c03f13] text-[11px] uppercase">हिंदी (HINDI) · SMS BROADCAST</strong>
-                        <span className="text-[10px] text-[#625e57]">AUTO-DISPATCH</span>
+                        <span className="text-[10px] text-[#2b2825]">AUTO-DISPATCH</span>
                       </div>
                       <p className="font-serif text-sm text-[#1d1d1b] leading-relaxed">
                         {calculatedScore >= 75
@@ -684,7 +684,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
               THE DIFFERENCE IS NOT ANOTHER WEATHER APP.
             </AnimatedH2>
-            <AnimatedParagraph className="font-editorial text-lg text-[#625e57] mt-3 leading-relaxed" delay={0.1}>
+            <AnimatedParagraph className="font-editorial text-lg text-[#2b2825] mt-3 leading-relaxed" delay={0.1}>
               Standard consumer apps tell an individual what the temperature was an hour ago in a distant city. Rashkar engineers predictive biophysical defense specifically for agrarian manual labor.
             </AnimatedParagraph>
           </div>
@@ -693,7 +693,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.04} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="01" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PERSONALIZED RISK</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Risk is computed against worker age, cardiovascular exertion tier, and acclimatization, not just ambient air thermometer reading.
               </AnimatedParagraph>
             </MotionCard>
@@ -701,7 +701,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.08} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="02" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">SHORT-TERM FORECAST</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 0–6 hour predictive horizon allows farm managers and laborers to reschedule intensive morning and evening shifts before solar apex.
               </AnimatedParagraph>
             </MotionCard>
@@ -709,7 +709,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.12} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="03" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">ACTIONABLE REST-WORK GUIDANCE</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Provides concrete clinical pacing (e.g. 45 min work / 15 min rest, 750ml ORS) mapped to specific crop operations like cotton picking.
               </AnimatedParagraph>
             </MotionCard>
@@ -717,7 +717,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.16} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="04" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">MULTILINGUAL COMMUNICATION</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Reaches non-literate smallholders through vernacular Marathi and Hindi IVR voice telephony, bypassing smartphone app dependency.
               </AnimatedParagraph>
             </MotionCard>
@@ -725,7 +725,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.2} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="05" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">AGRICULTURAL CONTEXT</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Aware of harvesting urgency during crop maturity windows, avoiding unrealistic advisories that demand farmers abandon ripening crops.
               </AnimatedParagraph>
             </MotionCard>
@@ -733,7 +733,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <MotionCard delay={0.24} className="border border-[#1d1d1b] p-6 bg-[#cdc6be]">
               <AnimatedLabel text="06" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">CLOUD-FIRST ARCHITECTURE</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Centralized PyTorch cloud microservices handle 100% of compute at zero infrastructure cost to the farmer.
               </AnimatedParagraph>
             </MotionCard>
@@ -755,7 +755,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
               <MotionCard delay={0.06} className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/50 space-y-2">
                 <AnimatedLabel text="POSSIBLE IN 24 HOURS:" className="text-[#c03f13] font-bold uppercase block" />
-                <ul className="space-y-1 text-[#625e57]">
+                <ul className="space-y-1 text-[#2b2825]">
                   <li>✓ Cloud API pipeline architecture</li>
                   <li>✓ Weather reanalysis data ingestion</li>
                   <li>✓ Baseline XGBoost WBGT proxy model</li>
@@ -767,7 +767,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
 
               <MotionCard delay={0.12} className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/50 space-y-2">
                 <AnimatedLabel text="NOT POSSIBLE IN 24 HOURS:" className="text-[#1d1d1b] font-bold uppercase block" />
-                <ul className="space-y-1 text-[#625e57]">
+                <ul className="space-y-1 text-[#2b2825]">
                   <li>✗ Multi-state national deployment</li>
                   <li>✗ Long-term field medical validation</li>
                   <li>✗ Extensive epidemiological cohort studies</li>
@@ -776,7 +776,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
                 </ul>
               </MotionCard>
             </div>
-            <AnimatedParagraph className="font-editorial text-sm text-[#625e57] italic" delay={0.1}>
+            <AnimatedParagraph className="font-editorial text-sm text-[#2b2825] italic" delay={0.1}>
               Rashkar prioritizes honest engineering boundaries. The 24-hour prototype demonstrates functional computational feasibility, preparing for multi-month field validation.
             </AnimatedParagraph>
           </div>
@@ -794,7 +794,7 @@ export const HeatRiskPage: React.FC<HeatRiskPageProps> = ({ navigate }) => {
               <AnimatedH4 className="font-monument text-lg uppercase text-[#1d1d1b]">
                 Proposed Targeted Reduction in Heatstroke Cases
               </AnimatedH4>
-              <AnimatedParagraph className="font-editorial text-sm text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                 Projected targeted reduction in acute heat-stress emergencies through preemptive 6-hour awareness and structured shade rest schedules in agricultural pilot zones.
               </AnimatedParagraph>
             </MotionCard>

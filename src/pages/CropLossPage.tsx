@@ -120,7 +120,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
       {/* 1. MONUMENTAL HERO: MASSIVE FULL-BLEED CROPPED WORDMARK (Stitch Visual)   */}
       {/* ========================================================================= */}
       <section className="border-b-2 editorial-rule-bold overflow-hidden relative bg-[#cdc6be]">
-        <div className="pt-6 sm:pt-8 px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-baseline justify-between border-b editorial-rule pb-3 font-mono text-xs text-[#625e57] gap-2">
+        <div className="pt-6 sm:pt-8 px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-baseline justify-between border-b editorial-rule pb-3 font-mono text-xs text-[#2b2825] gap-2">
           <div className="flex items-center gap-4">
             <AnimatedLabel text="EVIDENCE REANALYSIS 2026" />
             <AnimatedLabel text="PMFBY CLAIM SPECIFICATION" className="text-[#c03f13] font-bold" />
@@ -151,7 +151,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             </motion.span>
             <AnimatedEyebrow 
               text="Autonomous Plot-Loss Audit Engine · Fusing Ground Imagery with Sentinel-2 Multispectral Telemetry"
-              className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#625e57] mt-2 md:mt-0 max-w-md text-left md:text-right"
+              className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#2b2825] mt-2 md:mt-0 max-w-md text-left md:text-right"
             />
           </div>
         </div>
@@ -177,12 +177,12 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <AnimatedParagraph>
                 A smartphone photograph shows what is visible on the plant. Satellite imagery shows how the vegetation canopy changes over space and time. Weather data provides environmental context. Soil and crop data add agricultural context.
               </AnimatedParagraph>
-              <AnimatedParagraph className="text-[#625e57] text-base" delay={0.1}>
+              <AnimatedParagraph className="text-[#2b2825] text-base" delay={0.1}>
                 Each signal alone is incomplete: ground photos lack spatial context to prove 2-hectare loss, while optical satellites are blinded by monsoonal clouds during extreme cyclonic storms. Rashkar combines them into one unified, indisputable evidence package.
               </AnimatedParagraph>
             </div>
 
-            <div className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/60 font-mono text-xs text-[#625e57] space-y-1">
+            <div className="p-4 border border-[#1d1d1b] bg-[#ded7ce]/60 font-mono text-xs text-[#2b2825] space-y-1">
               <div className="text-[#1d1d1b] font-bold uppercase">STATUS QUO REALITY: 45–60 DAYS CLAIM DELAY</div>
               <div>Physical Crop Cutting Experiments (CCEs) cover only 2–4 cuts per day per officer. Rashkar compresses this verification bottleneck to 48 hours with zero field hardware.</div>
             </div>
@@ -191,33 +191,33 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
           {/* Right Column: Statement Stack */}
           <div className="lg:col-span-6 lg:border-l editorial-rule lg:pl-12 flex flex-col justify-between h-full space-y-6">
             <div>
-              <AnimatedLabel text="CONVERGENT EVIDENCE FORMULATION" className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-3 block" />
+              <AnimatedLabel text="CONVERGENT EVIDENCE FORMULATION" className="font-mono text-xs uppercase tracking-widest text-[#2b2825] mb-3 block" />
               <AnimatedH2 accent="none" className="font-monument text-4xl sm:text-5xl md:text-6xl uppercase text-[#1d1d1b] leading-tight border-b-2 editorial-rule-bold pb-6">
                 ONE PLOT.<br />
                 MULTIPLE SIGNALS.<br />
                 <span className="text-[#c03f13]">INDISPUTABLE</span><br />
                 EVIDENCE PACKAGE.
               </AnimatedH2>
-              <p className="font-editorial italic text-lg text-[#625e57] mt-4">
+              <p className="font-editorial italic text-lg text-[#2b2825] mt-4">
                 Satellite Telemetry · Weather Grids · Smartphone Photogrammetry · 100% Cloud.
               </p>
             </div>
 
             <div className="pt-6 border-t editorial-rule space-y-3 font-mono text-xs">
               <div className="flex justify-between py-1 border-b editorial-rule">
-                <span className="text-[#625e57] uppercase">Ground Truth Signal</span>
+                <span className="text-[#2b2825] uppercase">Ground Truth Signal</span>
                 <span className="font-bold text-[#1d1d1b]">Smartphone EXIF Photogrammetry</span>
               </div>
               <div className="flex justify-between py-1 border-b editorial-rule">
-                <span className="text-[#625e57] uppercase">Orbital Spectral Metric</span>
+                <span className="text-[#2b2825] uppercase">Orbital Spectral Metric</span>
                 <span className="font-bold text-[#1d1d1b]">Sentinel-2 MSI (10m Bands 4, 8, 11)</span>
               </div>
               <div className="flex justify-between py-1 border-b editorial-rule">
-                <span className="text-[#625e57] uppercase">Atmospheric Verification</span>
+                <span className="text-[#2b2825] uppercase">Atmospheric Verification</span>
                 <span className="font-bold text-[#1d1d1b]">IMD Gridded Doppler + ERA5 Reanalysis</span>
               </div>
               <div className="flex justify-between py-1">
-                <span className="text-[#625e57] uppercase">Verification Protocol</span>
+                <span className="text-[#2b2825] uppercase">Verification Protocol</span>
                 <span className="font-bold text-[#c03f13]">Human-In-The-Loop Surveyor Dossier</span>
               </div>
             </div>
@@ -248,7 +248,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <div>
                 <AnimatedLabel text="AFFECTED 01" className="text-[#c03f13] font-bold uppercase block" />
                 <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FARMERS</AnimatedH4>
-                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+                <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                   Loss of crops completely destroys seasonal household cashflow. Waiting 60 days forces smallholders into informal predatory loans at 36%+ interest.
                 </AnimatedParagraph>
               </div>
@@ -259,7 +259,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <div>
                 <AnimatedLabel text="AFFECTED 02" className="text-[#c03f13] font-bold uppercase block" />
                 <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">INSURERS</AnimatedH4>
-                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+                <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                   Must process millions of concurrent individual claims without reliable mathematical evidence, creating massive operational leakage and litigation.
                 </AnimatedParagraph>
               </div>
@@ -270,7 +270,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <div>
                 <AnimatedLabel text="AFFECTED 03" className="text-[#c03f13] font-bold uppercase block" />
                 <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">FIELD VERIFIERS</AnimatedH4>
-                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+                <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                   Loss adjusters and Patwaris face overwhelming paperwork, disputed boundaries, and logistical exhaustion surveying impassable flooded terrain.
                 </AnimatedParagraph>
               </div>
@@ -281,7 +281,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <div>
                 <AnimatedLabel text="AFFECTED 04" className="text-[#c03f13] font-bold uppercase block" />
                 <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">GOVERNMENT</AnimatedH4>
-                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+                <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                   Needs objective, uncompromised plot-level loss maps to trigger state disaster relief budgets and subsidy disbursements transparently.
                 </AnimatedParagraph>
               </div>
@@ -292,7 +292,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <div>
                 <AnimatedLabel text="AFFECTED 05" className="text-[#c03f13] font-bold uppercase block" />
                 <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PMFBY SYSTEM</AnimatedH4>
-                <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+                <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                   National crop insurance requires scalable modernization to maintain farmer trust, reduce administrative overhead, and ensure financial solvency.
                 </AnimatedParagraph>
               </div>
@@ -314,7 +314,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 ORTHOGONAL MODEL STACK
               </AnimatedH2>
             </div>
-            <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
+            <AnimatedParagraph className="font-mono text-xs text-[#2b2825] uppercase" delay={0.1}>
               100% Centralized Cloud Inference · Sub-150ms Response
             </AnimatedParagraph>
           </div>
@@ -331,7 +331,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   YOLOv8 DETECTOR
                 </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Visible Crop-Damage Detection</span>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Detects visible foliar perforation, torn leaves, stem fracture node points, boll detachment, and mechanical lodging directly from farmer smartphone photos.
                 </p>
               </div>
@@ -352,7 +352,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   ViT / MOBILENETV3
                 </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Damage Severity Tiers</span>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Vision Transformer extracts fine-grained foliar necrosis, chlorosis, and desiccation patterns, classifying damage into calibrated insurance compensation tiers.
                 </p>
               </div>
@@ -373,7 +373,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   UNET / SEGFORMER
                 </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Plot &amp; Canopy Isolation</span>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Pixel-level semantic segmentation isolating standing crop canopy from background dry soil, intrusive weeds, standing flood pools, and cadastral field boundaries.
                 </p>
               </div>
@@ -394,7 +394,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                   SENTINEL-2 LSTM
                 </AnimatedH4>
                 <span className="text-[#c03f13] font-bold block mb-3">Satellite Anomaly Detection</span>
-                <p className="font-editorial text-sm text-[#625e57] leading-relaxed">
+                <p className="font-editorial text-sm text-[#2b2825] leading-relaxed">
                   Evaluates 5-day cadence NDVI and NDRE spectral trajectories against 5-year historical phenology baselines to verify catastrophe event divergence.
                 </p>
               </div>
@@ -418,7 +418,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
               <AnimatedH2 accent="left" className="font-monument text-2xl sm:text-4xl uppercase tracking-tight text-[#1d1d1b] mt-2">
                 VERIFY A PLOT: SPECIMEN #MH-VRB-0247
               </AnimatedH2>
-              <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-1">
+              <AnimatedParagraph className="font-mono text-xs text-[#2b2825] uppercase mt-1">
                 Bt Cotton holding in Morshi, Amravati Taluka, Vidarbha, Maharashtra.
               </AnimatedParagraph>
             </div>
@@ -451,19 +451,19 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             {/* Dossier Header Ledger */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-6 hairline-b font-mono text-xs">
               <div>
-                <span className="text-[#625e57] block text-[10px] uppercase">PLOT IDENTIFIER</span>
+                <span className="text-[#2b2825] block text-[10px] uppercase">PLOT IDENTIFIER</span>
                 <strong className="text-[#1d1d1b] text-sm">MH-VRB-0247 (Survey #142/3A)</strong>
               </div>
               <div>
-                <span className="text-[#625e57] block text-[10px] uppercase">REGISTERED HOLDING</span>
+                <span className="text-[#2b2825] block text-[10px] uppercase">REGISTERED HOLDING</span>
                 <strong className="text-[#1d1d1b] text-sm">Bt Cotton (1.8 Hectares)</strong>
               </div>
               <div>
-                <span className="text-[#625e57] block text-[10px] uppercase">REPORTED PERIL EVENT</span>
+                <span className="text-[#2b2825] block text-[10px] uppercase">REPORTED PERIL EVENT</span>
                 <strong className="text-[#c03f13] text-sm uppercase">{current.name}</strong>
               </div>
               <div>
-                <span className="text-[#625e57] block text-[10px] uppercase">INTIMATION WINDOW</span>
+                <span className="text-[#2b2825] block text-[10px] uppercase">INTIMATION WINDOW</span>
                 <strong className="text-[#1d1d1b] text-sm">{current.date}</strong>
               </div>
             </div>
@@ -471,7 +471,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             {/* Metric Banner: Loss % & Confidence */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center bg-[#cdc6be] p-6 border border-[#1d1d1b]">
               <div className="md:col-span-6">
-                <span className="font-mono text-xs uppercase text-[#625e57] block font-bold">
+                <span className="font-mono text-xs uppercase text-[#2b2825] block font-bold">
                   BAYESIAN MULTIMODAL VERIFIED LOSS
                 </span>
                 <div className="flex items-baseline gap-4 mt-2">
@@ -482,7 +482,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                     <span className="font-monument text-xl sm:text-2xl uppercase text-[#1d1d1b] block leading-tight">
                       Verified Crop Loss
                     </span>
-                    <span className="font-mono text-[11px] text-[#625e57]">
+                    <span className="font-mono text-[11px] text-[#2b2825]">
                       {current.lossEstimate >= 50
                         ? 'Meets PMFBY 50% Catastrophic Fast-Track Trigger'
                         : 'Partial Loss Settlement Tier'}
@@ -493,7 +493,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
 
               <div className="md:col-span-6 md:border-l editorial-rule md:pl-6 space-y-3 font-mono text-xs">
                 <div className="flex justify-between items-center">
-                  <span className="text-[#625e57] uppercase font-bold">AI FUSION CONFIDENCE:</span>
+                  <span className="text-[#2b2825] uppercase font-bold">AI FUSION CONFIDENCE:</span>
                   <span className="font-monument text-3xl text-[#1d1d1b] font-bold">
                     <AnimatedStat value={current.confidence} suffix="%" />
                   </span>
@@ -506,7 +506,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                     transition={{ type: "spring", stiffness: 90, damping: 14 }}
                   />
                 </div>
-                <div className="flex justify-between text-[10px] text-[#625e57]">
+                <div className="flex justify-between text-[10px] text-[#2b2825]">
                   <span>Cryptographic Seal: #SHA256-7FA29B</span>
                   <span className="text-[#c03f13] font-bold uppercase">{current.severity}</span>
                 </div>
@@ -527,13 +527,13 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <MotionCard delay={0.05} className="border border-[#1d1d1b] p-5 bg-[#cdc6be] space-y-3 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-center text-[10px] uppercase hairline-b pb-2">
-                      <span className="text-[#625e57]">SIGNAL 01 // GROUND</span>
+                      <span className="text-[#2b2825]">SIGNAL 01 // GROUND</span>
                       <span className="text-[#c03f13] font-bold">SMARTPHONE EXIF</span>
                     </div>
                     <h5 className="font-monument text-lg uppercase text-[#1d1d1b] mt-3">
                       {current.signal1Title}
                     </h5>
-                    <p className="font-editorial text-xs text-[#625e57] mt-1 leading-relaxed">
+                    <p className="font-editorial text-xs text-[#2b2825] mt-1 leading-relaxed">
                       {current.signal1Desc}
                     </p>
                   </div>
@@ -547,13 +547,13 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <MotionCard delay={0.1} className="border border-[#1d1d1b] p-5 bg-[#cdc6be] space-y-3 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-center text-[10px] uppercase hairline-b pb-2">
-                      <span className="text-[#625e57]">SIGNAL 02 // SATELLITE</span>
+                      <span className="text-[#2b2825]">SIGNAL 02 // SATELLITE</span>
                       <span className="text-[#c03f13] font-bold">SENTINEL-2 MSI</span>
                     </div>
                     <h5 className="font-monument text-lg uppercase text-[#1d1d1b] mt-3">
                       {current.signal2Title}
                     </h5>
-                    <p className="font-editorial text-xs text-[#625e57] mt-1 leading-relaxed">
+                    <p className="font-editorial text-xs text-[#2b2825] mt-1 leading-relaxed">
                       {current.signal2Desc}
                     </p>
                   </div>
@@ -567,13 +567,13 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <MotionCard delay={0.15} className="border border-[#1d1d1b] p-5 bg-[#cdc6be] space-y-3 flex flex-col justify-between">
                   <div>
                     <div className="flex justify-between items-center text-[10px] uppercase hairline-b pb-2">
-                      <span className="text-[#625e57]">SIGNAL 03 // ATMOSPHERE</span>
+                      <span className="text-[#2b2825]">SIGNAL 03 // ATMOSPHERE</span>
                       <span className="text-[#c03f13] font-bold">IMD &amp; ERA5 GRIDS</span>
                     </div>
                     <h5 className="font-monument text-lg uppercase text-[#1d1d1b] mt-3">
                       {current.signal3Title}
                     </h5>
-                    <p className="font-editorial text-xs text-[#625e57] mt-1 leading-relaxed">
+                    <p className="font-editorial text-xs text-[#2b2825] mt-1 leading-relaxed">
                       {current.signal3Desc}
                     </p>
                   </div>
@@ -588,11 +588,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             {/* Evidence Package & Human Review Status Action */}
             <div className="hairline-t pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 font-mono text-xs">
               <div>
-                <span className="text-[#625e57] block">AUDIT DECISION STATUS:</span>
+                <span className="text-[#2b2825] block">AUDIT DECISION STATUS:</span>
                 <strong className={`text-sm uppercase ${humanSignedOff ? 'text-[#96b59f]' : 'text-[#c03f13]'}`}>
                   {humanSignedOff ? '✓ VERIFIED & APPROVED BY AUTHORIZED PATWARI' : '⚠ HUMAN REVIEW REQUIRED — EVIDENCE COMPILED'}
                 </strong>
-                <div className="text-[10px] text-[#625e57] mt-0.5">
+                <div className="text-[10px] text-[#2b2825] mt-0.5">
                   DEMONSTRATION DATA · NOT AN ACTUAL PMFBY SETTLEMENT DETERMINATION
                 </div>
               </div>
@@ -632,14 +632,14 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
           <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
             REDUCING SETTLEMENT FROM 60 DAYS TO 48 HOURS
           </AnimatedH2>
-          <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-2 max-w-3xl" delay={0.1}>
+          <AnimatedParagraph className="font-mono text-xs text-[#2b2825] uppercase mt-2 max-w-3xl" delay={0.1}>
             Important: Rashkar does NOT automatically approve or reject insurance claims. It empowers authorized human adjusters with reconciled mathematical evidence.
           </AnimatedParagraph>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 font-mono text-xs mt-10">
             {/* Status Quo */}
             <MotionCard delay={0.1} className="border border-[#1d1d1b] p-6 bg-[#cdc6be] space-y-4">
-              <div className="flex justify-between items-center text-[#625e57] font-bold border-b border-[#1d1d1b]/30 pb-2">
+              <div className="flex justify-between items-center text-[#2b2825] font-bold border-b border-[#1d1d1b]/30 pb-2">
                 <span>CONVENTIONAL STATUS QUO</span>
                 <span className="text-[#c03f13] font-bold">45–60 DAYS DELAY</span>
               </div>
@@ -753,7 +753,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
           <AnimatedH2 accent="left" className="font-monument text-3xl sm:text-5xl uppercase tracking-tight text-[#1d1d1b] mt-2">
             THE INNOVATION IS IN THE FUSION
           </AnimatedH2>
-          <AnimatedParagraph className="font-editorial text-base text-[#625e57] mt-2 max-w-3xl" delay={0.1}>
+          <AnimatedParagraph className="font-editorial text-base text-[#2b2825] mt-2 max-w-3xl" delay={0.1}>
             Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow.
           </AnimatedParagraph>
 
@@ -761,7 +761,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.05} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="01" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">MULTIMODAL EVIDENCE</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Overcoming single-sensor failure modes by cross-validating commodity phone images with orbital reflectance and Doppler radar.
               </AnimatedParagraph>
             </MotionCard>
@@ -769,7 +769,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.1} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="02" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">PLOT-LEVEL INTELLIGENCE</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Operating at individual cadastral survey numbers (1–2 hectares) rather than coarse district-level administrative aggregations.
               </AnimatedParagraph>
             </MotionCard>
@@ -777,7 +777,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.15} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="03" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">TIME-SERIES + VISUALS</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Pairing longitudinal 5-year spectral decay trajectories with acute point-in-time smartphone stem fracture detections.
               </AnimatedParagraph>
             </MotionCard>
@@ -785,7 +785,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.2} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="04" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">CLOUD AI COMPUTATION</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Zero field hardware to maintain. All neural inference executed on centralized cloud clusters, keeping farmer hardware costs at ₹0.
               </AnimatedParagraph>
             </MotionCard>
@@ -793,7 +793,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.25} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="05" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">EVIDENCE-FIRST OUTPUT</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Every percentage loss estimate is accompanied by cryptographic hash verification, bounding polygon overlays, and radar confirmation.
               </AnimatedParagraph>
             </MotionCard>
@@ -801,7 +801,7 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
             <MotionCard delay={0.3} className="border border-[#1d1d1b] p-6 bg-[#ded7ce]/40">
               <AnimatedLabel text="06" className="text-[#c03f13] font-bold text-sm block" />
               <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">HUMAN-REVIEWED WORKFLOW</AnimatedH4>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
                 Designed to empower agrarian officers and insurers with defensible data, preserving human accountability under PMFBY statutes.
               </AnimatedParagraph>
             </MotionCard>
@@ -837,11 +837,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   From 45–60 Days To 48h
                 </AnimatedH4>
-                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                <AnimatedParagraph className="font-editorial text-xs text-[#2b2825] leading-relaxed">
                   Proposed target to accelerate post-disaster claim intimation and verification sign-off.
                 </AnimatedParagraph>
               </div>
-              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.1} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
@@ -853,11 +853,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   CCE Survey Overhead Drop
                 </AnimatedH4>
-                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                <AnimatedParagraph className="font-editorial text-xs text-[#2b2825] leading-relaxed">
                   Targeted reduction in logistical expenditure associated with manual Crop Cutting Experiments.
                 </AnimatedParagraph>
               </div>
-              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.15} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
@@ -869,11 +869,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   Down from ₹500–800 / Acre
                 </AnimatedH4>
-                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                <AnimatedParagraph className="font-editorial text-xs text-[#2b2825] leading-relaxed">
                   Proposed surveying cost per enrolled plot acreage achieved through cloud automation.
                 </AnimatedParagraph>
               </div>
-              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
             </MotionCard>
 
             <MotionCard delay={0.2} className="p-6 md:p-8 flex flex-col justify-between bg-[#cdc6be]">
@@ -885,11 +885,11 @@ export const CropLossPage: React.FC<CropLossPageProps> = ({ navigate }) => {
                 <AnimatedH4 className="font-monument text-xs uppercase text-[#1d1d1b] font-bold mb-1">
                   ₹1,500 Cr → ₹750 Cr / Year
                 </AnimatedH4>
-                <AnimatedParagraph className="font-editorial text-xs text-[#625e57] leading-relaxed">
+                <AnimatedParagraph className="font-editorial text-xs text-[#2b2825] leading-relaxed">
                   Projected reduction in disputed claims through cryptographic satellite and EXIF cross-checking.
                 </AnimatedParagraph>
               </div>
-              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+              <AnimatedLabel text="Proposed Target" className="mt-4 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
             </MotionCard>
           </div>
 

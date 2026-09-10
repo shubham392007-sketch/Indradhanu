@@ -292,7 +292,7 @@ export const DevelopersSection: React.FC = () => {
 
           {/* Right Editorial Annotations & Supporting Text */}
           <div className="max-w-xl flex flex-col justify-between">
-            <div className="hidden sm:flex items-center gap-4 font-mono text-[11px] uppercase tracking-wider text-[#625e57] mb-3">
+            <div className="hidden sm:flex items-center gap-4 font-mono text-[11px] uppercase tracking-wider text-[#2b2825] mb-3">
               <span>TEAM / 04</span>
               <span>·</span>
               <span>AI + CLIMATE</span>
@@ -345,7 +345,7 @@ export const DevelopersSection: React.FC = () => {
                     <span className="inline-block px-2.5 py-1 border border-[#1d1d1b] bg-[#ded7ce] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#1d1d1b]">
                       {dev.role}
                     </span>
-                    <span className="block text-[10px] text-[#625e57] uppercase tracking-wider mt-1">
+                    <span className="block text-[10px] text-[#2b2825] uppercase tracking-wider mt-1">
                       {dev.affiliation}
                     </span>
                   </div>
@@ -360,7 +360,7 @@ export const DevelopersSection: React.FC = () => {
                 </motion.h3>
 
                 {/* Subsystem Research Focus Annotation */}
-                <p className="font-editorial italic text-sm sm:text-base text-[#625e57] leading-relaxed max-w-md">
+                <p className="font-editorial italic text-sm sm:text-base text-[#2b2825] leading-relaxed max-w-md">
                   {dev.focus}
                 </p>
               </div>
@@ -392,7 +392,7 @@ export const DevelopersSection: React.FC = () => {
                         transition={springPhysics}
                         className="inline-flex items-center gap-1.5 text-[#1d1d1b]/70 hover:text-[#c03f13] transition-colors group/link cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#c03f13] focus:ring-offset-2 py-1"
                       >
-                        <span className="text-[#625e57] group-hover/link:text-[#c03f13] transition-colors">
+                        <span className="text-[#2b2825] group-hover/link:text-[#c03f13] transition-colors">
                           <SocialIcon type={link.type} />
                         </span>
                         <span className="font-bold">{link.label}</span>
@@ -413,7 +413,7 @@ export const DevelopersSection: React.FC = () => {
       </motion.div>
 
       {/* 3. SECTION FOOTER: Technical Footnote */}
-      <div className="px-6 md:px-12 py-4 bg-[#ded7ce]/40 hairline-t flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-xs text-[#625e57] gap-2">
+      <div className="px-6 md:px-12 py-4 bg-[#ded7ce]/40 hairline-t flex flex-col sm:flex-row justify-between items-start sm:items-center font-mono text-xs text-[#2b2825] gap-2">
         <div className="flex items-center gap-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#c03f13]" />
           <span>RESEARCH &amp; ENGINEERING COHORT · 4 PRINCIPAL INVESTIGATORS</span>

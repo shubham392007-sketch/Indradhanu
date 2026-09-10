@@ -73,11 +73,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 <span className="drop-cap-boxed">A</span>
                 <EmphasizedText>cloud-based artificial intelligence platform</EmphasizedText> designed to support climate-resilient agriculture by combining environmental intelligence, personalized heat-risk prediction, and AI-assisted crop-loss verification.
               </div>
-              <AnimatedParagraph delay={0.15} className="font-serif italic text-sm md:text-base text-[#625e57] mt-6 leading-relaxed">
+              <AnimatedParagraph delay={0.15} className="font-serif italic text-sm md:text-base text-[#2b2825] mt-6 leading-relaxed">
                 A software-only cloud AI platform. Designed from first principles to turn satellite multispectral time-series, weather reanalysis grids, and farmer smartphone photographs into rapid rural defense.
               </AnimatedParagraph>
             </div>
-            <div className="mt-8 pt-6 hairline-t flex flex-wrap items-center justify-between font-mono text-xs text-[#625e57] gap-2">
+            <div className="mt-8 pt-6 hairline-t flex flex-wrap items-center justify-between font-mono text-xs text-[#2b2825] gap-2">
               <AnimatedLabel>INFRASTRUCTURE: 100% CLOUD &amp; SMARTPHONE</AnimatedLabel>
               <AnimatedLabel className="text-[#1d1d1b] font-bold">[VOL. IV · 2026]</AnimatedLabel>
             </div>
@@ -92,7 +92,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </svg>
             </div>
             <div>
-              <AnimatedLabel className="font-mono text-xs uppercase tracking-widest text-[#625e57] mb-4 block">
+              <AnimatedLabel className="font-mono text-xs uppercase tracking-widest text-[#2b2825] mb-4 block">
                 SPECIFICATION OVERVIEW · 2026 EDITION
               </AnimatedLabel>
               {/* Monumental condensed typography stack */}
@@ -107,7 +107,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 className="font-monument text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-[#1d1d1b] leading-tight pr-14"
               />
             </div>
-            <div className="hairline-t pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs uppercase text-[#625e57]">
+            <div className="hairline-t pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-xs uppercase text-[#2b2825]">
               <div><strong className="text-[#1d1d1b] block text-base font-serif">WBGT</strong> Wet Bulb Proxy</div>
               <div><strong className="text-[#1d1d1b] block text-base font-serif">SENTINEL-2</strong> 10m Multispectral</div>
               <div><strong className="text-[#1d1d1b] block text-base font-serif">YOLOv8</strong> Field Pathology</div>
@@ -192,7 +192,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <MotionCard delay={0.05} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 01 // HEAT STRESS</span>
-                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">PHYSIOLOGICAL DEFENSE</AnimatedLabel>
+                <AnimatedLabel className="text-[10px] text-[#2b2825] uppercase">PHYSIOLOGICAL DEFENSE</AnimatedLabel>
               </div>
               <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Extreme Heat Threatens Human Life</AnimatedH4>
               <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
@@ -204,7 +204,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <MotionCard delay={0.15} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 02 // CROP LOSS</span>
-                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">AGRARIAN ASSETS</AnimatedLabel>
+                <AnimatedLabel className="text-[10px] text-[#2b2825] uppercase">AGRARIAN ASSETS</AnimatedLabel>
               </div>
               <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Sudden Perils Devastate Smallholder Plots</AnimatedH4>
               <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
@@ -216,7 +216,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <MotionCard delay={0.25} className="p-6 border border-[#1d1d1b] bg-[#ded7ce]/60 space-y-2">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-bold text-[#c03f13] uppercase">LAYER 03 // VERIFICATION</span>
-                <AnimatedLabel className="text-[10px] text-[#625e57] uppercase">EVIDENCE GAP</AnimatedLabel>
+                <AnimatedLabel className="text-[10px] text-[#2b2825] uppercase">EVIDENCE GAP</AnimatedLabel>
               </div>
               <AnimatedH4 className="font-monument text-xl text-[#1d1d1b] uppercase">Fragmented Proof Stalls Recovery</AnimatedH4>
               <AnimatedParagraph className="font-editorial text-base text-[#1d1d1b]/80 leading-relaxed">
@@ -231,7 +231,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
       {/* 4. BY THE NUMBERS (Stitch Reference Image 7: Divided by thin 1px rules)   */}
       {/* ========================================================================= */}
       <section className="w-full max-w-[1920px] mx-auto hairline-b bg-[#cdc6be]" id="stats">
-        <div className="p-6 md:px-12 py-6 hairline-b flex flex-col sm:flex-row justify-between items-baseline font-mono text-xs text-[#625e57] gap-2">
+        <div className="p-6 md:px-12 py-6 hairline-b flex flex-col sm:flex-row justify-between items-baseline font-mono text-xs text-[#2b2825] gap-2">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#c03f13]"></span>
             <AnimatedLabel className="font-bold text-[#1d1d1b] uppercase">RESEARCH &amp; DOCUMENTATION LEDGER</AnimatedLabel>
@@ -244,7 +244,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#1d1d1b] font-mono">
           {/* Stat 01 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
-            <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
+            <div className="text-[11px] uppercase tracking-wider text-[#2b2825] mb-2 flex justify-between">
               <AnimatedLabel>EXPOSURE DEMOGRAPHY</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">RESEARCH</span>
             </div>
@@ -255,14 +255,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825]">
               Agricultural field workers exposed daily to hazardous wet-bulb heat stress across India.
             </AnimatedParagraph>
           </div>
 
           {/* Stat 02 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
-            <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
+            <div className="text-[11px] uppercase tracking-wider text-[#2b2825] mb-2 flex justify-between">
               <AnimatedLabel>RECORD HEAT EVENTS</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">2024 RECORD</span>
             </div>
@@ -273,14 +273,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825]">
               Cumulative heatwave days recorded across 18 Indian states during the 2024 agricultural calendar.
             </AnimatedParagraph>
           </div>
 
           {/* Stat 03 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
-            <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
+            <div className="text-[11px] uppercase tracking-wider text-[#2b2825] mb-2 flex justify-between">
               <AnimatedLabel>PMFBY ENROLLMENT</AnimatedLabel>
               <span className="text-[10px] border border-[#1d1d1b]/30 px-1">GOV DATA</span>
             </div>
@@ -291,14 +291,14 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 className="font-monument text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1d1d1b] leading-none" 
               />
             </div>
-            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825]">
               Agrarian farmer-plot enrollments in Pradhan Mantri Fasal Bima Yojana awaiting rapid audit modernizations.
             </AnimatedParagraph>
           </div>
 
           {/* Stat 04 */}
           <div className="p-6 md:p-10 flex flex-col justify-between">
-            <div className="text-[11px] uppercase tracking-wider text-[#625e57] mb-2 flex justify-between">
+            <div className="text-[11px] uppercase tracking-wider text-[#2b2825] mb-2 flex justify-between">
               <AnimatedLabel>STATUS QUO SETTLEMENT</AnimatedLabel>
               <span className="text-[10px] bg-[#c03f13] text-[#cdc6be] px-1 font-bold">BOTTLENECK</span>
             </div>
@@ -307,7 +307,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 45–60 D
               </span>
             </div>
-            <AnimatedParagraph className="font-serif italic text-sm text-[#625e57]">
+            <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825]">
               Average claim-verification timeframe in traditional manual surveys; targeted by Rashkar to 48 hours.
             </AnimatedParagraph>
           </div>
@@ -326,7 +326,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <span className="text-[#c03f13]">THE INTELLIGENCE IS FRAGMENTED.</span>
             </AnimatedH2>
           </div>
-          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#2b2825] uppercase mt-4 md:mt-0">
             Current systems leave critical blind spots. Rashkar connects the signals into a unified software pipeline.
           </AnimatedParagraph>
         </div>
@@ -342,7 +342,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Personalization
               </div>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed">
                 Broadcast weather forecasts provide district-wide ambient temperatures. They ignore solar radiation flux, humidity, worker age, exertion level, and acclimatization.
               </AnimatedParagraph>
             </div>
@@ -360,7 +360,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Field Evidence
               </div>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed">
                 Orbital multispectral imagery offers broad spectral vegetation indices (NDVI/NDRE) but is blinded by monsoonal cloud decks and lacks micro-level foliar damage proof.
               </AnimatedParagraph>
             </div>
@@ -378,7 +378,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Limited Historical Context
               </div>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed">
                 Ground smartphone photos capture visible damage but lack historical phenology curves, meteorological verification, and spatial plot boundary confirmation.
               </AnimatedParagraph>
             </div>
@@ -396,7 +396,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <div className="text-[11px] text-[#c03f13] font-bold uppercase mb-3">
                 → Slow &amp; Fragmented
               </div>
-              <AnimatedParagraph className="text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="text-[#2b2825] leading-relaxed">
                 Physical Crop Cutting Experiments (CCEs) and manual adjuster visits take 45–60 days to survey millions of plots, creating dispute cycles and delayed insurance relief.
               </AnimatedParagraph>
             </div>
@@ -432,7 +432,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <span className="text-[#c03f13]">ONE CLIMATE-RESILIENT PLATFORM.</span>
             </AnimatedH2>
           </div>
-          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase mt-4 md:mt-0">
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#2b2825] uppercase mt-4 md:mt-0">
             Distinct operational engines sharing a common cloud pipeline to protect life before the crisis and recover livelihood after the loss.
           </AnimatedParagraph>
         </div>
@@ -462,13 +462,13 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                   HEAT-RISK INTELLIGENCE
                 </AnimatedH3>
               </div>
-              <AnimatedParagraph className="font-serif text-base text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif text-base text-[#2b2825] leading-relaxed">
                 Predict heat risk before exposure becomes a crisis. Translates environmental data, worker age, exertion level, and acclimatization into personalized 0–100 risk scores with vernacular work-rest pacing guidance.
               </AnimatedParagraph>
             </div>
 
             <div className="border-t border-[#1d1d1b]/20 pt-6 mt-8 space-y-4">
-              <div className="flex justify-between font-mono text-xs text-[#625e57] uppercase">
+              <div className="flex justify-between font-mono text-xs text-[#2b2825] uppercase">
                 <AnimatedLabel>PREDICTION HORIZON: 0–6 HOURS</AnimatedLabel>
                 <AnimatedLabel className="font-bold text-[#1d1d1b]">HUMAN LIFE DEFENSE</AnimatedLabel>
               </div>
@@ -492,7 +492,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <AnimatedH3 className="font-monument text-4xl sm:text-5xl md:text-6xl text-[#1d1d1b] font-extrabold tracking-tight uppercase leading-none">
                 THE DUAL<br />ENGINE!
               </AnimatedH3>
-              <AnimatedParagraph className="font-serif text-base sm:text-lg text-[#625e57] italic mt-4 max-w-xs mx-auto leading-relaxed">
+              <AnimatedParagraph className="font-serif text-base sm:text-lg text-[#2b2825] italic mt-4 max-w-xs mx-auto leading-relaxed">
                 A unified cloud intelligence suite protecting human life &amp; agrarian assets across India.
               </AnimatedParagraph>
             </div>
@@ -510,7 +510,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </motion.button>
             </div>
 
-            <div className="font-mono text-xs uppercase tracking-wider text-[#625e57]">
+            <div className="font-mono text-xs uppercase tracking-wider text-[#2b2825]">
               <strong className="text-[#1d1d1b]">TIP!</strong> Click individual engine buttons to enter dedicated operational workflows
             </div>
           </div>
@@ -539,13 +539,13 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                   CROP-LOSS INTELLIGENCE
                 </AnimatedH3>
               </div>
-              <AnimatedParagraph className="font-serif text-base text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif text-base text-[#2b2825] leading-relaxed">
                 Turn fragmented field and environmental signals into structured crop-loss evidence. Cross-verifies farmer smartphone photos with Sentinel-2 spectral drops to compress claim settlement from 60 days to 48 hours.
               </AnimatedParagraph>
             </div>
 
             <div className="border-t border-[#1d1d1b]/20 pt-6 mt-8 space-y-4">
-              <div className="flex justify-between font-mono text-xs text-[#625e57] uppercase">
+              <div className="flex justify-between font-mono text-xs text-[#2b2825] uppercase">
                 <AnimatedLabel>CONFIDENCE: 91% MULTIMODAL</AnimatedLabel>
                 <AnimatedLabel className="font-bold text-[#1d1d1b]">FINANCIAL RECOVERY</AnimatedLabel>
               </div>
@@ -583,7 +583,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               FIVE STAKEHOLDER EXPERIENCES
             </AnimatedH2>
           </div>
-          <AnimatedParagraph className="font-mono text-xs text-[#625e57] uppercase mt-3 md:mt-0 max-w-sm" delay={0.15}>
+          <AnimatedParagraph className="font-mono text-xs text-[#2b2825] uppercase mt-3 md:mt-0 max-w-sm" delay={0.15}>
             Tailored interfaces delivering transparent value across the agrarian lifecycle.
           </AnimatedParagraph>
         </div>
@@ -597,7 +597,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 Receives understandable, hyper-local risk warnings via native Marathi/Hindi SMS and voice calls. Submits damage photos directly without specialized hardware.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Zero Tech Barrier" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Zero Tech Barrier" className="mt-6 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.1} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
@@ -608,7 +608,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 Reviews structured mathematical evidence packages reconciling ground photos with satellite NDVI anomalies, eliminating manual field logging delays.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="70% CCE Cost Reduction" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="70% CCE Cost Reduction" className="mt-6 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.15} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
@@ -619,7 +619,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 Accesses tamper-evident loss evidence with cross-modal confidence scores, enabling rapid 48-hour claim disbursements while curbing fraudulent filings.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="50% Fraud Mitigation" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="50% Fraud Mitigation" className="mt-6 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.2} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
@@ -630,7 +630,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 Monitors aggregated district-level climate anomalies, heat-stress clusters, and localized disaster declarations through real-time state dashboards.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Policy Resilience" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Policy Resilience" className="mt-6 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           <MotionCard delay={0.25} className="p-6 flex flex-col justify-between bg-[#ded7ce]/40 hover:bg-[#ded7ce] transition-colors">
@@ -641,7 +641,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 Schedules community harvesting shifts, distributes electrolyte supplies, and supports member claim intimations with aggregated village data.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Community Defense" className="mt-6 pt-2 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Community Defense" className="mt-6 pt-2 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -682,11 +682,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 Targeted Reduction In Clinical Heatstroke
               </AnimatedH4>
-              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825] leading-relaxed">
                 Projected reduction in acute heat-stress collapses through forward-looking 6-hour personalized work-rest schedule notifications during peak summer harvest.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Target Horizon: 2026–2027 Field Trial" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Target Horizon: 2026–2027 Field Trial" className="mt-6 pt-3 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           {/* Impact 02 */}
@@ -705,11 +705,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 From 45–60 Days To 48 Hours
               </AnimatedH4>
-              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825] leading-relaxed">
                 Projected compression of PMFBY claim intimation, multimodal cross-verification, and official patwari approval cycle for catastrophic loss relief.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Target Horizon: Pilot Sub-District" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Target Horizon: Pilot Sub-District" className="mt-6 pt-3 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           {/* Impact 03 */}
@@ -729,11 +729,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               <AnimatedH4 className="font-monument text-sm uppercase text-[#1d1d1b] font-bold mb-2">
                 Reduced From ₹500–800 / Acre
               </AnimatedH4>
-              <AnimatedParagraph className="font-serif italic text-sm text-[#625e57] leading-relaxed">
+              <AnimatedParagraph className="font-serif italic text-sm text-[#2b2825] leading-relaxed">
                 Projected 70% reduction in physical Crop Cutting Experiment (CCE) surveying overhead by automating satellite &amp; smartphone multimodal correlation.
               </AnimatedParagraph>
             </div>
-            <AnimatedLabel text="Target Horizon: PMFBY Integration" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="Target Horizon: PMFBY Integration" className="mt-6 pt-3 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -749,34 +749,34 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               UNITED NATIONS SUSTAINABLE DEVELOPMENT GOALS
             </AnimatedH3>
           </div>
-          <AnimatedLabel text="Direct alignment with 5 UN targets" className="font-mono text-xs text-[#625e57] uppercase mt-2 md:mt-0" />
+          <AnimatedLabel text="Direct alignment with 5 UN targets" className="font-mono text-xs text-[#2b2825] uppercase mt-2 md:mt-0" />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 font-mono text-xs">
           <MotionCard delay={0.04} className="border border-[#1d1d1b] p-4 bg-[#ded7ce]/50">
             <span className="text-[#c03f13] font-bold text-sm block">SDG 01</span>
             <strong className="font-monument text-sm uppercase text-[#1d1d1b] block mt-1">NO POVERTY</strong>
-            <p className="font-editorial text-xs text-[#625e57] mt-1">Preventing bankruptcy after sudden catastrophic climate wipeouts.</p>
+            <p className="font-editorial text-xs text-[#2b2825] mt-1">Preventing bankruptcy after sudden catastrophic climate wipeouts.</p>
           </MotionCard>
           <MotionCard delay={0.08} className="border border-[#1d1d1b] p-4 bg-[#ded7ce]/50">
             <span className="text-[#c03f13] font-bold text-sm block">SDG 02</span>
             <strong className="font-monument text-sm uppercase text-[#1d1d1b] block mt-1">ZERO HUNGER</strong>
-            <p className="font-editorial text-xs text-[#625e57] mt-1">Securing agrarian livelihoods and domestic harvest continuity.</p>
+            <p className="font-editorial text-xs text-[#2b2825] mt-1">Securing agrarian livelihoods and domestic harvest continuity.</p>
           </MotionCard>
           <MotionCard delay={0.12} className="border border-[#1d1d1b] p-4 bg-[#ded7ce]/50">
             <span className="text-[#c03f13] font-bold text-sm block">SDG 03</span>
             <strong className="font-monument text-sm uppercase text-[#1d1d1b] block mt-1">GOOD HEALTH</strong>
-            <p className="font-editorial text-xs text-[#625e57] mt-1">Eliminating heatstroke fatalities among manual outdoor harvesters.</p>
+            <p className="font-editorial text-xs text-[#2b2825] mt-1">Eliminating heatstroke fatalities among manual outdoor harvesters.</p>
           </MotionCard>
           <MotionCard delay={0.16} className="border border-[#1d1d1b] p-4 bg-[#ded7ce]/50">
             <span className="text-[#c03f13] font-bold text-sm block">SDG 08</span>
             <strong className="font-monument text-sm uppercase text-[#1d1d1b] block mt-1">DECENT WORK</strong>
-            <p className="font-editorial text-xs text-[#625e57] mt-1">Protecting occupational safety standards for agrarian laborers.</p>
+            <p className="font-editorial text-xs text-[#2b2825] mt-1">Protecting occupational safety standards for agrarian laborers.</p>
           </MotionCard>
           <MotionCard delay={0.2} className="border border-[#1d1d1b] p-4 bg-[#ded7ce]/50">
             <span className="text-[#c03f13] font-bold text-sm block">SDG 13</span>
             <strong className="font-monument text-sm uppercase text-[#1d1d1b] block mt-1">CLIMATE ACTION</strong>
-            <p className="font-editorial text-xs text-[#625e57] mt-1">Adaptive digital public infrastructure for extreme weather resilience.</p>
+            <p className="font-editorial text-xs text-[#2b2825] mt-1">Adaptive digital public infrastructure for extreme weather resilience.</p>
           </MotionCard>
         </div>
       </section>
@@ -792,7 +792,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               24-HOUR FEASIBILITY EVALUATION
             </AnimatedH2>
           </div>
-          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#2b2825] uppercase" delay={0.1}>
             Honest, rigorous delineation between what was delivered in the hackathon prototype versus required long-term institutional deployment.
           </AnimatedParagraph>
         </div>
@@ -810,7 +810,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#c03f13]">WHAT IS ACHIEVED:</div>
-                <ul className="space-y-1 text-[11px] text-[#625e57]">
+                <ul className="space-y-1 text-[11px] text-[#2b2825]">
                   <li>✓ Complete editorial responsive UI &amp; design system</li>
                   <li>✓ Cloud architecture pipeline with zero hardware dependency</li>
                   <li>✓ Sample Sentinel-2 &amp; IMD radar meteorological datasets</li>
@@ -836,7 +836,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#1d1d1b]">WHAT IS PLANNED:</div>
-                <ul className="space-y-1 text-[11px] text-[#625e57]">
+                <ul className="space-y-1 text-[11px] text-[#2b2825]">
                   <li>→ Retrained ViT and SegFormer on 20,000 ground photos</li>
                   <li>→ Live automated Sentinel-2 STAC index ingestion pipeline</li>
                   <li>→ Automated IVR telephony gateways (Marathi, Telugu, Hindi)</li>
@@ -846,7 +846,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 </ul>
               </div>
             </div>
-            <AnimatedLabel text="STATUS: ACTIVE RESEARCH ROADMAP" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="STATUS: ACTIVE RESEARCH ROADMAP" className="mt-6 pt-3 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
 
           {/* Tier 3: Longer Term Production */}
@@ -861,7 +861,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               </AnimatedH4>
               <div className="space-y-2 text-[#1d1d1b]">
                 <div className="font-bold text-[#1d1d1b]">WHAT IS REQUIRED:</div>
-                <ul className="space-y-1 text-[11px] text-[#625e57]">
+                <ul className="space-y-1 text-[11px] text-[#2b2825]">
                   <li>→ National multi-state epidemiological heat validation</li>
                   <li>→ Formal institutional integration with Ministry of Agriculture</li>
                   <li>→ Production insurance underwriting consensus agreements</li>
@@ -871,7 +871,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
                 </ul>
               </div>
             </div>
-            <AnimatedLabel text="STATUS: NATIONAL VISION" className="mt-6 pt-3 hairline-t text-[10px] text-[#625e57] uppercase block" />
+            <AnimatedLabel text="STATUS: NATIONAL VISION" className="mt-6 pt-3 hairline-t text-[10px] text-[#2b2825] uppercase block" />
           </MotionCard>
         </div>
       </section>
@@ -887,7 +887,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
               RESEARCH ARCHIVES
             </AnimatedH2>
           </div>
-          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] uppercase" delay={0.1}>
+          <AnimatedParagraph className="max-w-md font-mono text-xs text-[#2b2825] uppercase" delay={0.1}>
             Rigorous analysis of existing literature on occupational heat stress, satellite agriculture, and insurance auditing.
           </AnimatedParagraph>
         </div>
@@ -899,7 +899,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             quote="Based on the reviewed literature and solutions documented in the project research, no reviewed solution was identified that combines all of the stated requirements into one integrated workflow."
             className="text-xl md:text-2xl text-[#1d1d1b] italic leading-relaxed"
           />
-          <AnimatedParagraph className="font-mono text-xs text-[#625e57] mt-3 uppercase" delay={0.2}>
+          <AnimatedParagraph className="font-mono text-xs text-[#2b2825] mt-3 uppercase" delay={0.2}>
             Prior studies isolated meteorological WBGT models from personal work intensity, or examined satellite NDVI loss without ground smartphone damage computer vision. Rashkar bridges these disparate disciplines into a single cloud-native protocol.
           </AnimatedParagraph>
         </MotionCard>
@@ -911,7 +911,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               HEAT-STRESS PREDICTION
             </AnimatedH4>
-            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+            <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
               Liljegren WBGT formulation, ISO 7243 standards, and exertional heat collapse risks among tropical agricultural manual laborers.
             </AnimatedParagraph>
           </MotionCard>
@@ -921,7 +921,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               SATELLITE SPECTRAL PHENOLOGY
             </AnimatedH4>
-            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+            <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
               Copernicus Sentinel-2 MSI red-edge bands (B5, B6, B7) for early drought transpiration decay and NDVI sudden anomaly detection.
             </AnimatedParagraph>
           </MotionCard>
@@ -931,7 +931,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               COMPUTER VISION PATHOLOGY
             </AnimatedH4>
-            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+            <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
               YOLOv8 micro-geometry detection of mechanical stem fracture and foliar stripping paired with ViT damage classification tiers.
             </AnimatedParagraph>
           </MotionCard>
@@ -941,7 +941,7 @@ export const HomePage: React.FC<HomePageProps> = ({ navigate }) => {
             <AnimatedH4 className="font-monument text-base uppercase text-[#1d1d1b] mt-1 mb-2">
               PMFBY VERIFICATION BOTTLENECKS
             </AnimatedH4>
-            <AnimatedParagraph className="text-[#625e57] leading-relaxed text-xs">
+            <AnimatedParagraph className="text-[#2b2825] leading-relaxed text-xs">
               Crop Cutting Experiments (CCE) statistical error margins, yield estimation delays, and dispute resolution models under extreme weather perils.
             </AnimatedParagraph>
           </MotionCard>

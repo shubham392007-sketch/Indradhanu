@@ -6,7 +6,7 @@
   --color-paper-dark: #c4bcaf;
   --color-paper-card: rgba(229, 222, 213, 0.45);
   --color-ink: #1d1d1b;
-  --color-ink-muted: #625e57;
+  --color-ink-muted: #2b2825;
   --color-ink-pure: #0a0a09;
   --color-rust: #c03f13;
   --color-rust-hover: #9e340f;
@@ -74,6 +74,13 @@ main .bg-\[\#cdc6be\] {
 /* Preserve subtle card hover feedback */
 .hover\:bg-\[\#cdc6be\]:hover {
   background-color: rgba(216, 211, 200, 0.6) !important;
+}
+
+/* Ultra dark grey for high-legibility muted/monospace typography */
+.text-\[\#625e57\],
+.text-\[\#2b2825\],
+.text-ink-muted {
+  color: #2b2825 !important;
 }
 
 /* Tactile paper grain overlay */

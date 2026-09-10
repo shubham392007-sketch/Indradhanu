@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="inline-block w-1.5 h-1.5 rounded-full bg-[#c03f13]"
             />
-            <span className="text-[11px] uppercase font-mono tracking-wider text-[#625e57]">
+            <span className="text-[11px] uppercase font-mono tracking-wider text-[#2b2825]">
               {currentPath === '/heat-risk' 
                 ? 'ENGINE 01: HEAT-RISK' 
                 : currentPath === '/crop-loss' 
@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               <motion.button 
                 whileHover={{ x: 2, color: '#c03f13' }}
                 onClick={() => handleNav('/heat-risk')}
-                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#625e57] hover:text-[#1d1d1b] transition-colors cursor-pointer"
+                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#2b2825] hover:text-[#1d1d1b] transition-colors cursor-pointer"
               >
                 Heat-Risk →
               </motion.button>
@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               <motion.button 
                 whileHover={{ x: 2, color: '#c03f13' }}
                 onClick={() => handleNav('/crop-loss')}
-                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#625e57] hover:text-[#1d1d1b] transition-colors cursor-pointer"
+                className="hidden md:inline-block font-mono text-xs uppercase tracking-wider text-[#2b2825] hover:text-[#1d1d1b] transition-colors cursor-pointer"
               >
                 Crop-Loss →
               </motion.button>
@@ -150,8 +150,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                 <span className="font-blackletter text-3xl text-[#1d1d1b]">
                   Rash<span className="text-[0.88em] inline-block -translate-y-[0.02em]">K</span>ar
                 </span>
-                <span className="text-[#625e57]">/</span>
-                <span className="font-mono text-xs uppercase tracking-widest text-[#625e57]">
+                <span className="text-[#2b2825]">/</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-[#2b2825]">
                   EDITORIAL RESEARCH INDEX · 2026
                 </span>
               </div>
@@ -181,7 +181,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                       >
                         00. RASHKAR PLATFORM
                       </motion.button>
-                      <p className="font-editorial text-sm text-[#625e57] mt-1">
+                      <p className="font-editorial text-sm text-[#2b2825] mt-1">
                         Integrated climate-resilient architecture combining worker defense and harvest recovery.
                       </p>
                     </li>
@@ -193,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                       >
                         01. HEAT-RISK INTELLIGENCE
                       </motion.button>
-                      <p className="font-editorial text-sm text-[#625e57] mt-1">
+                      <p className="font-editorial text-sm text-[#2b2825] mt-1">
                         Personalized WBGT proxy forecasting &amp; vernacular work-rest pacing guidance.
                       </p>
                     </li>
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                       >
                         02. CROP-LOSS INTELLIGENCE
                       </motion.button>
-                      <p className="font-editorial text-sm text-[#625e57] mt-1">
+                      <p className="font-editorial text-sm text-[#2b2825] mt-1">
                         Multimodal plot verification fusing smartphone photogrammetry with Sentinel-2 time-series.
                       </p>
                     </li>
@@ -244,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               </div>
             </div>
 
-            <div className="relative z-10 hairline-t pt-4 flex flex-col md:flex-row justify-between text-xs font-mono text-[#625e57] gap-2">
+            <div className="relative z-10 hairline-t pt-4 flex flex-col md:flex-row justify-between text-xs font-mono text-[#2b2825] gap-2">
               <span>100% CLOUD-BASED · SATELLITE &amp; SMARTPHONE INTELLIGENCE</span>
               <span>RASHKAR SPECIFICATION © 2026</span>
             </div>

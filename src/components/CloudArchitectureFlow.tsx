@@ -86,7 +86,7 @@ export const CloudArchitectureFlow: React.FC = () => {
             INTELLIGENCE IN THE CLOUD
           </AnimatedH3>
         </div>
-        <AnimatedParagraph className="max-w-md font-mono text-xs text-[#625e57] text-left md:text-right" delay={0.1}>
+        <AnimatedParagraph className="max-w-md font-mono text-xs text-[#2b2825] text-left md:text-right" delay={0.1}>
           A software-only computational pipeline powered by <span className="text-[#1d1d1b] font-bold">cloud microservices, public meteorological feeds, and commodity smartphones</span>.
         </AnimatedParagraph>
       </div>
@@ -115,11 +115,11 @@ export const CloudArchitectureFlow: React.FC = () => {
                 />
               )}
               <div className="flex justify-between items-center w-full">
-                <span className={`font-bold ${isActive ? 'text-[#c03f13]' : 'text-[#625e57]'}`}>
+                <span className={`font-bold ${isActive ? 'text-[#c03f13]' : 'text-[#2b2825]'}`}>
                   {st.step}
                 </span>
                 <span className={`text-[9px] uppercase px-1 py-0.5 border ${
-                  isActive ? 'border-[#cdc6be]/30 text-[#cdc6be]' : 'border-[#1d1d1b]/20 text-[#625e57]'
+                  isActive ? 'border-[#cdc6be]/30 text-[#cdc6be]' : 'border-[#1d1d1b]/20 text-[#2b2825]'
                 }`}>
                   {st.badge}
                 </span>
@@ -151,7 +151,7 @@ export const CloudArchitectureFlow: React.FC = () => {
                 <h4 className="font-monument text-2xl sm:text-4xl uppercase text-[#1d1d1b] mt-1">
                   {stages[activeStage].title}
                 </h4>
-                <div className="font-serif italic text-base text-[#625e57] mt-0.5">
+                <div className="font-serif italic text-base text-[#2b2825] mt-0.5">
                   {stages[activeStage].subtitle}
                 </div>
               </div>
@@ -170,7 +170,7 @@ export const CloudArchitectureFlow: React.FC = () => {
                 <p className="font-editorial text-lg md:text-xl text-[#1d1d1b] leading-relaxed">
                   {stages[activeStage].description}
                 </p>
-                <div className="font-mono text-xs text-[#625e57] pt-2">
+                <div className="font-mono text-xs text-[#2b2825] pt-2">
                   ARCHITECTURAL COMPLIANCE: Centralized cloud processing guarantees that smallholders need not purchase, maintain, or troubleshoot on-field sensors or specialized hardware.
                 </div>
               </div>
@@ -200,7 +200,7 @@ export const CloudArchitectureFlow: React.FC = () => {
         </AnimatePresence>
 
         {/* Visual Data Flow Arrow Sequence */}
-        <div className="hairline-t pt-4 flex flex-wrap items-center justify-between font-mono text-xs text-[#625e57] gap-3">
+        <div className="hairline-t pt-4 flex flex-wrap items-center justify-between font-mono text-xs text-[#2b2825] gap-3">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#c03f13]"></span>
             <span>DATA FLOW:</span>
