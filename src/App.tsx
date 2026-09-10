@@ -38,15 +38,9 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#cdc6be] text-[#1d1d1b] font-editorial selection:bg-[#c03f13] selection:text-[#cdc6be] relative overflow-x-hidden">
+    <div className="min-h-screen paper-crumpled-surface text-[#1d1d1b] font-editorial selection:bg-[#c03f13] selection:text-[#d8d3c8] relative overflow-x-hidden">
       {/* Subtle editorial scroll progress indicator at top edge */}
       <ScrollProgress />
-
-      {/* Tactile paper grain overlay */}
-      <div 
-        aria-hidden="true" 
-        className="fixed inset-0 paper-grain-overlay z-40 pointer-events-none"
-      ></div>
 
       {/* Global Minimal Editorial Header */}
       <Header currentPath={currentPath} navigate={navigate} />

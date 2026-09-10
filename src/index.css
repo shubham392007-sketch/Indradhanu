@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #cdc6be;
-  --color-paper-light: #ded7ce;
-  --color-paper-dark: #beb5aa;
-  --color-paper-card: rgba(222, 215, 206, 0.45);
+  --color-paper: #d8d3c8;
+  --color-paper-light: #e5ded5;
+  --color-paper-dark: #c4bcaf;
+  --color-paper-card: rgba(229, 222, 213, 0.45);
   --color-ink: #1d1d1b;
   --color-ink-muted: #625e57;
   --color-ink-pure: #0a0a09;
@@ -22,18 +22,46 @@
 
 /* Base Editorial Textures and Styles */
 body {
-  background-color: #cdc6be;
+  background-color: #d8d3c8;
   color: #1d1d1b;
   position: relative;
   font-feature-settings: "lnum" 1;
 }
 
+/* Master Physical Crumpled Paper Surface - Continuous Document Sheet */
+.paper-crumpled-surface {
+  background-color: #d8d3c8;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+    url('/paper-crumpled.webp');
+  background-repeat: repeat;
+  background-size: 2048px auto;
+  background-position: top center;
+  background-attachment: scroll;
+}
+
+@media (max-width: 768px) {
+  .paper-crumpled-surface {
+    background-size: 1024px auto;
+  }
+}
+
+/* Allow the continuous paper texture to show through all sections and default paper containers */
+.bg-\[\#cdc6be\] {
+  background-color: transparent !important;
+}
+
+/* Preserve subtle card hover feedback */
+.hover\:bg-\[\#cdc6be\]:hover {
+  background-color: rgba(216, 211, 200, 0.6) !important;
+}
+
 /* Tactile paper grain overlay */
 .paper-grain-overlay {
-  background-image: radial-gradient(#1d1d1b 0.6px, transparent 0.6px), radial-gradient(#ffffff 0.6px, #cdc6be 0.6px);
+  background-image: radial-gradient(#1d1d1b 0.5px, transparent 0.5px), radial-gradient(#ffffff 0.5px, #d8d3c8 0.5px);
   background-size: 24px 24px;
   background-position: 0 0, 12px 12px;
-  opacity: 0.08;
+  opacity: 0.05;
   pointer-events: none;
 }
 
