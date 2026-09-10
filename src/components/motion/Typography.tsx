@@ -587,7 +587,7 @@ export const AnimatedWordReveal: React.FC<AnimatedWordRevealProps> = ({
   }
 
   return (
-    <span className={inline-block }>
+    <span className={`inline-block ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="inline-block overflow-hidden mr-[0.28em] last:mr-0">
           <motion.span
