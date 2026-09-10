@@ -10,7 +10,7 @@ import {
 } from './motion/Typography';
 
 export const CloudArchitectureFlow: React.FC = () => {
-  const [activeStage, setActiveStage] = useState<number>(2);
+  const [activeStage, setActiveStage] = useState<number>(0);
 
   const stages = [
     {
